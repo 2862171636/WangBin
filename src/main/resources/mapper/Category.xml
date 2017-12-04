@@ -6,18 +6,18 @@
 <mapper namespace="com.lanou.dao.CategoryMapper">
 
     <resultMap type="Category" id="CategoryResult" >
-    		<id column="CategoryId" property="CategoryId" javaType="int"/>
-    		<result column="CategoryItem" property="CategoryItem" jdbcType="VARCHAR"/>
-			<result column="CategoryRes" property="CategoryRes" jdbcType="int"/>
+    		<id column="CategoryId" property="categoryId" javaType="int"/>
+    		<result column="CategoryItem" property="categoryItem" jdbcType="VARCHAR"/>
+			<result column="CategoryRes" property="categoryRes" jdbcType="int"/>
 
     </resultMap>
 	
 	<select id="findById" resultMap="CategoryResult">
-		select * from category where categoryId = #{categoryId}
+		select * from category where categoryId = #{CategoryId}
 	</select>
 
 	<select id="findChildById">
-		select * from
+		select * from category where categoryId = categoryRes
 	</select>
 	
 
