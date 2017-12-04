@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lanou.dao.CategoryMapper">
+
+	<resultMap type="Category" id="selectByPrimaryKeyResult">
+		<id column="cId" property="cId" javaType="Integer"></id>
+		<result column="cName" property="cName" jdbcType="VARCHAR"></result>
+		<result column="parentId" property="parentId" javaType="integer"></result>
+		<result column="state" property="state" javaType="integer"></result>
+
+	</resultMap>
+
+	<select id="selectByPrimaryKey" resultMap="selectByPrimaryKeyResult">
+		SELECT * FROM yaya_category WHERE  cId = #{cId}
+	</select>
+
+	<resultMap type="Category" id="selectCategoryChildrenByParentIdResult">
+
+		<id column="cId" property="cId" javaType="Integer"></id>
+		<result column="cName" property="cName" jdbcType="VARCHAR"></result>
+		<result column="parentId" property="parentId" javaType="integer"></result>
+		<result column="state" property="state" javaType="integer"></result>
+
+		<collection property="categoryList" ofType="com.lanou.entity.Category">
+			<id column="cId" property="cId" javaType="Integer"></id>
+			<result column="cName" property="cName" jdbcType="VARCHAR"></result>
+			<result column="parentId" property="parentId" javaType="integer"></result>
+			<result column="state" property="state" javaType="integer"></result>
+		</collection>
+	</resultMap>
+
+	<select id="selectCategoryChildrenByParentId" resultMap="selectCategoryChildrenByParentIdResult" >
+		SELECT * FROM yaya_category WHERE parentId = #{cId}
+	</select>
+
+	<resultMap type="integer" id="selectCidParentIdForZeroResult">
+		<id column="cId"  javaType="Integer"></id>
+	</resultMap>
+
+	<select id="selectCidParentIdForZero" resultMap="selectCidParentIdForZeroResult">
+		SELECT cId FROM yaya_category WHERE parentId = 0
+	</select>
+
+</mapper>

@@ -2,23 +2,32 @@
 function checkUsername() {  
 	var username = document.getElementById("username").value;  
 	if( username == "" || username == null ){  
-	　　changeUsernamePrompt( "用户长度不能少于3个字符" );  
+	　　changeUsernamePrompt( "用户长度不能少于3个字符" ); 
+	
 	　　return false;  
 	}  
 	switch( isUsername( username ) ){  
-	　　case 0: break;    
+	　　case 0: break;  
+	// 　　case 1: {  
+	// 　　 changeUsernamePrompt( "您选择的用户名‘"+username+"‘格式不正确，用户名不能以数字开头" );  
+	// 　　 return false;  
+	// 　　}  
 	　　case 1: {  
 	　　 changeUsernamePrompt( "用户长度不能少于3个字符" );  
 	　　 return false;  
 	　　}  
 	　　case 2: {  
 	　　 changeUsernamePrompt( "* 用户名含有非法字符" );  
-	　　 return false;    
+	　　 return false;  
+	　　}  
+	// 　　case 4: {  
+	// 　　 changeUsernamePrompt( "您选择的用户名‘"+username+"‘格式不正确，用户名只能包含_,英文字母，数字" );  
+	// 　　 return false;  
+	// 　　}  
 	}
 	 changeUsernamePrompt( "* 可以注册" );  
 	return true;  
-	} 
-}
+} 
 function changeUsernamePrompt(cnt){  
 	document.getElementById( "failinfo" ).innerHTML = cnt;  
 	document.getElementById( "failinfo" ).style.display = "block";  
@@ -41,20 +50,22 @@ function isUsername( username ){
 	// }  
 	return 0;  
 } 
-// 用户名失焦
+//用户名失焦
 $("#username").blur(function(){
-	// 
-	var username = $("#username").val();
-	$.ajax({
-		type:"post",
-		url:"localhost:8081/user/reg.do",
-		data:{"userName":username},
-		dataType:"json",
-		async:true,
-		success:function(data){
-			console.log(data);
-		}
-	});
+	lostfocuks();
+	var username=$("#username").val();
+	 $.ajax({
+	 	type:"post",
+	 	url:"",
+	 	data:{username:username},
+	 	dataType:"json",
+	 	async:true,
+	 	success:function(data){
+	 		
+	 	}
+	 });
+})
+function lostfocuks(){
 	checkUsername();
 	if(!checkUsername()){
 		$("#failinfo").css({
@@ -65,71 +76,46 @@ $("#username").blur(function(){
 			color:"rgb(30, 170, 57)",
 		})
 	}
-})
-// 提交数据
-$(".sub").on("click",function(){
-	// 判定提交时是否合法
-	var tel=moble.value;
-	// console.log(isF1 == false,isF2 == false,!checkUsername(),!validatemobile(tel));
-	// console.log(isF1 == false&&isF2 == false&&!checkUsername()&&!validatemobile(tel));
-	//
-	var username = $("#username").val();
-	var password = $("#password").val();
-	var mobile = $("#moble").val();
-	// console.log(username,password,mobile);
-	var formData = new FormData();
-	formData.append("username",username);
-	formData.append("password",password);
-	formData.append("mobile",mobile);
-	$.ajax({
-		type:"post",
-		dataType:"json",
-		url:"http://localhost:8080/user/reg.do",
-		data:formData,
-		async:true,
-		success:function(data){
-
-		}
-	})
-
-})
-
-
+}
 // 密码判断
 var failpass = document.getElementById("failpass");
-var isF1 = false;
+var isF1=false;
 $("#password").blur(function(){
-	var password = $(this).val();
-	if(! /^.{3,20}$/.test(password) || password == null || password == ""){
+	psdlostfocuks(this);
+})
+function psdlostfocuks(_this){
+	var password = $(_this).val();
+	if(! /^.{6,20}$/.test(password) || password == null || password == ""){
 		failpass.innerHTML = "* 字符长度不能少于6个字符";
 		failpass.style.color = "red";
-		isF1 = false;
+		isF1=false;
 	}else{
 		failpass.innerHTML = "* 可以注册";
 		failpass.style.color = "rgb(30, 170, 57)";
-		isF1 = true;
+		isF1=true;
 	}
-})
+}
 // 再次确认密码判断
-var isF2 = false;
 var failagin = document.getElementById("failagin");
+var isF2=false;
 $("#agin").blur(function(){
 	var password = $("#password").val();
 	var passagin = $(this).val();
 	console.log(passagin,password)
-	if(! /^.{3,20}$/.test(passagin) || passagin == null || passagin == ""){
+	if(! /^.{6,20}$/.test(passagin) || passagin == null || passagin == ""){
 		failagin.innerHTML = "* 字符长度不能少于6个字符";
 		failagin.style.color = "red";
-		isF2 = false;
+		isF2=false;
 		return ;
 	}else if(password != passagin){
 		failagin.innerHTML = "* 两次输入的密码不一致";
 		failagin.style.color = "red";
-		isF2 = false;
+		isF2=false;
 	}else{
 		failagin.innerHTML = "* 可以注册";
 		failagin.style.color = "rgb(30, 170, 57)";
-		isF2 = true;
+		isF2=true;
+		
 	}
 })
 // 验证手机号码
@@ -167,5 +153,82 @@ function validatemobile(mobile)
    		validatemobile(tel);
    }
 
+//验证码验证
 
+$('#yanzhengma').codeVerify({
+	type : 1,
+	width : '100px',
+	height : '40px',
+	fontSize : '12px',
+	codeLength : 4,
+	ready : function() {
+	},
+	success : function() {},
+	error : function() {}
+});
+var isF3=false;
+$(".varify-input-code").on("blur",function(){
+	yanzhengmalost();
+})
+function yanzhengmalost(){
+	var str="";
+	$("font").each(function(){
+		str+=$(this).html();
+		
+	})
+	var txt=$(".varify-input-code").val();
+	txt=txt.toLowerCase();
+	str=str.toLowerCase();
+	if(str==txt){
+		$("#yanzhengreault").html("验证通过");
+			$("#yanzhengreault").css({color:"rgb(0,151,60)"});
+			isF3=true;
+	}else{
+		$("#yanzhengreault").html("验证码错误");
+		$("#yanzhengreault").css({color:"red"});
+		isF3=false;
+		 return false;
+	}
+}
+//提交数据
+$(".sub").on("click",function(){
+	lostfocuks();
+	psdlostfocuks($("#password"));
+	yanzhengmalost();
+	// 判定提交时是否合法
+	var tel=moble.value;
+	 console.log(isF1 == false,isF2 == false,!checkUsername(),!validatemobile(tel),!$(".agree").prop("checked"));
+	// console.log(isF1 == false&&isF2 == false&&!checkUsername()&&!validatemobile(tel));
+	if(isF1 == false || isF2 == false || !checkUsername() || !validatemobile(tel) || isF3 == false || !$(".agree").prop("checked")){
+//		console.log(11);
+		console.log("请填写正确的用户信息");
+		return;
+	}
+	var username = $("#username").val();
+	var password1 = $("#password").val();
+	var mobile = $("#moble").val();
+	
+	// console.log(username,password,mobile);
+	// var formData = new FormData();
+	// formData.append("username",username);
+	// formData.append("password",password1);
+	// formData.append("mobile",mobile);
+	// console.log(formData);
+	$.ajax({
+		type:"get",
+		dataType:"json",
+		url:"/user/reg.do",
+		data:{
+			"user.userName":username,
+			"user.password":password1,
+			"user.poneNum":mobile
+		},
+		// processData:false,
+		// contentType:false,
+		async:true,
+		success:function(data){
 
+		}
+	})
+
+})

@@ -88,7 +88,6 @@ body{
     position: relative;
 }
 .name{
-    width:120px;
     float: right;
     text-align: right;
     font-size: 13px;
@@ -138,17 +137,22 @@ body{
 .load img{
     float: right;
 }
+#yanzhengma{
+    position: absolute;
+    top: 0px;
+    left: 439px;
+}
+#name{
+    position: relative;
+    left: -329px;
+}
 
-/*******************/
-#failinfo,#failagin,#failpass,#failmoble{
+#failinfo,#failagin,#failpass,#failmoble,#yanzhengreault{
     position: absolute;
     top:34px;
     left: 120px;
     font-size: 12px;
 }
-
-
-
 
 
 
