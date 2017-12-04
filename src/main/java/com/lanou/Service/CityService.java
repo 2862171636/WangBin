@@ -11,6 +11,6 @@ import java.util.List;
 
 public interface CityService {
     public List<City> selectCity(Integer city);
-    public  List<Integer> selectYear();
+
 
 }

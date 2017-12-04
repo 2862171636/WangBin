@@ -28,12 +28,5 @@ public class CityController {
         System.out.println("CITY:"+city);
        return city;
     }
-    @RequestMapping(value = "/selectYear.do",method = RequestMethod.GET)
-    @ResponseBody
-    public  List<Integer> selectYear(){
-        System.out.println("date1:");
-        List<Integer>  year=cityService.selectYear();
-        System.out.println("CITY:"+year);
-        return year;
-    }
+
 }
