@@ -1,0 +1,176 @@
+body,h1,h2,h3{
+    margin: 0;
+    padding:0;
+}
+body{
+    background-color:#f8f8f7;
+}
+.header{
+    width:100%;
+    height: 120px;
+}
+.both{
+    width:990px;
+    height:120px;
+    margin: 0 auto;
+}
+.header .both img{
+    width:344px;
+    height: 76px;
+    margin-top:22px;
+    float: left;
+}
+.header .both div{
+    width:276px;
+    height: 120px;
+    color:rgb(149,149,149);
+    font-size: 13px;
+    line-height: 120px;
+    float: right;
+}
+.header .both div span a{
+    color:#1eaa39;
+    text-decoration: none;
+}
+.ad{
+    width:100%;
+    height: 100px;
+    background-image: url('../images/register_banner.jpg');
+}
+.content{
+    width: 990px;
+    height: 655px;
+    margin: 0 auto;
+    background-color: #FFF;
+    border:1px solid #f2f2f1;
+    padding-bottom:50px;
+}
+.content_top{
+    width: 990px;
+    height: 57px;
+}
+.content_top h2{
+    width: 80px;
+    height: 56px;
+    float:left;
+    color:#333333;
+    font-size: 16px;
+    margin-left:50px;
+    line-height: 56px;
+    font-weight: normal;
+}
+.content_top h3{
+    width: 160px;
+    height: 56px;
+    float: right;
+    font-size: 16px;
+    color:#333333;
+    margin-right: 50px;
+    line-height: 56px;
+    font-weight: normal;
+}
+.content_top h3 a{
+    text-decoration: none;
+    color:#1eaa39;
+}
+.register{
+    width: 446px;
+    height: 505px;
+    padding-bottom:63px;
+    margin-top:30px;
+    margin-left: 78px;
+    float: left;
+}
+.register_info1{
+    height: 36px;
+    margin-bottom: 30px;
+    line-height: 36px;
+    position: relative;
+}
+.name{
+    width:120px;
+    float: right;
+    text-align: right;
+    font-size: 13px;
+    color:rgb(102, 102, 102);
+}
+.name span{
+    color:red;
+    margin-right: 10px;
+}
+.register_info1 input{
+    width: 290px;
+    height: 36px;
+    border:1px solid #deded3;
+    padding-left:10px;
+    float:right;
+    border-radius: 4px;
+    margin-right: 24px;
+}
+.xieyi{
+    width: 264px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    float: left;
+    margin-left: 120px;
+}
+.xieyi span a{
+    color:#3fae45;
+    text-decoration: none;
+} 
+.register .sub{
+    width: 264px;
+    height: 40px;
+    font-size: 18px;
+    margin-top:20px;
+    margin-left: 120px;
+    padding: 0;
+    background-image: url('../images/btn.jpg');
+    color:white;
+}
+.load{
+    width: 378px;
+    height: 354px;
+    float:left;
+    margin-top: 30px;
+}
+.load img{
+    float: right;
+}
+
+/*******************/
+#failinfo,#failagin,#failpass,#failmoble{
+    position: absolute;
+    top:34px;
+    left: 120px;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
