@@ -5,10 +5,11 @@ package com.lanou.entity;
  */
 public class User {
 
+
     private Integer uId;
     private String userName;
     private String password;
-    private int poneNum;
+    private String poneNum;
 
     public Integer getuId() {
         return uId;
@@ -34,11 +35,11 @@ public class User {
         this.password = password;
     }
 
-    public int getPoneNum() {
+    public String getPoneNum() {
         return poneNum;
     }
 
-    public void setPoneNum(int poneNum) {
+    public void setPoneNum(String poneNum) {
         this.poneNum = poneNum;
     }
 
@@ -55,7 +56,7 @@ public class User {
     public User() {
     }
 
-    public User(Integer uId, String userName, String password, int poneNum) {
+    public User(Integer uId, String userName, String password, String poneNum) {
         this.uId = uId;
         this.userName = userName;
         this.password = password;

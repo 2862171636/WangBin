@@ -27,9 +27,11 @@ public class UserController {
     @RequestMapping(value = "/login.do",method = RequestMethod.GET)
     @ResponseBody
     public String confirmUser(User user){
+        System.out.println(user);
         String result = null;
         User loginUser = userService.confirmUser(user.getUserName());
        if(loginUser != null && user.getPassword().equals(loginUser.getPassword())){
+           System.out.println("chengg");
            result = "success";
        }else {
            result = "error";
@@ -54,31 +56,27 @@ public class UserController {
     //注册验证
     @RequestMapping(value = "/reg.do",method = RequestMethod.GET)
     @ResponseBody
-    public  String reg(User user, String password1) throws IOException {
-        System.out.println("aa");
+    public  String reg(User user) throws IOException {
+        System.out.println("aa"+ user);
         User regUser = userService.confirmUser(user.getUserName());
 
         String result = null;
-        System.out.println("yonghuming:"+user.getUserName()+"mima:"+user.getPassword()+",querenmima:"+password1);
-        if(password1.equals(user.getPassword())){
+
+
             if(regUser == null){
                 userService.addUser(user);
                 result = "success";
             }else{
-
-             //   String jsonStr = "{\"errormsg\":\"用户名存在\"}";
-              //  System.out.println(jsonStr);
-//                response.getWriter().println(jsonStr);;//得到写入流
-//                response.getWriter().flush();//再调用一下flush
                 result = "error";
             }
-        }else{
-            System.out.println("密码不一致");
-            result = "error";
-        }
         return  result;
 
     }
+
+
+
+
+
 
     @InitBinder("user")
     public void initUser(WebDataBinder webDataBinder){

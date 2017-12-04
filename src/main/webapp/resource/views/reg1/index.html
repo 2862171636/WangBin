@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>注册</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    	<link rel="stylesheet" type="text/css" href="css/verify.css"/>    	
 </head>
 <body>
     <div class="header">
@@ -32,23 +33,25 @@
             <div class="register_info1 passagin">
                 <input type="password" name="" id="agin" placeholder="确认密码">
                 <div class="name"><span>*</span>确认密码：</div> 
-                <div id="failagin">ewrwrew</div>  
+                <div id="failagin"></div>  
             </div>
             <div class="register_info1">
                 <input type="text" name="" id="moble" placeholder="请输入验证手机号">
                 <div class="name"><span>*</span>验证手机：</div>
                 <div id="failmoble"></div>
             </div>
-            <div class="register_info1">
-                <input type="text" name="" placeholder="请输入右侧验证码">
-                <div class="name"><span>*</span>验证码：</div>
+            <div class="register_info1 special_register">
+                <!--<input type="text" name="" placeholder="请输入右侧验证码">-->
+                <div id="name" class="name"><span>*</span>验证码：</div>
+                <div id="yanzhengma"></div>
+                <div id="yanzhengreault"></div>
             </div>
             <div class="register_info1">
                 <input type="text" name="" placeholder="请输入短信验证码">
                 <div class="name"><span>*</span>短信验证码：</div>
             </div>
             <div class="xieyi">
-                <input type="checkbox" name="">我已阅读并同意<span><a href="###">用户协议</a></span>
+                <input class="agree" type="checkbox" name="">我已阅读并同意<span><a href="###">用户协议</a></span>
             </div>
             <input type="submit" class="sub" name="" value="提 交">
         </div>
@@ -56,7 +59,8 @@
             <img src="images/regist_index.jpg" alt="">
         </div>
     </div>
-    <script src="js/jquery-3.2.1.min.js"></script>
+   	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/verify.js"></script>
     <script src="js/register.js"></script>
 </body>
 </html>
