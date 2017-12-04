@@ -3,6 +3,7 @@ package com.lanou.ServiceImpl;
 import com.lanou.Service.CityService;
 import com.lanou.dao.CityMapper;
 import com.lanou.entity.City;
+import com.lanou.entity.Userbirth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,5 +20,9 @@ public class CityServiceImpl implements CityService{
     @Transactional
     public List<City> selectCity(Integer cityid) {
         return cityMapper.selectCity(cityid);
+    }
+
+    public List<Integer> selectYear() {
+      return  cityMapper.selectYear();
     }
 }

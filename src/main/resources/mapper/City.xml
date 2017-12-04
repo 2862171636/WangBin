@@ -14,6 +14,16 @@
         select * from city where parentid =#{cityid}
     </select>
 
+    <resultMap type="com.lanou.entity.Userbirth" id="birthResult" >
+        <id column="dateid" property="dateid" javaType="int"/>
+        <result column="year" property="year" javaType="int"/>
+        <result column="month" property="month" javaType="int"/>
+        <result column="day" property="day" javaType="int"/>
+    </resultMap>
+
+    <select id="selectYear" resultMap="birthResult">
+        select year from Userbirth
+    </select>
 
 
 </mapper>
