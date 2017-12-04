@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lanou.dao.CityMapper">
+
+    <resultMap type="com.lanou.entity.City" id="CityResult" >
+        <id column="cityid" property="cityid" javaType="int"/>
+        <result column="cityname" property="cityname" jdbcType="VARCHAR"/>
+        <result column="parentid" property="parentid" javaType="int"/>
+    </resultMap>
+
+    <select id="selectCity" parameterType="int" resultMap="CityResult">
+        select * from city where parentid =#{cityid}
+    </select>
+
+
+
+</mapper>
