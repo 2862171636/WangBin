@@ -20,9 +20,7 @@ public class TeacherServiceImpl implements TeacherService{
     private TeacherMapper teacherMapper;
    
     public List<Teacher> findTeachers() {
-         List<Teacher> teachers = teacherMapper.findTeachers();
-
-
+        List<Teacher> teachers = teacherMapper.findTeachers();
         return teachers;
     }
 }
