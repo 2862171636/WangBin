@@ -33,4 +33,20 @@ public class AdressController {
         return  adresses;
 
     }
+    @RequestMapping("/updateAdress.do")
+    @ResponseBody
+    public String  updateAdress(String name, String email, Integer city, String detailAdress, String telephone, String phone, String building, String code) {
+        Adress adress=new Adress(name,email,city,detailAdress,telephone,phone,building,code);
+        adress.setuId(1);
+        System.out.println(adress);
+        adressService.insertAdress(adress);
+        return "chenggong";
+    }
+    @RequestMapping("/deleteAdress.do")
+    @ResponseBody
+    public String  deleteAdress(Integer dId) {
+        System.out.println("竟来了");
+        adressService.deleteAdress(dId);
+        return  "success";
+    }
 }

@@ -28,4 +28,8 @@ public class AdressServiceImpl implements AdressService{
         List<Adress> adresses= adressMapper.selectAdress(uId);
         return  adresses;
     }
+
+    public void deleteAdress(Integer dId) {
+        adressMapper.deleteAdress(dId);
+    }
 }

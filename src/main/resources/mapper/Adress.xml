@@ -4,17 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lanou.dao.AdressMapper">
 
-
-
     <insert id="insertAdress" parameterType="com.lanou.entity.Adress" >
         INSERT INTO adress(name,email,city,detailAdress,telephone,phone,building, code,u_id) VALUE (#{name},#{email},#{city},#{detailAdress},#{telephone},#{phone},#{building},#{code},#{uId})
     </insert>
-
-
 
     <select id="selectAdress" parameterType="int" resultType="com.lanou.entity.Adress">
           SELECT * FROM adress WHERE u_id=#{uId}
     </select>
 
+    <delete id="deleteAdress" parameterType="int">
+          DELETE FROM adress WHERE dId=#{dId}
+    </delete>
 
 </mapper>

@@ -96,7 +96,7 @@ public class UserController {
         user.setName(name);
 
         userService.updateUser(user);
-        return "注册成功";
+        return "success";
     }
 
     // 密码的修改
@@ -109,7 +109,7 @@ public class UserController {
         user.setPassword(password);
         user.setUserName(userName);
         userService.updatePassword(user);
-        return "修改成功";
+        return "success";
     }
 
 }
