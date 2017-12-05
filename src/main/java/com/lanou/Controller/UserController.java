@@ -3,6 +3,7 @@ package com.lanou.Controller;
 import com.lanou.Service.UserService;
 import com.lanou.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 
 /**
  * Created by lanou on 2017/12/2.
@@ -81,6 +83,24 @@ public class UserController {
     @InitBinder("user")
     public void initUser(WebDataBinder webDataBinder){
         webDataBinder.setFieldDefaultPrefix("user.");
+    }
+
+    //用户信息的修改
+    @RequestMapping(value = "/update.do")
+    @ResponseBody
+    public  String updateUser(Integer gener, String email, String name, String detailed, Integer road, String userName, @DateTimeFormat(pattern="yyyy/MM/dd") Date birth) throws IOException {
+        System.out.println("aa"+gener);
+        User user=new User();
+        user.setGener(gener);
+        user.setUserName(userName);
+        user.setBirth(birth);
+        user.setDetailed(detailed);
+        user.setRoad(road);
+        user.setEmail(email);
+        user.setName(name);
+
+        userService.updateUser(user);
+        return  "注册成功";
     }
 
 }

@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
+
 /**
  * Created by lanou on 2017/12/2.
  */
@@ -27,4 +29,10 @@ public class UserServiceImpl implements UserService{
         userMapper.addUser(user);
 
     }
+
+    public void updateUser(User user) {
+        userMapper.updateUser(user);
+    }
+
+
 }
