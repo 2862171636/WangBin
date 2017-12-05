@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.lanou.dao.SelectMapper" >
+
+
+    <resultMap id="nameResult" type="Select">
+        <id column="pId" property="pId" javaType="int"/>
+        <result column="pSpec" property="pSpec" jdbcType="VARCHAR"/>
+        <result column="pMoney" property="pMoney" javaType="int"/>
+        <result column="pImg" property="pImg" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+    <select id="findNames" resultMap="nameResult">
+
+        SELECT * FROM product WHERE pSpec LIKE "%"#{name}"%"
+
+    </select>
+
+</mapper>
+

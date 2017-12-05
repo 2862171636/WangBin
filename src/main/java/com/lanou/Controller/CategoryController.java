@@ -1,10 +1,9 @@
 package com.lanou.Controller;
 
-import com.alibaba.druid.support.json.JSONUtils;
-import com.alibaba.druid.support.json.JSONWriter;
+
 import com.lanou.Service.CategoryService;
 import com.lanou.entity.Category;
-import jdk.nashorn.internal.parser.JSONParser;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import java.util.ArrayList;
 import java.util.List;
 
