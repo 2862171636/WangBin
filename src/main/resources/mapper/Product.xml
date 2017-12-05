@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.lanou.dao.ProductMapper">
+
+    <!--<resultMap type="User" id="userResult" >-->
+    		<!--<id column="uId" property="uId" javaType="int"/>-->
+    		<!--<result column="userName" property="userName" jdbcType="VARCHAR"/>-->
+			<!--<result column="password" property="password" jdbcType="VARCHAR"/>-->
+			<!--<result column="pone" property="poneNum" jdbcType="VARCHAR"/>-->
+    <!--</resultMap>-->
+	<!---->
+	<!--<select id="confirmUser" resultMap="userResult">-->
+		<!--select * from Emeixian_User where userName = #{userName}-->
+	<!--</select>-->
+	<!---->
+	<!--<insert id="addUser" parameterType="User">-->
+		<!--insert into Emeixian_User(userName,password,pone) values(#{userName},#{password},#{poneNum})-->
+	<!--</insert>-->
+
+
+	<resultMap id="productResult" type="Product">
+		<id column="pId" property="pId" javaType="int"></id>
+		<result column="pSpec" property="pSpec" jdbcType="VARCHAR"/>
+		<result column="category_id" property="category_id" javaType="int"/>
+		<result column="pMoney" property="pMoney" javaType="int"/>
+		<result column=" pImg" property="pImg" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<select id="findsProdct" resultMap="productResult">
+
+		SELECT * FROM Product WHERE category_id = #{parendId}
+
+
+
+
+	</select>
+
+
+
+	
+</mapper>
