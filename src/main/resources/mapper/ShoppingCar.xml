@@ -6,20 +6,22 @@
 <mapper namespace="com.lanou.dao.ShoppingCarMapper">
 
     <resultMap type="ShoppingCar" id="ShoppingResult" >
-    		<id column="teacher_id" property="tId" javaType="int"/>
-    		<result column="teacher_name" property="teacherName" jdbcType="VARCHAR"/>
+    		<id column="shoppingCar_id" property="shoppingCarId" javaType="int"/>
+    		<result column="price_id" property="priceId" jdbcType="VARCHAR"/>
+			<result column="num" property="num" javaType="int"/>
+			<result column="uId" property="uId" javaType="int"/>
     </resultMap>
 	
-	<insert id="addToShoppingCar" parameterType="com.lanou.entity.ShoppingCar">
-		INSERT #{shoppingCar} INTO shoppingCar
+	<insert id="addToShoppingCar" parameterType="ShoppingCar">
+		INSERT INTO shoppingCar(price_id,num,u_id) VALUES (#{shoppingCar.price_id},#{shoppingCar.num},#{shoppingCar.uId})
 	</insert>
 
 	<select id="selectShoppingCarsForUser" resultMap="ShoppingResult" parameterType="int">
-		SELECT * FROM shoppingCar WHERE 1=1 AND u_id = #{uid};
+		SELECT * FROM shoppingCar WHERE 1=1 AND u_id = #{uid}
 	</select>
 
 	<delete id="deleteShoppingCarById" parameterType="int">
-		DELETE * FROM shoppingCar WHERE 1=1 AND shoppingCarId= #{shoppingCarId};
+		DELETE * FROM shoppingCar WHERE 1=1 AND shoppingCarId= #{shoppingCarId}
 	</delete>
 	
 	

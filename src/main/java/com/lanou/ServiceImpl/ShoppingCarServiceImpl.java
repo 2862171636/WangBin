@@ -22,14 +22,14 @@ public class ShoppingCarServiceImpl implements ShoppingCarService{
 
 
     public boolean addToShoppingCar(ShoppingCar shoppingCar) {
-        return false;
+        return ShoppingCarMapper.addToShoppingCar(shoppingCar);
     }
 
     public List<ShoppingCar> selectShoppingCarsForUser(int uid) {
-        return null;
+        return ShoppingCarMapper.selectShoppingCarsForUser(uid);
     }
 
     public boolean deleteShoppingCarById(int shoppingCarId) {
-        return false;
+        return deleteShoppingCarById(shoppingCarId);
     }
 }
