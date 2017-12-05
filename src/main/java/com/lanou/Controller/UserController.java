@@ -76,10 +76,6 @@ public class UserController {
     }
 
 
-
-
-
-
     @InitBinder("user")
     public void initUser(WebDataBinder webDataBinder){
         webDataBinder.setFieldDefaultPrefix("user.");
@@ -89,8 +85,8 @@ public class UserController {
     @RequestMapping(value = "/update.do")
     @ResponseBody
     public  String updateUser(Integer gener, String email, String name, String detailed, Integer road, String userName, @DateTimeFormat(pattern="yyyy/MM/dd") Date birth) throws IOException {
-        System.out.println("aa"+gener);
-        User user=new User();
+        System.out.println("aa" + gener);
+        User user = new User();
         user.setGener(gener);
         user.setUserName(userName);
         user.setBirth(birth);
@@ -100,7 +96,20 @@ public class UserController {
         user.setName(name);
 
         userService.updateUser(user);
-        return  "注册成功";
+        return "注册成功";
+    }
+
+    // 密码的修改
+    //用户信息的修改
+    @RequestMapping(value = "/updatePassword.do")
+    @ResponseBody
+    public  String updatePassword(String password,String userName) throws IOException {
+        System.out.println("aa" );
+        User user = new User();
+        user.setPassword(password);
+        user.setUserName(userName);
+        userService.updatePassword(user);
+        return "修改成功";
     }
 
 }

@@ -34,5 +34,9 @@ public class UserServiceImpl implements UserService{
         userMapper.updateUser(user);
     }
 
+    public void updatePassword(User user) {
+        userMapper.updatePassword(user);
+    }
+
 
 }

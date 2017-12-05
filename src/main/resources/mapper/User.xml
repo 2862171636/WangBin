@@ -29,6 +29,10 @@
 	<update id="updateUser" parameterType="User">
 		update Emeixian_User set birth=#{birth},gender=#{gener},email=#{email},name=#{name},detailed=#{detailed},road=#{road} where userName=#{userName}
 	</update>
+	<update id="updatePassword" parameterType="User">
+		update Emeixian_User set password=#{password} where userName=#{userName}
+	</update>
+
 
 </mapper>
 
