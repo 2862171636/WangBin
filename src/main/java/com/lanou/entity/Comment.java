@@ -6,14 +6,14 @@ import java.util.List;
 /**
  * Created by lanou on 2017/12/4.
  */
-public class comment {
+public class Comment {
     private int commentId;
     private String commentContent;
     private Date commentTime;
     private int uId;
     private int pId;
     private int answerFor;//通过此id查找回复的是哪一条评论,如果无 说明是最父级
-    private List<comment> answers;
+    private List<Comment> answers;
 
     public int getCommentId() {
         return commentId;
@@ -63,20 +63,20 @@ public class comment {
         this.answerFor = answerFor;
     }
 
-    public List<comment> getAnswers() {
+    public List<Comment> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(List<comment> answers) {
+    public void setAnswers(List<Comment> answers) {
         this.answers = answers;
     }
 
-    public comment() {
+    public Comment() {
     }
 
     @Override
     public String toString() {
-        return "comment{" +
+        return "Comment{" +
                 "commentId=" + commentId +
                 ", commentContent='" + commentContent + '\'' +
                 ", commentTime=" + commentTime +

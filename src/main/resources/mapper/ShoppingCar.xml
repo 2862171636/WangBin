@@ -9,7 +9,7 @@
     		<id column="shoppingCar_id" property="shoppingCarId" javaType="int"/>
     		<result column="price_id" property="priceId" jdbcType="VARCHAR"/>
 			<result column="num" property="num" javaType="int"/>
-			<result column="uId" property="uId" javaType="int"/>
+			<result column="u_Id" property="uId" javaType="int"/>
     </resultMap>
 	
 	<insert id="addToShoppingCar" parameterType="ShoppingCar">
