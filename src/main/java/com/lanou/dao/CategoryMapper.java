@@ -10,7 +10,9 @@ import java.util.List;
 public interface CategoryMapper {
 
     public Category selectByPrimaryKey(Integer cId);
+
     public List<Category> selectCategoryChildrenByParentId(Integer cId);
+
     public List<Integer> selectCidParentIdForZero();
 
 }

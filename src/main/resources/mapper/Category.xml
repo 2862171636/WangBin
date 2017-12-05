@@ -14,7 +14,7 @@
 	</resultMap>
 
 	<select id="selectByPrimaryKey" resultMap="selectByPrimaryKeyResult">
-		SELECT * FROM yaya_category WHERE  cId = #{cId}
+		SELECT * FROM category WHERE  cId = #{cId}
 	</select>
 
 	<resultMap type="Category" id="selectCategoryChildrenByParentIdResult">
@@ -33,7 +33,7 @@
 	</resultMap>
 
 	<select id="selectCategoryChildrenByParentId" resultMap="selectCategoryChildrenByParentIdResult" >
-		SELECT * FROM yaya_category WHERE parentId = #{cId}
+		SELECT * FROM category WHERE parentId = #{cId}
 	</select>
 
 	<resultMap type="integer" id="selectCidParentIdForZeroResult">
@@ -41,7 +41,7 @@
 	</resultMap>
 
 	<select id="selectCidParentIdForZero" resultMap="selectCidParentIdForZeroResult">
-		SELECT cId FROM yaya_category WHERE parentId = 0
+		SELECT cId FROM category WHERE parentId = 0
 	</select>
 
 </mapper>
