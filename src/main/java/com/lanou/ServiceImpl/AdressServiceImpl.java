@@ -9,7 +9,7 @@ import com.lanou.entity.Adress;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import java.util.List;
 
 
 /**
@@ -22,5 +22,10 @@ public class AdressServiceImpl implements AdressService{
 
     public void insertAdress(Adress adress) {
         adressMapper.insertAdress(adress);
+    }
+
+    public List<Adress> selectAdress(int uId) {
+        List<Adress> adresses= adressMapper.selectAdress(uId);
+        return  adresses;
     }
 }

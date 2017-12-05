@@ -12,6 +12,9 @@
 
 
 
+    <select id="selectAdress" parameterType="int" resultType="com.lanou.entity.Adress">
+          SELECT * FROM adress WHERE u_id=#{uId}
+    </select>
 
 
 </mapper>

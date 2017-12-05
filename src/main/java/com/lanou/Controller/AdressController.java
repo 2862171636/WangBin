@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * Created by lanou on 2017/12/5.
  */
@@ -23,5 +25,12 @@ public class AdressController {
         System.out.println(adress);
         adressService.insertAdress(adress);
         return "chenggong";
+    }
+    @RequestMapping("/selectAdress.do")
+    @ResponseBody
+    public List<Adress> selectAdress(){
+        List<Adress> adresses=adressService.selectAdress(1);
+        return  adresses;
+
     }
 }
