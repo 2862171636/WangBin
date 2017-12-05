@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface CityMapper {
     public List<City> selectCity(Integer cityid);
-    public  List<Integer> selectYear();
+
 }
