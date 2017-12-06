@@ -32,4 +32,8 @@ public class AdressServiceImpl implements AdressService{
     public void deleteAdress(Integer dId) {
         adressMapper.deleteAdress(dId);
     }
+    public Adress selectAdressDid(int dId) {
+       Adress adress= (Adress) adressMapper.selectAdressDid(dId);
+        return  adress;
+    }
 }

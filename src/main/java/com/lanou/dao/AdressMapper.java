@@ -11,4 +11,5 @@ public interface AdressMapper {
     public  void insertAdress(Adress adress);
     public List<Adress>  selectAdress(int uId);
     public void deleteAdress(Integer dId);
+    public Adress  selectAdressDid(int dId);
 }

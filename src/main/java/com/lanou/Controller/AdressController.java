@@ -49,4 +49,11 @@ public class AdressController {
         adressService.deleteAdress(dId);
         return  "success";
     }
+    @RequestMapping("/selectAdressDid.do")
+    @ResponseBody
+    public Adress selectAdressDid(int dId){
+        Adress adresses= (Adress) adressService.selectAdressDid(dId);
+        return  adresses;
+
+    }
 }

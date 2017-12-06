@@ -16,4 +16,8 @@
           DELETE FROM adress WHERE dId=#{dId}
     </delete>
 
+    <select id="selectAdressDid" parameterType="int" resultType="com.lanou.entity.Adress">
+        SELECT * FROM adress WHERE dId=#{dId}
+    </select>
+
 </mapper>
