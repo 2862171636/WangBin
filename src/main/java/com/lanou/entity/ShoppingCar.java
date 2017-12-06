@@ -6,7 +6,7 @@ package com.lanou.entity;
 public class ShoppingCar {
 
     private int shoppingCarId;
-    private int priceId;
+    private Price price;
     private int num;
     private int uId;
 
@@ -18,12 +18,12 @@ public class ShoppingCar {
         this.shoppingCarId = shoppingCarId;
     }
 
-    public int getPriceId() {
-        return priceId;
+    public Price getPrice() {
+        return price;
     }
 
-    public void setPriceId(int priceId) {
-        this.priceId = priceId;
+    public void setPrice(Price price) {
+        this.price = price;
     }
 
     public int getNum() {
@@ -46,8 +46,8 @@ public class ShoppingCar {
     }
 
 
-    public ShoppingCar(int priceId, int num, int uId) {
-        this.priceId = priceId;
+    public ShoppingCar(Price price, int num, int uId) {
+        this.price = price;
         this.num = num;
         this.uId = uId;
     }
@@ -56,7 +56,7 @@ public class ShoppingCar {
     public String toString() {
         return "ShoppingCar{" +
                 "shoppingCarId=" + shoppingCarId +
-                ", priceId=" + priceId +
+                ", price=" + price +
                 ", num=" + num +
                 ", uId=" + uId +
                 '}';

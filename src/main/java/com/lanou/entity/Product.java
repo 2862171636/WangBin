@@ -48,7 +48,6 @@ public class Product {
     private int pId;
     private String pSpec;
     private int category_id;
-
     private int pMoney;
     private  String pImg;
 
