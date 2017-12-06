@@ -9,6 +9,15 @@ public class ShoppingCar {
     private Price price;
     private int num;
     private int uId;
+    private Stock stock;
+
+    public Stock getStock() {
+        return stock;
+    }
+
+    public void setStock(Stock stock) {
+        this.stock = stock;
+    }
 
     public int getShoppingCarId() {
         return shoppingCarId;
@@ -46,10 +55,11 @@ public class ShoppingCar {
     }
 
 
-    public ShoppingCar(Price price, int num, int uId) {
+    public ShoppingCar(Price price, int num, int uId, Stock stock) {
         this.price = price;
         this.num = num;
         this.uId = uId;
+        this.stock = stock;
     }
 
     @Override
@@ -59,6 +69,7 @@ public class ShoppingCar {
                 ", price=" + price +
                 ", num=" + num +
                 ", uId=" + uId +
+                ", stock=" + stock +
                 '}';
     }
 }

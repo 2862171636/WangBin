@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lanou.dao.StockMapper">
+
+	<resultMap id="stocks" type="Stock">
+		<id column="stockId" property="stockId" javaType="int"/>
+        <result column="stockName" property="stockName" jdbcType="VARCHAR"/>
+        <result column="stockNum" property="stockNum" javaType="INTEGER"/>
+	</resultMap>
+
+	<select id="findStockByPriceId" parameterType="int" resultMap="stocks">
+		select * from stock where price_id = #{priceId}
+	</select>
+
+
+
+	<insert id="addStockByPriceId" parameterType="Price">
+        INSERT INTO stock(stockName,num,price_id) VALUES  #{stockName},#{stockNum},#{priceId}
+	</insert>
+
+    <update id="updateByOrder" parameterType="int">
+        UPDATE stock(num) VALUES (num - #{shoppingCar.num})
+    </update>
+    <update id="updateByAdmin" parameterType="Price">
+        UPDATE stock(stockName,num,price_id) VALUES  #{stockName},#{stockNum},#{priceId} where 1=1 and
+    </update>
+</mapper>
+

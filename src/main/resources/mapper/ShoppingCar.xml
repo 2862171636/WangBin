@@ -7,20 +7,37 @@
 
     <resultMap type="ShoppingCar" id="ShoppingResult" >
     		<id column="shoppingCar_id" property="shoppingCarId" javaType="int"/>
-    		<result column="price_id" property="priceId" jdbcType="VARCHAR"/>
+    		<result column="price_id" property="priceId" javaType="int"/>
 			<result column="num" property="num" javaType="int"/>
 			<result column="u_Id" property="uId" javaType="int"/>
     </resultMap>
-	
-	<insert id="addToShoppingCar" parameterType="ShoppingCar">
+	<parameterMap id="shoppingCar" type="ShoppingCar">
+		<parameter property="shoppingCarId" javaType="int"/>
+		<parameter property="priceId" javaType="int"/>
+		<parameter property="num" javaType="int"/>
+		<parameter property="uId" javaType="int"/>
+		<parameter property="stockId" jdbcType="int"/>
+	</parameterMap>
+
+	<!--添加到购物车 通过页面传过来的属性 priceId num(数量) uId(当前用户)-->
+	<insert id="addToShoppingCar" parameterMap="shoppingCar">
 		INSERT INTO shoppingCar(price_id,num,u_id) VALUES (#{price_id},#{num},#{uId})
 	</insert>
-
+	<!--显示当前用户添加到购物车的商品信息-->
 	<select id="selectShoppingCarsForUser" resultMap="ShoppingResult" parameterType="int">
 		SELECT * FROM shoppingCar WHERE 1=1 AND u_id = #{uid}
 	</select>
-
+	<!--从购物车删除 直接物理删除 但要求购物车对象未绑定订单(提交) 即order_id = 0 -->
 	<delete id="deleteShoppingCarById" parameterType="int">
-		DELETE * FROM shoppingCar WHERE 1=1 AND shoppingCarId= #{shoppingCarId}
+		DELETE * FROM shoppingCar WHERE 1=1 AND shoppingCarId= #{shoppingCarId},order_id = 0
 	</delete>
+	<!--编辑购物车信息 可以改变所选商品属性-->
+	<update id="updateShoppingCarById" parameterType="int">
+		UPDATE (price_Id,num,stockId) VALUES (#{priceId},#{num},#{stockId}) WHERE shoppingCarId = #{shoppingCarId}
+	</update>
+	<!--当提交订单时 根据生成的订单orderId去改变购物车状态-->
+	<update id="orderShoppingCar" parameterType="int">
+		UPDATE (order_id) VALUES (#{orderId}) WHERE shoppingCarId = #{shoppingCarId} and order_Id = 0;
+	</update>
+
 </mapper>
