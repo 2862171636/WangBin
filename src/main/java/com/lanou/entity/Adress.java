@@ -4,31 +4,40 @@ package com.lanou.entity;
  * Created by lanou on 2017/12/5.
  */
 public class Adress {
-    private  int uId;
-    private String name;
+    private  int dId;
+    private  int u_id;
+    private String aname;
     private  String email;
     private  Integer city;
     private  String detailAdress;
     private String telephone;
     private  String phone;
     private String building;
-    private String code;
+    private String codes;
     private  Integer deleteId;
 
-    public int getuId() {
-        return uId;
+    public int getU_id() {
+        return u_id;
     }
 
-    public void setuId(int uId) {
-        this.uId = uId;
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
+    }
+
+    public int getdId() {
+        return dId;
+    }
+
+    public void setdId(int dId) {
+        this.dId = dId;
     }
 
     public String getName() {
-        return name;
+        return aname;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.aname = aname;
     }
 
     public String getEmail() {
@@ -80,11 +89,11 @@ public class Adress {
     }
 
     public String getCode() {
-        return code;
+        return codes;
     }
 
     public void setCode(String code) {
-        this.code = code;
+        this.codes = codes;
     }
 
     public Integer getDeleteId() {
@@ -99,30 +108,30 @@ public class Adress {
         super();
     }
 
-    public Adress(String name, String email, Integer city, String detailAdress, String telephone, String phone, String building, String code) {
-        this.name = name;
+    public Adress(String aname, String email, Integer city, String detailAdress, String telephone, String phone, String building, String codes) {
+        this.aname = aname;
         this.email = email;
         this.city = city;
         this.detailAdress = detailAdress;
         this.telephone = telephone;
         this.phone = phone;
         this.building = building;
-        this.code = code;
-
+        this.codes = codes;
     }
 
     @Override
     public String toString() {
         return "Adress{" +
-                "name='" + name + '\'' +
+                "dId=" + dId +
+                ", aname='" + aname + '\'' +
                 ", email='" + email + '\'' +
                 ", city=" + city +
                 ", detailAdress='" + detailAdress + '\'' +
                 ", telephone='" + telephone + '\'' +
                 ", phone='" + phone + '\'' +
                 ", building='" + building + '\'' +
-                ", code='" + code + '\'' +
-                ", deleteId=" + deleteId +
+                ", codes='" + codes + '\'' +
+
                 '}';
     }
 }

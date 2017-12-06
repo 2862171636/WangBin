@@ -19,9 +19,9 @@ public class AdressController {
     private AdressService adressService;
     @RequestMapping("/adress.do")
     @ResponseBody
-    public String  insertAdress(String name, String email, Integer city, String detailAdress, String telephone, String phone, String building, String code) {
-        Adress adress=new Adress(name,email,city,detailAdress,telephone,phone,building,code);
-        adress.setuId(1);
+    public String  insertAdress(String aname, String email, Integer city, String detailAdress, String telephone, String phone, String building, String code) {
+        Adress adress=new Adress(aname,email,city,detailAdress,telephone,phone,building,code);
+        adress.setU_id(1);
         System.out.println(adress);
         adressService.insertAdress(adress);
         return "chenggong";
@@ -35,11 +35,11 @@ public class AdressController {
     }
     @RequestMapping("/updateAdress.do")
     @ResponseBody
-    public String  updateAdress(String name, String email, Integer city, String detailAdress, String telephone, String phone, String building, String code) {
-        Adress adress=new Adress(name,email,city,detailAdress,telephone,phone,building,code);
-        adress.setuId(1);
+    public String  updateAdress(String aname, String email, Integer city, String detailAdress, String telephone, String phone, String building, String codes,int dId) {
+        Adress adress=new Adress(aname,email,city,detailAdress,telephone,phone,building,codes);
+        adress.setdId(dId);
         System.out.println(adress);
-        adressService.insertAdress(adress);
+        adressService.updateAdress(adress);
         return "chenggong";
     }
     @RequestMapping("/deleteAdress.do")

@@ -36,4 +36,8 @@ public class AdressServiceImpl implements AdressService{
        Adress adress= (Adress) adressMapper.selectAdressDid(dId);
         return  adress;
     }
+
+    public void updateAdress(Adress adress) {
+        adressMapper.updateAdress(adress);
+    }
 }

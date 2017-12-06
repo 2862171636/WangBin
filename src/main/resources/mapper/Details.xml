@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.lanou.dao.DetailsMapper">
+
+
+
+
+	<select id="selectProduct" parameterType="int" resultType="com.lanou.entity.DetailsProduct">
+
+		SELECT * FROM product WHERE pId= #{pId}
+	</select>
+	<select id="selectUnit" resultType="com.lanou.entity.Unit">
+		SELECT * from unit WHERE  unit_id=#{unit_id}
+	</select>
+	<select id="selectUnitId" parameterType="int" resultType="java.lang.Integer">
+		SELECT unit FROM pro_unit where pId=#{pId}
+	</select>
+	<select id="selectSpec" resultType="com.lanou.entity.Spec">
+		SELECT * from spec WHERE  spec_id=#{spec_id}
+	</select>
+	<select id="selectSpecId" parameterType="int" resultType="java.lang.Integer">
+		SELECT spec_id FROM pro_spec where pId=#{pId}
+	</select>
+	<select id="selectStock" parameterType="int" resultType="com.lanou.entity.Stock">
+		SELECT * FROM stock where priceId=#{pId}
+	</select>
+</mapper>

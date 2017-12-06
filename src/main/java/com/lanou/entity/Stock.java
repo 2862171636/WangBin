@@ -5,25 +5,17 @@ package com.lanou.entity;
  */
 //库存
 public class Stock {
-    private int stockId;
-    private int priceId;
+    private int stock_id;
+
     private String stockName;
     private int stockNum;
 
-    public int getStockId() {
-        return stockId;
+    public int getStock_id() {
+        return stock_id;
     }
 
-    public void setStockId(int stockId) {
-        this.stockId = stockId;
-    }
-
-    public int getPriceId() {
-        return priceId;
-    }
-
-    public void setPriceId(int priceId) {
-        this.priceId = priceId;
+    public void setStock_id(int stock_id) {
+        this.stock_id = stock_id;
     }
 
     public String getStockName() {
@@ -43,10 +35,11 @@ public class Stock {
     }
 
     public Stock() {
+        super();
     }
 
-    public Stock(int priceId, String stockName, int stockNum) {
-        this.priceId = priceId;
+    public Stock(int stock_id, String stockName, int stockNum) {
+        this.stock_id = stock_id;
         this.stockName = stockName;
         this.stockNum = stockNum;
     }
@@ -54,8 +47,7 @@ public class Stock {
     @Override
     public String toString() {
         return "Stock{" +
-                "stockId=" + stockId +
-                ", priceId=" + priceId +
+                "stock_id=" + stock_id +
                 ", stockName='" + stockName + '\'' +
                 ", stockNum=" + stockNum +
                 '}';

@@ -5,7 +5,7 @@
 <mapper namespace="com.lanou.dao.AdressMapper">
 
     <insert id="insertAdress" parameterType="com.lanou.entity.Adress" >
-        INSERT INTO adress(name,email,city,detailAdress,telephone,phone,building, code,u_id) VALUE (#{name},#{email},#{city},#{detailAdress},#{telephone},#{phone},#{building},#{code},#{uId})
+        INSERT INTO adress(aname,email,city,detailAdress,telephone,phone,building, codes,u_id) VALUE (#{aname},#{email},#{city},#{detailAdress},#{telephone},#{phone},#{building},#{codes},#{uId})
     </insert>
 
     <select id="selectAdress" parameterType="int" resultType="com.lanou.entity.Adress">
@@ -20,4 +20,7 @@
         SELECT * FROM adress WHERE dId=#{dId}
     </select>
 
+    <update id="updateAdress"  parameterType="com.lanou.entity.Adress" >
+        UPDATE adress  SET aname=#{aname},email=#{email},city=#{city},detailAdress=#{detailAdress},telephone=#{telephone},phone=#{phone},building=#{building},codes=#{codes} where dId=#{dId}
+    </update>
 </mapper>
