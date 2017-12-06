@@ -9,15 +9,30 @@
 
     <resultMap id="nameResult" type="Select">
         <id column="pId" property="pId" javaType="int"/>
-        <result column="pSpec" property="pSpec" jdbcType="VARCHAR"/>
-        <result column="pMoney" property="pMoney" javaType="int"/>
+        <result column="pName" property="pName" jdbcType="VARCHAR"/>
+        <result column="pMoney" property="pMoney" javaType="double"/>
         <result column="pImg" property="pImg" jdbcType="VARCHAR"/>
 
     </resultMap>
 
     <select id="findNames" resultMap="nameResult">
 
-        SELECT * FROM product WHERE pSpec LIKE "%"#{name}"%"
+        SELECT * FROM product WHERE pName LIKE CONCAT('%',#{name},'%')
+
+    </select>
+    
+    
+    <resultMap id="listResult" type="Select">
+
+        <id column="pId" property="pId" javaType="int"/>
+        <result column="pNumber" property="pNumber" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+
+    <select id="listNames" resultMap="listResult">
+
+         SELECT * FROM product WHERE pNumber LIKE CONCAT('%',#{listNames},'%')
 
     </select>
 

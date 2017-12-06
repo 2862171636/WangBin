@@ -3,6 +3,7 @@ package com.lanou.Controller;
 import com.lanou.Service.SelectService;
 import com.lanou.entity.Select;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,7 +26,7 @@ public class SelectController {
     @ResponseBody
     public Map<String,Object> findName(String name){
       Map maps = new HashMap();
-      List<Select> selects = selectService.findsNames(name);
+      List<String> selects = selectService.findsNames(name);
       if (selects.size()!= 0){
           maps.put("seccess",selects);
 
@@ -36,6 +37,26 @@ public class SelectController {
       }
       return maps;
 
+    }
+
+    @RequestMapping("/lists.do")
+    @ResponseBody
+    public Map<String,Object> ListNames(String listname) {
+
+        Map maps = new HashMap();
+
+        List<String> lists = selectService.listName(listname);
+
+        if (lists.size()!=0){
+
+            maps.put("success",lists);
+        }else {
+
+            maps.put("error",lists);
+        }
+
+
+        return maps;
     }
 
 

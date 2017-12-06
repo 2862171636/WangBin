@@ -18,10 +18,17 @@ public class SelectServiceImpl implements SelectService {
     @Autowired private SelectMapper selectMapper;
 
 
-    public List<Select> findsNames(String names ) {
+    public List<String> findsNames(String names ) {
 
-        List<Select> selectsName = selectMapper.findNames(names);
+        List<String> selectsName = selectMapper.findNames(names);
 
         return selectsName;
+    }
+
+    public List<String> listName(String listName) {
+
+        List<String> listNames = selectMapper.listNames(listName);
+
+        return listNames;
     }
 }

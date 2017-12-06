@@ -9,5 +9,7 @@ import java.util.List;
  */
 public interface SelectService {
 
-    public List<Select> findsNames(String names);
+    public List<String> findsNames(String names);
+
+    public List<String> listName(String listName);
 }

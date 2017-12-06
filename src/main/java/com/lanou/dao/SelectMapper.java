@@ -10,6 +10,8 @@ import java.util.List;
  */
 public interface SelectMapper {
 
-    public List<Select> findNames(String names);
+    public List<String> findNames(String name);
+
+    public List<String> listNames(String listNames);
 
 }
