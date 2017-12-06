@@ -31,7 +31,7 @@
 
 	<select id="findsProdct" resultMap="productResult">
 
-		SELECT * FROM Product WHERE category_id = #{parendId}
+		SELECT * FROM product WHERE category_id = #{parendId}
 
 
 

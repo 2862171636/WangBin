@@ -12,7 +12,7 @@ import java.util.List;
  * Created by lanou on 2017/12/5.
  */
 
-@Service("selectService")
+@Service("SelectService")
 public class SelectServiceImpl implements SelectService {
 
     @Autowired private SelectMapper selectMapper;
