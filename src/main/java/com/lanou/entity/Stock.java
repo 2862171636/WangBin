@@ -3,19 +3,21 @@ package com.lanou.entity;
 /**
  * Created by lanou on 2017/12/4.
  */
-//库存
+//库存 与价格一同被容量和规格决定 因此在数据库中通过priceId绑定
+//因为存在多个库存可能 因此与price为 1 对 多关系
 public class Stock {
-    private int stock_id;
+    private int stockId;
 
     private String stockName;
+
     private int stockNum;
 
-    public int getStock_id() {
-        return stock_id;
+    public int getStockId() {
+        return stockId;
     }
 
-    public void setStock_id(int stock_id) {
-        this.stock_id = stock_id;
+    public void setStockId(int stockId) {
+        this.stockId = stockId;
     }
 
     public String getStockName() {
@@ -35,11 +37,9 @@ public class Stock {
     }
 
     public Stock() {
-        super();
     }
 
-    public Stock(int stock_id, String stockName, int stockNum) {
-        this.stock_id = stock_id;
+    public Stock(String stockName, int stockNum) {
         this.stockName = stockName;
         this.stockNum = stockNum;
     }
@@ -47,9 +47,10 @@ public class Stock {
     @Override
     public String toString() {
         return "Stock{" +
-                "stock_id=" + stock_id +
+                "stockId=" + stockId +
                 ", stockName='" + stockName + '\'' +
                 ", stockNum=" + stockNum +
                 '}';
     }
 }
+
