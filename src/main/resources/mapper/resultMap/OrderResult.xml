@@ -10,7 +10,7 @@
 		<collection select="com.lanou.dao.ShoppingCarMapper.selectShoppingCarsForOrder"
 					javaType="java.util.List"
 					property="shoppingCars"
-					column="order_id"
+					column="oId"
 					ofType="com.lanou.entity.ShoppingCar">
 			<id column="shoppingCar_id" property="shoppingCarId" javaType="int"/>
 			<result column="num" property="num" javaType="int"/>

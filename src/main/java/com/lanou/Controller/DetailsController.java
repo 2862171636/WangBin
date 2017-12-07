@@ -1,6 +1,7 @@
 package com.lanou.Controller;
 
 import com.lanou.Service.DetailsService;
+import com.lanou.Util.FastJson_All;
 import com.lanou.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -19,19 +21,17 @@ public class DetailsController {
     @Autowired
     private DetailsService detailsService;
     @RequestMapping(value = "/selectProduct.do")
-    @ResponseBody
-    public Details findTeachers(Integer pId){
+    public void findTeachers(Integer pId, HttpServletResponse response){
         System.out.println("date1:");
-        return detailsService.selectProduct(pId)    ;
+        FastJson_All.toJson(detailsService.selectProduct(pId),response);
     }
 //    需要商品的id 规格的id 单位的id
     @RequestMapping(value = "selectPrice")
-    @ResponseBody
-    public  Double selectPrice(int p_id,int spec_id,int unit_id){
+    public void selectPrice(int p_id,int spec_id,int unit_id,HttpServletResponse response){
         Price price=new Price(p_id,spec_id,unit_id);
         System.out.println(price);
         System.out.println(detailsService.selectPrice(price));
-       return detailsService.selectPrice(price);
+        FastJson_All.toJson(detailsService.selectPrice(price),response);
     }
 
 }

@@ -1,7 +1,9 @@
 package com.lanou.Controller;
 
 import com.lanou.Service.UserService;
+import com.lanou.Util.FastJson_All;
 import com.lanou.entity.User;
+import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
@@ -27,8 +29,7 @@ public class UserController {
 
     //登录验证用的
     @RequestMapping(value = "/login.do",method = RequestMethod.GET)
-    @ResponseBody
-    public String confirmUser(User user){
+    public void confirmUser(User user,HttpServletResponse response){
         System.out.println(user);
         String result = null;
         User loginUser = userService.confirmUser(user.getUserName());
@@ -38,12 +39,11 @@ public class UserController {
        }else {
            result = "error";
        }
-       return  result;
+       FastJson_All.toJson(result,response);
     }
 
     //注册用户名失焦
     @RequestMapping(value = "/focus.do",method = RequestMethod.GET)
-    @ResponseBody
     public String focus(User user) {
         String result = null;
         User regUser = userService.confirmUser(user.getUserName());
@@ -57,8 +57,7 @@ public class UserController {
 
     //注册验证
     @RequestMapping(value = "/reg.do",method = RequestMethod.GET)
-    @ResponseBody
-    public  String reg(User user) throws IOException {
+    public  void reg(User user,HttpServletResponse response) throws IOException {
         System.out.println("aa"+ user);
         User regUser = userService.confirmUser(user.getUserName());
 
@@ -71,7 +70,7 @@ public class UserController {
             }else{
                 result = "error";
             }
-        return  result;
+        FastJson_All.toJson(result,response);
 
     }
 
@@ -83,8 +82,7 @@ public class UserController {
 
     //用户信息的修改
     @RequestMapping(value = "/update.do")
-    @ResponseBody
-    public  String updateUser(Integer gener, String email, String name, String detailed, Integer road, String userName, @DateTimeFormat(pattern="yyyy/MM/dd") Date birth) throws IOException {
+    public void updateUser(HttpServletResponse response,Integer gener, String email, String name, String detailed, Integer road, String userName, @DateTimeFormat(pattern="yyyy/MM/dd") Date birth) throws IOException {
         System.out.println("aa" + gener);
         User user = new User();
         user.setGener(gener);
@@ -95,20 +93,19 @@ public class UserController {
         user.setEmail(email);
         user.setName(name);
         userService.updateUser(user);
-        return "success";
+        FastJson_All.toJson("success",response);
     }
 
     // 密码的修改
     //用户信息的修改
     @RequestMapping(value = "/updatePassword.do")
-    @ResponseBody
-    public  String updatePassword(String password,String userName) throws IOException {
+    public void updatePassword(String password,String userName,HttpServletResponse response) throws IOException {
         System.out.println("aa" );
         User user = new User();
         user.setPassword(password);
         user.setUserName(userName);
         userService.updatePassword(user);
-        return "success";
+        FastJson_All.toJson("success", response);
     }
 
 }

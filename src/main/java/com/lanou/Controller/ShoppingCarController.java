@@ -1,6 +1,7 @@
 package com.lanou.Controller;
 
 import com.lanou.Service.ShoppingCarService;
+import com.lanou.Util.FastJson_All;
 import com.lanou.entity.Order;
 import com.lanou.entity.ShoppingCar;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -21,34 +23,31 @@ public class ShoppingCarController {
     private ShoppingCarService shoppingCarService;
 
     @RequestMapping(value = "/find.do",method = RequestMethod.GET)
-    @ResponseBody
-    public ShoppingCar findShoppingCar(int shoppingCarId){
-        return shoppingCarService.findShoppingCarById(shoppingCarId);
+    public void findShoppingCar(int shoppingCarId, HttpServletResponse response){
+         FastJson_All.toJson(shoppingCarService.findShoppingCarById(shoppingCarId),response);
     }
 
     //    添加到购物车 传入购物车对象
     @RequestMapping("/add.do")
-    public String addToShoppingCar(ShoppingCar shoppingCar){
+    public void addToShoppingCar(ShoppingCar shoppingCar,HttpServletResponse response){
         if (shoppingCarService.addToShoppingCar(shoppingCar)){
-            return "success";
+            FastJson_All.toJson("success",response);
         }else{
-            return "error";
+            FastJson_All.toJson("error",response);
         }
     }
     //    根据用户id查找购物车
     @RequestMapping("/finds.do")
-    @ResponseBody
-    public List<ShoppingCar> findShoppingCars(int uId){
-        return shoppingCarService.selectShoppingCarsForUser(uId);
+    public void findShoppingCars(int uId,HttpServletResponse response){
+        FastJson_All.toJson(shoppingCarService.selectShoppingCarsForUser(uId),response);
 
     }
 
 
     //    根据购物车id更新购物车
     @RequestMapping("/update.do")
-    @ResponseBody
-    public boolean updateShoppingCar(ShoppingCar shoppingCar){
-        return shoppingCarService.updateShoppingCar(shoppingCar);
+    public void updateShoppingCar(ShoppingCar shoppingCar,HttpServletResponse response){
+        FastJson_All.toJson(shoppingCarService.updateShoppingCar(shoppingCar),response);
 
     }
 

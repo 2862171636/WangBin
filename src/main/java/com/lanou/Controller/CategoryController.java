@@ -2,6 +2,7 @@ package com.lanou.Controller;
 
 
 import com.lanou.Service.CategoryService;
+import com.lanou.Util.FastJson_All;
 import com.lanou.entity.Category;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,7 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @RequestMapping("/find.do")
-    @ResponseBody
-    public List<Category> findCategory(HttpServletResponse response ) throws IOException {
+    public void findCategory(HttpServletResponse response) throws IOException {
 
         List<Integer> cids = categoryService.selectCidParentIdForZero();
         List<Category> categoryList = new ArrayList<Category>();
@@ -35,7 +35,7 @@ public class CategoryController {
         Category category = categoryService.selectByPrimaryKey(cids.get(i));
         categoryList.add(category);
         }
-        return categoryList;
+        FastJson_All.toJson(categoryList,response);
 //        String jsonStr = JSON
 //        response.setContentType("text/html");
 //        response.setCharacterEncoding("utf-8");

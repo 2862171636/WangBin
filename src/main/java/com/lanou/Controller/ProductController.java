@@ -1,6 +1,7 @@
 package com.lanou.Controller;
 
 import com.lanou.Service.ProductService;
+import com.lanou.Util.FastJson_All;
 import com.lanou.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -30,8 +31,7 @@ public class ProductController {
     private ProductService productService;
 
     @RequestMapping("product.do")
-    @ResponseBody
-    public Map<String,Object> prodcut(int categoryId, HttpServletResponse response) {
+    public void prodcut(int categoryId, HttpServletResponse response) {
 
         Map maps = new HashMap();
         response.setContentType("text/html;charset=UTF-8");
@@ -49,7 +49,7 @@ public class ProductController {
 
         }
 
-        return maps;
+        FastJson_All.toJson(maps,response);
 
     }
 

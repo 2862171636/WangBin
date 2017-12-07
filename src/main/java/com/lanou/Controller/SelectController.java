@@ -1,6 +1,7 @@
 package com.lanou.Controller;
 
 import com.lanou.Service.SelectService;
+import com.lanou.Util.FastJson_All;
 import com.lanou.entity.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,8 +26,7 @@ public class SelectController {
     private SelectService selectService;
 
     @RequestMapping("/select.do")
-    @ResponseBody
-    public Map<String,Object> findName(String name){
+    public void findName(String name,HttpServletResponse response){
       Map maps = new HashMap();
       List<String> selects = selectService.findsNames(name);
       if (selects.size()!= 0){
@@ -37,13 +37,12 @@ public class SelectController {
           maps.put("error",selects);
 
       }
-      return maps;
+      FastJson_All.toJson(maps,response);
 
     }
 
     @RequestMapping("/lists.do")
-    @ResponseBody
-    public Map<String,Object> ListNames(String listname,HttpServletResponse response) {
+    public void ListNames(String listname,HttpServletResponse response) {
 
         Map maps = new HashMap();
         response.setContentType("text/html;charset=UTF-8");
@@ -58,7 +57,7 @@ public class SelectController {
         }
 
 
-        return maps;
+        FastJson_All.toJson(maps,response);
     }
 
 

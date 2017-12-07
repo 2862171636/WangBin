@@ -40,6 +40,7 @@
 	<update id="orderShoppingCar" parameterType="int">
 		UPDATE (order_id) VALUES (#{orderId}) WHERE shoppingCarId = #{shoppingCarId} and order_Id = 0;
 	</update>
+
 	<!--当访问订单时 通过orderId加载出对应的订单信息 -->
 	<select id="selectShoppingCarsForOrder" parameterType="int" resultMap="ShoppingResult">
 		SELECT * FROM shoppingCar WHERE order_id = #{orderId}
