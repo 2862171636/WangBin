@@ -6,12 +6,12 @@
 <mapper namespace="com.lanou.dao.OrderMapper">
 
     <resultMap type="Order" id="OrderResult" >
-        <id column="teacher_id" property="tId" javaType="int"/>
-        <result column="teacher_name" property="teacherName" jdbcType="VARCHAR"/>
+        <id column="order_id" property="tId" javaType="int"/>
+        <result column="order_name" property="teacherName" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <insert id="addToShoppingCar" parameterType="com.lanou.entity.ShoppingCar">
-        INSERT INTO shoppingCar VALUES #{shoppingCar}
+    <insert id="addToOrder" parameterType="com.lanou.entity.ShoppingCar" >
+        INSERT INTO shoppingCar VALUES #{shoppingCar} ;SELECT @@Identity
     </insert>
 
     <select id="selectShoppingCarsForUser" resultMap="OrderResult" parameterType="int">

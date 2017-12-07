@@ -16,12 +16,12 @@
 		<parameter property="priceId" javaType="int"/>
 		<parameter property="num" javaType="int"/>
 		<parameter property="uId" javaType="int"/>
-		<parameter property="stockId" jdbcType="int"/>
+		<parameter property="stockId" javaType="int"/>
 	</parameterMap>
 
 	<!--添加到购物车 通过页面传过来的属性 priceId num(数量) uId(当前用户)-->
-	<insert id="addToShoppingCar" parameterMap="shoppingCar">
-		INSERT INTO shoppingCar(price_id,num,u_id) VALUES (#{price_id},#{num},#{uId})
+	<insert id="addToShoppingCar" keyProperty="shoppingCarId" parameterMap="shoppingCar">
+		INSERT INTO shoppingCar(price_id,num,u_id) VALUES (#{price_id},#{num},#{uId});SELECT @@Identity
 	</insert>
 	<!--显示当前用户添加到购物车的商品信息-->
 	<select id="selectShoppingCarsForUser" resultMap="ShoppingResult" parameterType="int">
