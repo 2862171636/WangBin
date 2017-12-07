@@ -18,15 +18,15 @@ import java.util.List;
 public class ShoppingCarServiceImpl implements ShoppingCarService{
 
     @Autowired
-    private ShoppingCarMapper ShoppingCarMapper;
+    private ShoppingCarMapper shoppingCarMapper;
 
 
     public boolean addToShoppingCar(ShoppingCar shoppingCar) {
-        return ShoppingCarMapper.addToShoppingCar(shoppingCar);
+        return shoppingCarMapper.addToShoppingCar(shoppingCar);
     }
 
     public List<ShoppingCar> selectShoppingCarsForUser(int uid) {
-        return ShoppingCarMapper.selectShoppingCarsForUser(uid);
+        return shoppingCarMapper.selectShoppingCarsForUser(uid);
     }
 
     public boolean deleteShoppingCarById(int shoppingCarId) {
@@ -34,10 +34,14 @@ public class ShoppingCarServiceImpl implements ShoppingCarService{
     }
 
     public boolean updateShoppingCar(ShoppingCar shoppingCar) {
-        return ShoppingCarMapper.updateShoppingCar(shoppingCar);
+        return shoppingCarMapper.updateShoppingCar(shoppingCar);
     }
 
     public boolean orderShoppingCar(int shoppingCarId, int orderId) {
-        return ShoppingCarMapper.orderShoppingCar(shoppingCarId,orderId);
+        return shoppingCarMapper.orderShoppingCar(shoppingCarId,orderId);
+    }
+
+    public ShoppingCar findShoppingCarById(int shoppingCarId) {
+        return shoppingCarMapper.selectShoppingCarById(shoppingCarId);
     }
 }

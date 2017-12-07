@@ -8,7 +8,7 @@ import java.util.List;
  * Created by lanou on 2017/12/5.
  */
 public interface OrderMapper {
-    public Order findOrderById(int oId);
-    public List<Order> findOrdersForUser(int uId);
-    public List<Order> findAllOrders();
+    public Order selectOrderById(int oId);
+    public List<Order> selectOrderForUser(int uId);
+//    public List<Order> findAllOrders();
 }

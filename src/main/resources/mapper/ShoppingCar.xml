@@ -44,4 +44,9 @@
 	<select id="selectShoppingCarsForOrder" parameterType="int" resultMap="ShoppingResult">
 		SELECT * FROM shoppingCar WHERE order_id = #{orderId}
 	</select>
+
+	<select id="selectShoppingCarById" parameterType="int" resultMap="ShoppingResult">
+		SELECT * FROM shoppingCar WHERE shoppingCar_id = #{shoppingCarId}
+	</select>
+
 </mapper>

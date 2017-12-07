@@ -15,5 +15,6 @@ public interface ShoppingCarService {
     public boolean deleteShoppingCarById(int shoppingCarId);
     public boolean updateShoppingCar(ShoppingCar shoppingCar);
     public boolean orderShoppingCar(int shoppingCarId,int orderId);
+    public ShoppingCar findShoppingCarById(int shoppingCarId);
 
 }

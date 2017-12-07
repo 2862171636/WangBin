@@ -11,16 +11,15 @@
     </resultMap>
 
     <insert id="addToOrder" parameterType="com.lanou.entity.ShoppingCar" >
-        INSERT INTO shoppingCar VALUES #{shoppingCar} ;SELECT @@Identity
+        INSERT INTO shoppingCar VALUES #{shoppingCar}
     </insert>
 
-    <select id="selectShoppingCarsForUser" resultMap="OrderResult" parameterType="int">
-        SELECT * FROM shoppingCar WHERE 1=1 AND u_id = #{uid}
+    <select id="selectOrderById" parameterType="int" resultMap="OrderResultMap.OrderResult">
+        SELECT * FROM orders WHERE oId = #{OrderId}
     </select>
-
-    <delete id="deleteShoppingCarById" parameterType="int">
-        DELETE * FROM shoppingCar WHERE 1=1 AND shoppingCarId= #{shoppingCarId}
-    </delete>
+    <select id="selectOrderForUser" parameterType="int" resultMap="OrderResultMap.OrderResult">
+        SELECT * FROM orders WHERE u_id = #{uId}
+    </select>
 
 
 </mapper>

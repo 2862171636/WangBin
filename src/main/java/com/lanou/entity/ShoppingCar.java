@@ -73,7 +73,7 @@ public class ShoppingCar {
 
     @Override
     public String toString() {
-        return "ShoppingCar{" +
+        return "ShoppingCarController{" +
                 "shoppingCarId=" + shoppingCarId +
                 ", price=" + price +
                 ", num=" + num +

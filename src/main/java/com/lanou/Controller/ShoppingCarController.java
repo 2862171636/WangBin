@@ -1,26 +1,32 @@
 package com.lanou.Controller;
 
 import com.lanou.Service.ShoppingCarService;
-import com.lanou.Service.TeacherService;
+import com.lanou.entity.Order;
 import com.lanou.entity.ShoppingCar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
 /**
- * Created by lanou on 2017/12/1.
+ * Created by lanou on 2017/12/7.
  */
 @Controller
 @RequestMapping("/shopping")
-public class ShoppingController {
-
+public class ShoppingCarController {
     @Autowired
     private ShoppingCarService shoppingCarService;
-//    添加到购物车 传入购物车对象
+
+    @RequestMapping(value = "/find.do",method = RequestMethod.GET)
+    @ResponseBody
+    public ShoppingCar findShoppingCar(int shoppingCarId){
+        return shoppingCarService.findShoppingCarById(shoppingCarId);
+    }
+
+    //    添加到购物车 传入购物车对象
     @RequestMapping("/add.do")
     public String addToShoppingCar(ShoppingCar shoppingCar){
         if (shoppingCarService.addToShoppingCar(shoppingCar)){
@@ -29,10 +35,10 @@ public class ShoppingController {
             return "error";
         }
     }
-//    根据用户id查找购物车
-    @RequestMapping("/find.do")
+    //    根据用户id查找购物车
+    @RequestMapping("/finds.do")
     @ResponseBody
-    public List<ShoppingCar> findShoppingCar(int uId){
+    public List<ShoppingCar> findShoppingCars(int uId){
         return shoppingCarService.selectShoppingCarsForUser(uId);
 
     }
@@ -45,6 +51,7 @@ public class ShoppingController {
         return shoppingCarService.updateShoppingCar(shoppingCar);
 
     }
+
 
 
 }
