@@ -6,11 +6,23 @@ package com.lanou.entity;
  价格属性 由产品 规格和单位一同决定
  */
 public class Price {
+    private Spec spec;
+    private Unit unit;
+    private Product product;
     private Integer price_id;
-    private  Integer p_id;
-    private  Integer spec_id ;
-    private  Integer unit_id;
+    private Integer p_id;
+    private Integer spec_id ;
+    private Integer unit_id;
     private Double price_name;
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
     public Integer getPrice_id() {
         return price_id;
     }
@@ -51,6 +63,22 @@ public class Price {
         this.price_name = price_name;
     }
 
+    public Spec getSpec() {
+        return spec;
+    }
+
+    public void setSpec(Spec spec) {
+        this.spec = spec;
+    }
+
+    public Unit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(Unit unit) {
+        this.unit = unit;
+    }
+
     public Price() {
         super();
     }
@@ -65,10 +93,14 @@ public class Price {
     @Override
     public String toString() {
         return "Price{" +
-                "price_id=" + price_id +
+                "spec=" + spec +
+                ", unit=" + unit +
+                ", product=" + product +
+                ", price_id=" + price_id +
                 ", p_id=" + p_id +
                 ", spec_id=" + spec_id +
                 ", unit_id=" + unit_id +
+                ", price_name=" + price_name +
                 '}';
     }
 }

@@ -10,6 +10,15 @@ public class ShoppingCar {
     private int num;
     private int uId;
     private Stock stock;
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Stock getStock() {
         return stock;

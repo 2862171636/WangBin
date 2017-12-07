@@ -10,6 +10,7 @@ import java.util.List;
 public interface ShoppingCarMapper {
     public boolean addToShoppingCar(ShoppingCar shoppingCar);
     public List<ShoppingCar> selectShoppingCarsForUser(int uid);
+    public List<ShoppingCar> selectShoppingCarsForOrder(int orderId);
     public boolean deleteShoppingCarById(int shoppingCarId);
     public boolean updateShoppingCar(ShoppingCar shoppingCar);
     public boolean orderShoppingCar(int shoppingCarId,int orderId);

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lanou.dao.PriceMapper">
+
+	<resultMap id="prices" type="Price">
+		<id column="price_Id" property="price_Id" javaType="int"/>
+        <result column="priceName" property="priceName" jdbcType="VARCHAR"/>
+		<association property="spec" column="spec_id"
+					 select="com.lanou.dao.SpecMapper.selectSpecByPriceId"/>
+		<association property="unit" column="unit_id"
+					 select="com.lanou.dao.UnitMapper.selectUnitByPriceId"/>
+		<association property="product" column="p_id"
+					 select="com.lanou.dao.DetailsMapper.selectProduct"/>
+
+	</resultMap>
+
+	<select id="selectPriceByPriceId" parameterType="int" resultMap="prices">
+		select * from price where price_id = #{priceId}
+	</select>
+
+</mapper>
+

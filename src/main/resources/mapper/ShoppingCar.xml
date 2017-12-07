@@ -7,9 +7,10 @@
 
     <resultMap type="ShoppingCar" id="ShoppingResult" >
     		<id column="shoppingCar_id" property="shoppingCarId" javaType="int"/>
-    		<result column="price_id" property="priceId" javaType="int"/>
 			<result column="num" property="num" javaType="int"/>
 			<result column="u_Id" property="uId" javaType="int"/>
+			<association property="price" column="price_id"
+					 select="com.lanou.dao.PriceMapper.selectPriceByPriceId"/>
     </resultMap>
 	<parameterMap id="shoppingCar" type="ShoppingCar">
 		<parameter property="shoppingCarId" javaType="int"/>
@@ -39,5 +40,8 @@
 	<update id="orderShoppingCar" parameterType="int">
 		UPDATE (order_id) VALUES (#{orderId}) WHERE shoppingCarId = #{shoppingCarId} and order_Id = 0;
 	</update>
-
+	<!--当访问订单时 通过orderId加载出对应的订单信息 -->
+	<select id="selectShoppingCarsForOrder" parameterType="int" resultMap="ShoppingResult">
+		SELECT * FROM shoppingCar WHERE order_id = #{orderId}
+	</select>
 </mapper>

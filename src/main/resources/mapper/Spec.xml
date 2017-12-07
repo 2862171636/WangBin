@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lanou.dao.SpecMapper">
+
+	<resultMap id="specs" type="Spec">
+		<id column="specId" property="specId" javaType="int"/>
+        <result column="specName" property="specName" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<select id="selectSpecById" parameterType="int" resultMap="specs">
+		select * from spec where spec_id = #{specId}
+	</select>
+
+
+</mapper>
+

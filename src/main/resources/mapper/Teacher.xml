@@ -5,9 +5,10 @@
     
 <mapper namespace="com.lanou.dao.TeacherMapper">
 
-    <resultMap type="com.lanou.entity.Teacher" id="teacherResult" >
+    <resultMap type="Teacher" id="teacherResult" >
     		<id column="teacher_id" property="tId" javaType="int"/>
     		<result column="teacher_name" property="teacherName" jdbcType="VARCHAR"/>
+
     </resultMap>
 	
 	<select id="findTeachers" resultMap="teacherResult">

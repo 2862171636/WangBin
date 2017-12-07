@@ -1,13 +1,14 @@
 package com.lanou.entity;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by lanou on 2017/12/4.
  */
 public class Order {
     private int orderId;
-    private ShoppingCar shoppingCar;
+    private List<ShoppingCar> shoppingCars;
     private int state;
     private Date orderTime;
 
@@ -19,12 +20,12 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public ShoppingCar getShoppingCar() {
-        return shoppingCar;
+    public List<ShoppingCar> getShoppingCars() {
+        return shoppingCars;
     }
 
-    public void setShoppingCar(ShoppingCar shoppingCar) {
-        this.shoppingCar = shoppingCar;
+    public void setShoppingCars(List<ShoppingCar> shoppingCars) {
+        this.shoppingCars = shoppingCars;
     }
 
     public int getState() {
@@ -46,17 +47,11 @@ public class Order {
     public Order() {
     }
 
-    public Order(ShoppingCar shoppingCar, int state, Date orderTime) {
-        this.shoppingCar = shoppingCar;
-        this.state = state;
-        this.orderTime = orderTime;
-    }
-
     @Override
     public String toString() {
         return "Order{" +
                 "orderId=" + orderId +
-                ", shoppingCar=" + shoppingCar +
+                ", shoppingCar=" + shoppingCars +
                 ", state=" + state +
                 ", orderTime=" + orderTime +
                 '}';

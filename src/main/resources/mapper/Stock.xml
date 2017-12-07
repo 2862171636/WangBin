@@ -6,13 +6,13 @@
 <mapper namespace="com.lanou.dao.StockMapper">
 
 	<resultMap id="stocks" type="Stock">
-		<id column="stockId" property="stockId" javaType="int"/>
+		<id column="stock_id" property="stockId" javaType="int"/>
         <result column="stockName" property="stockName" jdbcType="VARCHAR"/>
         <result column="stockNum" property="stockNum" javaType="INTEGER"/>
 	</resultMap>
 
 	<select id="findStockByPriceId" parameterType="int" resultMap="stocks">
-		select * from stock where price_id = #{priceId}
+		select * from stock where priceId = #{priceId}
 	</select>
 
 

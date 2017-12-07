@@ -5,7 +5,7 @@
 
 <mapper namespace="com.lanou.dao.UserMapper">
 
-	<resultMap type="com.lanou.entity.User" id="userResult" >
+	<resultMap type="User" id="userResult" >
 		<id column="uId" property="uId" javaType="int"/>
 		<result column="userName" property="userName" jdbcType="VARCHAR"/>
 		<result column="password" property="password" jdbcType="VARCHAR"/>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lanou.dao.UnitMapper">
+
+	<resultMap id="units" type="Unit">
+		<id column="unit_id" property="unitId" javaType="int"/>
+		<result column="unit_name" property="unitName" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<select id="selectUnitById" parameterType="int" resultMap="units">
+		select * from unit where unit_id = #{priceId}
+	</select>
+
+
+</mapper>
+
