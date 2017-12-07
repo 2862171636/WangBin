@@ -9,6 +9,7 @@ public class Price {
     private Spec spec;
     private Unit unit;
     private Product product;
+    private DetailsProduct detailsProduct;
     private Integer price_id;
     private Integer p_id;
     private Integer spec_id ;
@@ -21,6 +22,14 @@ public class Price {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public Spec getSpec() {
+        return spec;
+    }
+
+    public void setSpec(Spec spec) {
+        this.spec = spec;
     }
 
     public Integer getPrice_id() {
@@ -63,14 +72,6 @@ public class Price {
         this.price_name = price_name;
     }
 
-    public Spec getSpec() {
-        return spec;
-    }
-
-    public void setSpec(Spec spec) {
-        this.spec = spec;
-    }
-
     public Unit getUnit() {
         return unit;
     }
@@ -83,11 +84,18 @@ public class Price {
         super();
     }
 
-    public Price( Integer p_id, Integer spec_id, Integer unit_id) {
+    public DetailsProduct getDetailsProduct() {
+        return detailsProduct;
+    }
 
+    public void setDetailsProduct(DetailsProduct detailsProduct) {
+        this.detailsProduct = detailsProduct;
+    }
+
+    public Price(Integer p_id, Integer spec_id, Integer unit_id) {
+        this.unit_id = unit_id;
         this.p_id = p_id;
         this.spec_id = spec_id;
-        this.unit_id = unit_id;
     }
 
     @Override
@@ -96,6 +104,7 @@ public class Price {
                 "spec=" + spec +
                 ", unit=" + unit +
                 ", product=" + product +
+                ", detailsProduct=" + detailsProduct +
                 ", price_id=" + price_id +
                 ", p_id=" + p_id +
                 ", spec_id=" + spec_id +

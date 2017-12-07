@@ -6,8 +6,8 @@
 <mapper namespace="com.lanou.dao.UnitMapper">
 
 	<resultMap id="units" type="Unit">
-		<id column="unit_id" property="unitId" javaType="int"/>
-		<result column="unit_name" property="unitName" jdbcType="VARCHAR"/>
+		<id column="unit_id" property="unit_id" javaType="int"/>
+		<result column="unit_name" property="unit_name" jdbcType="VARCHAR"/>
 	</resultMap>
 
 	<select id="selectUnitById" parameterType="int" resultMap="units">

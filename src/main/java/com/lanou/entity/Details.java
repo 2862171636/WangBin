@@ -7,7 +7,7 @@ import java.util.List;
  */
 public class Details {
     private  DetailsProduct product;
-    private List<Unit> unit ;
+    private  List<Unit> unit ;
     private  List<Spec> spec;
     private  Stock stock;
 

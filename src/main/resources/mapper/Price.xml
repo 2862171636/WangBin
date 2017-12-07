@@ -6,13 +6,13 @@
 <mapper namespace="com.lanou.dao.PriceMapper">
 
 	<resultMap id="prices" type="Price">
-		<id column="price_Id" property="price_Id" javaType="int"/>
+		<id column="price_Id" property="price_id" javaType="int"/>
         <result column="priceName" property="priceName" jdbcType="VARCHAR"/>
 		<association property="spec" column="spec_id"
-					 select="com.lanou.dao.SpecMapper.selectSpecByPriceId"/>
+					 select="com.lanou.dao.SpecMapper.selectSpecById"/>
 		<association property="unit" column="unit_id"
-					 select="com.lanou.dao.UnitMapper.selectUnitByPriceId"/>
-		<association property="product" column="p_id"
+					 select="com.lanou.dao.UnitMapper.selectUnitById"/>
+		<association property="detailsProduct" column="p_id"
 					 select="com.lanou.dao.DetailsMapper.selectProduct"/>
 
 	</resultMap>
