@@ -13,5 +13,7 @@ public interface ShoppingCarService {
     public boolean addToShoppingCar(ShoppingCar shoppingCar);
     public List<ShoppingCar> selectShoppingCarsForUser(int uid);
     public boolean deleteShoppingCarById(int shoppingCarId);
+    public boolean updateShoppingCar(ShoppingCar shoppingCar);
+    public boolean orderShoppingCar(int shoppingCarId,int orderId);
 
 }

@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class Order {
     private int orderId;
-    private int shoppingCarId;
+    private ShoppingCar shoppingCar;
     private int state;
     private Date orderTime;
 
@@ -19,12 +19,12 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public int getShoppingCarId() {
-        return shoppingCarId;
+    public ShoppingCar getShoppingCar() {
+        return shoppingCar;
     }
 
-    public void setShoppingCarId(int shoppingCarId) {
-        this.shoppingCarId = shoppingCarId;
+    public void setShoppingCar(ShoppingCar shoppingCar) {
+        this.shoppingCar = shoppingCar;
     }
 
     public int getState() {
@@ -46,8 +46,8 @@ public class Order {
     public Order() {
     }
 
-    public Order(int shoppingCarId, int state, Date orderTime) {
-        this.shoppingCarId = shoppingCarId;
+    public Order(ShoppingCar shoppingCar, int state, Date orderTime) {
+        this.shoppingCar = shoppingCar;
         this.state = state;
         this.orderTime = orderTime;
     }
@@ -56,7 +56,7 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "orderId=" + orderId +
-                ", shoppingCarId=" + shoppingCarId +
+                ", shoppingCar=" + shoppingCar +
                 ", state=" + state +
                 ", orderTime=" + orderTime +
                 '}';

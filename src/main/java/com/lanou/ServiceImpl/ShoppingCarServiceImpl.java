@@ -32,4 +32,12 @@ public class ShoppingCarServiceImpl implements ShoppingCarService{
     public boolean deleteShoppingCarById(int shoppingCarId) {
         return deleteShoppingCarById(shoppingCarId);
     }
+
+    public boolean updateShoppingCar(ShoppingCar shoppingCar) {
+        return ShoppingCarMapper.updateShoppingCar(shoppingCar);
+    }
+
+    public boolean orderShoppingCar(int shoppingCarId, int orderId) {
+        return ShoppingCarMapper.orderShoppingCar(shoppingCarId,orderId);
+    }
 }

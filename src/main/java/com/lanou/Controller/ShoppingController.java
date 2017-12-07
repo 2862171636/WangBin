@@ -20,7 +20,7 @@ public class ShoppingController {
 
     @Autowired
     private ShoppingCarService shoppingCarService;
-
+//    添加到购物车 传入购物车对象
     @RequestMapping("/add.do")
     public String addToShoppingCar(ShoppingCar shoppingCar){
         if (shoppingCarService.addToShoppingCar(shoppingCar)){
@@ -29,12 +29,22 @@ public class ShoppingController {
             return "error";
         }
     }
-
+//    根据用户id查找购物车
     @RequestMapping("/find.do")
     @ResponseBody
     public List<ShoppingCar> findShoppingCar(int uId){
         return shoppingCarService.selectShoppingCarsForUser(uId);
 
     }
+
+
+    //    根据购物车id更新购物车
+    @RequestMapping("/update.do")
+    @ResponseBody
+    public boolean updateShoppingCar(ShoppingCar shoppingCar){
+        return shoppingCarService.updateShoppingCar(shoppingCar);
+
+    }
+
 
 }

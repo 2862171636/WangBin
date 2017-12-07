@@ -32,7 +32,7 @@
 		DELETE * FROM shoppingCar WHERE 1=1 AND shoppingCarId= #{shoppingCarId},order_id = 0
 	</delete>
 	<!--编辑购物车信息 可以改变所选商品属性-->
-	<update id="updateShoppingCarById" parameterType="int">
+	<update id="updateShoppingCar" parameterType="int">
 		UPDATE (price_Id,num,stockId) VALUES (#{priceId},#{num},#{stockId}) WHERE shoppingCarId = #{shoppingCarId}
 	</update>
 	<!--当提交订单时 根据生成的订单orderId去改变购物车状态-->
