@@ -94,7 +94,6 @@ public class UserController {
         user.setRoad(road);
         user.setEmail(email);
         user.setName(name);
-
         userService.updateUser(user);
         return "success";
     }

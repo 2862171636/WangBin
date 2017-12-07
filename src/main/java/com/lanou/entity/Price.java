@@ -1,73 +1,74 @@
 package com.lanou.entity;
 
+import sun.util.resources.cldr.id.CurrencyNames_id;
+
 /**
  价格属性 由产品 规格和单位一同决定
  */
 public class Price {
-    private int priceId;
-    private Product product;
-    private Spec spec;
-    private Unit unit;
-    private double priceName;
-
-    public int getPriceId() {
-        return priceId;
+    private Integer price_id;
+    private  Integer p_id;
+    private  Integer spec_id ;
+    private  Integer unit_id;
+    private Double price_name;
+    public Integer getPrice_id() {
+        return price_id;
     }
 
-    public void setPriceId(int priceId) {
-        this.priceId = priceId;
+    public void setPrice_id(Integer price_id) {
+        this.price_id = price_id;
     }
 
-    public Product getProduct() {
-        return product;
+    public Integer getP_id() {
+        return p_id;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setP_id(Integer p_id) {
+        this.p_id = p_id;
     }
 
-    public Spec getSpec() {
-        return spec;
+    public Integer getSpec_id() {
+        return spec_id;
     }
 
-    public void setSpec(Spec spec) {
-        this.spec = spec;
+    public void setSpec_id(Integer spec_id) {
+        this.spec_id = spec_id;
     }
 
-    public Unit getUnit() {
-        return unit;
+    public Integer getUnit_id() {
+        return unit_id;
     }
 
-    public void setUnit(Unit unit) {
-        this.unit = unit;
+    public void setUnit_id(Integer unit_id) {
+        this.unit_id = unit_id;
     }
 
-    public double getPriceName() {
-        return priceName;
+    public Double getPrice_name() {
+        return price_name;
     }
 
-    public void setPriceName(double priceName) {
-        this.priceName = priceName;
+    public void setPrice_name(Double price_name) {
+        this.price_name = price_name;
     }
 
     public Price() {
+        super();
     }
 
-    public Price(Product product, Spec spec, Unit unit, double priceName) {
-        this.product = product;
-        this.spec = spec;
-        this.unit = unit;
-        this.priceName = priceName;
+    public Price( Integer p_id, Integer spec_id, Integer unit_id) {
+
+        this.p_id = p_id;
+        this.spec_id = spec_id;
+        this.unit_id = unit_id;
     }
 
     @Override
     public String toString() {
         return "Price{" +
-                "priceId=" + priceId +
-                ", product=" + product +
-                ", spec=" + spec +
-                ", unit=" + unit +
-                ", priceName=" + priceName +
+                "price_id=" + price_id +
+                ", p_id=" + p_id +
+                ", spec_id=" + spec_id +
+                ", unit_id=" + unit_id +
                 '}';
     }
 }

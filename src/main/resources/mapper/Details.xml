@@ -8,23 +8,33 @@
 
 
 
+	<!--根据商品Id查出对应的商品-->
 	<select id="selectProduct" parameterType="int" resultType="com.lanou.entity.DetailsProduct">
 
 		SELECT * FROM product WHERE pId= #{pId}
 	</select>
+	<!--根据商品查出对应的单位-->
 	<select id="selectUnit" resultType="com.lanou.entity.Unit">
 		SELECT * from unit WHERE  unit_id=#{unit_id}
 	</select>
 	<select id="selectUnitId" parameterType="int" resultType="java.lang.Integer">
 		SELECT unit FROM pro_unit where pId=#{pId}
 	</select>
+	<!--根据商品查出规格-->
 	<select id="selectSpec" resultType="com.lanou.entity.Spec">
 		SELECT * from spec WHERE  spec_id=#{spec_id}
 	</select>
 	<select id="selectSpecId" parameterType="int" resultType="java.lang.Integer">
 		SELECT spec_id FROM pro_spec where pId=#{pId}
 	</select>
+	<!--根据商品查出库存-->
 	<select id="selectStock" parameterType="int" resultType="com.lanou.entity.Stock">
 		SELECT * FROM stock where priceId=#{pId}
+	</select>
+
+
+<!--查询价格-->
+	<select id="selectPrice" resultType="java.lang.Double">
+		SELECT  price_name FROM  price where p_id=#{p_id} and spec_id=#{spec_id} and unit_id=#{unit_id}
 	</select>
 </mapper>

@@ -42,4 +42,7 @@ public class DetailsServiceImpl implements DetailsService{
         System.out.println(details);
         return details;
     }
+    public  Double selectPrice(Price price){
+        return  detailsMapper.selectPrice(price);
+    };
 }

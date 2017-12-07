@@ -1,10 +1,7 @@
 package com.lanou.Controller;
 
 import com.lanou.Service.DetailsService;
-import com.lanou.entity.City;
-import com.lanou.entity.Details;
-import com.lanou.entity.DetailsProduct;
-import com.lanou.entity.Product;
+import com.lanou.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,9 +22,16 @@ public class DetailsController {
     @ResponseBody
     public Details findTeachers(Integer pId){
         System.out.println("date1:");
-
-
-        return detailsService.selectProduct(pId);
+        return detailsService.selectProduct(pId)    ;
+    }
+//    需要商品的id 规格的id 单位的id
+    @RequestMapping(value = "selectPrice")
+    @ResponseBody
+    public  Double selectPrice(int p_id,int spec_id,int unit_id){
+        Price price=new Price(p_id,spec_id,unit_id);
+        System.out.println(price);
+        System.out.println(detailsService.selectPrice(price));
+       return detailsService.selectPrice(price);
     }
 
 }

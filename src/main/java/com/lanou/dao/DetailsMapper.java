@@ -18,4 +18,7 @@ public interface DetailsMapper {
     public Spec selectSpec(Integer spec_id);
     public List<Integer> selectSpecId(Integer pId);
     public  Stock selectStock(Integer pId);
+    public Double selectPrice(Price price);
+
+
 }
