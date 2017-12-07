@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,10 +31,10 @@ public class ProductController {
 
     @RequestMapping("product.do")
     @ResponseBody
-    public Map<String,Object> prodcut(int categoryId) {
+    public Map<String,Object> prodcut(int categoryId, HttpServletResponse response) {
 
         Map maps = new HashMap();
-
+        response.setContentType("text/html;charset=UTF-8");
         List<Product> products = productService.findsProducts(categoryId);
 
         if (products.size() == 0) {
