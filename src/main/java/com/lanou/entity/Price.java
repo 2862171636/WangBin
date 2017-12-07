@@ -1,6 +1,6 @@
 package com.lanou.entity;
 
-import sun.util.resources.cldr.id.CurrencyNames_id;
+
 
 /**
  价格属性 由产品 规格和单位一同决定
