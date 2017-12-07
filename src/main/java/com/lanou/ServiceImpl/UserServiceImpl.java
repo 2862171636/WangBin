@@ -24,15 +24,17 @@ public class UserServiceImpl implements UserService{
         return userMapper.confirmUser(userName);
     }
 
+    //@Transactional
     public void addUser(User user) {
 
         userMapper.addUser(user);
 
     }
-
+    @Transactional
     public void updateUser(User user) {
         userMapper.updateUser(user);
     }
+    @Transactional
 
     public void updatePassword(User user) {
         userMapper.updatePassword(user);

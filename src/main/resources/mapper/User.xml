@@ -9,7 +9,7 @@
 		<id column="uId" property="uId" javaType="int"/>
 		<result column="userName" property="userName" jdbcType="VARCHAR"/>
 		<result column="password" property="password" jdbcType="VARCHAR"/>
-		<result column="pone" property="poneNum" jdbcType="VARCHAR"/>
+		<result column="phone" property="poneNum" jdbcType="VARCHAR"/>
 		<result column="gender" property="gener" jdbcType="VARCHAR"/>
 		<result column="name" property="name" jdbcType="VARCHAR"/>
 		<result column="detailed" property="detailed" jdbcType="VARCHAR"/>
@@ -23,7 +23,7 @@
 	</select>
 
 	<insert id="addUser" parameterType="User">
-		insert into Emeixian_User(userName,password,pone) values(#{userName},#{password},#{poneNum})
+		insert into Emeixian_User(userName,password,phone) values(#{userName},#{password},#{poneNum})
 	</insert>
 
 	<update id="updateUser" parameterType="User">
