@@ -7,7 +7,7 @@ public class HomePage {
     private String pName;
     private String sPec;
     private String pImg;
-    private  Double pPrice;
+    private  Double pMoney;
 
     public String getpName() {
         return pName;
@@ -33,23 +33,23 @@ public class HomePage {
         this.pImg = pImg;
     }
 
-    public Double getpPrice() {
-        return pPrice;
+    public Double getpMoney() {
+        return pMoney;
     }
 
-    public void setpPrice(Double pPrice) {
-        this.pPrice = pPrice;
+    public void setpMoney(Double pMoney) {
+        this.pMoney = pMoney;
     }
 
     public HomePage() {
         super();
     }
 
-    public HomePage(String pName, String sPec, String pImg, Double pPrice) {
+    public HomePage(String pName, String sPec, String pImg, Double pMoney) {
         this.pName = pName;
         this.sPec = sPec;
         this.pImg = pImg;
-        this.pPrice = pPrice;
+        this.pMoney = pMoney;
     }
 
     @Override
@@ -58,7 +58,7 @@ public class HomePage {
                 "pName='" + pName + '\'' +
                 ", sPec='" + sPec + '\'' +
                 ", pImg='" + pImg + '\'' +
-                ", pPrice=" + pPrice +
+                ", pMoney=" + pMoney +
                 '}';
     }
 }
