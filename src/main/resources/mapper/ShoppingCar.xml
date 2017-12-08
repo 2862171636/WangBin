@@ -23,8 +23,12 @@
 	<!--</parameterMap>-->
 
 	<!--添加到购物车 通过页面传过来的属性 priceId num(数量) uId(当前用户) 返回当前购物车主键-->
-	<insert id="addToShoppingCar" keyProperty="shoppingCarId">
-		INSERT INTO shoppingCar(price_id,num,u_id,stock_id) VALUES (#{0},#{1},#{2},#{ 3})
+	<!--<insert id="addToShoppingCar" useGeneratedKeys="true" keyProperty="shoppingCarId">-->
+		<!--INSERT INTO shoppingCar(price_id,num,u_id,stock_id) VALUES (#{0},#{1},#{2},#{3})-->
+	<!--</insert>-->
+
+	<insert id="addToShoppingCar" useGeneratedKeys="true" keyProperty="shoppingCarId">
+		INSERT INTO shoppingCar(price_id,num,u_id,stock_id) VALUES (#{price.price_id},#{num},#{user.uId},#{stock.stockId})
 	</insert>
 	<!--显示当前用户添加到购物车的商品信息-->
 	<select id="selectShoppingCarsForUser" resultMap="ShoppingResult" parameterType="int">
@@ -35,8 +39,8 @@
 		DELETE * FROM shoppingCar WHERE 1=1 AND shoppingCarId= #{shoppingCarId},order_id = 0
 	</delete>
 	<!--编辑购物车信息 可以改变所选商品属性-->
-	<update id="updateShoppingCar" parameterType="int">
-		UPDATE (price_Id,num,stockId) VALUES (#{priceId},#{num},#{stockId}) WHERE shoppingCarId = #{shoppingCarId}
+	<update id="updateShoppingCar" useGeneratedKeys="true" keyProperty="shoppingCarId">
+		UPDATE (price_Id,num,stockId) VALUES (#{price.price_id},#{num},#{user.uId},#{stock.stockId}) WHERE shoppingCarId = #{shoppingCarId}
 	</update>
 	<!--当提交订单时 根据生成的订单orderId去改变购物车状态-->
 	<update id="orderShoppingCar" parameterType="int">

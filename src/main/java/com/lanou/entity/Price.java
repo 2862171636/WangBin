@@ -1,6 +1,7 @@
 package com.lanou.entity;
 
 
+import java.util.List;
 
 /**
  价格属性 由产品 规格和单位一同决定
@@ -15,6 +16,15 @@ public class Price {
     private Integer spec_id ;
     private Integer unit_id;
     private Double price_name;
+    private List<Stock> stocks;
+
+    public List<Stock> getStocks() {
+        return stocks;
+    }
+
+    public void setStocks(List<Stock> stocks) {
+        this.stocks = stocks;
+    }
 
     public Product getProduct() {
         return product;
@@ -110,6 +120,7 @@ public class Price {
                 ", spec_id=" + spec_id +
                 ", unit_id=" + unit_id +
                 ", price_name=" + price_name +
+                ", stocks=" + stocks +
                 '}';
     }
 }

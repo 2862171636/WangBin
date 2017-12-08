@@ -2,7 +2,10 @@ package com.lanou.Controller;
 
 import com.lanou.Service.ShoppingCarService;
 import com.lanou.Util.FastJson_All;
+import com.lanou.entity.Price;
 import com.lanou.entity.ShoppingCar;
+import com.lanou.entity.Stock;
+import com.lanou.entity.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,14 +34,21 @@ public class ShoppingCarController {
     @RequestMapping("/add.do")
     public void addToShoppingCar(@Param("priceId") Integer priceId, @Param("num")Integer num, @Param("uId")Integer uId, @Param("stockId")Integer stockId, HttpServletResponse response){
         if (priceId == null || num == null || uId == null || stockId == null){
-            FastJson_All.toJson("空指针",response);
+            FastJson_All.toJson("error",response);
         }else {
-            if (true){
-                System.out.println(shoppingCarService.addToShoppingCar(priceId,num,uId,stockId));
+                ShoppingCar shoppingCar = new ShoppingCar();
+                Price price = new Price();
+                price.setPrice_id(priceId);
+                User user = new User();
+                user.setuId(uId);
+                Stock stock = new Stock();
+                stock.setStockId(stockId);
+                shoppingCar.setPrice(price);
+                shoppingCar.setNum(num);
+                shoppingCar.setUser(user);
+                shoppingCar.setStock(stock);
+                shoppingCarService.addToShoppingCar(shoppingCar);
                 FastJson_All.toJson("success",response);
-            }else{
-                FastJson_All.toJson("error",response);
-            }
         }
 
     }

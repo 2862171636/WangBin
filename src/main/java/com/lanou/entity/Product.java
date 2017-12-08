@@ -46,10 +46,14 @@ public class Product {
     }
 
     private int pId;
+//    规格
     private String pSpec;
+//    标签
     private int category_id;
+//    价格
     private int pMoney;
-    private  String pImg;
+//    图片
+    private String pImg;
 
     public Product(int pId, String pSpec, int category_id, int pMoney, String pImg) {
         this.pId = pId;

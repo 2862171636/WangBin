@@ -6,19 +6,28 @@
 <mapper namespace="com.lanou.dao.PriceMapper">
 
 	<resultMap id="prices" type="Price">
-		<id column="price_Id" property="price_id" javaType="int"/>
-        <result column="priceName" property="priceName" jdbcType="VARCHAR"/>
+		<id column="price_id" property="price_id" javaType="int"/>
+        <result column="price_name" property="price_name" jdbcType="VARCHAR"/>
 		<association property="spec" column="spec_id"
 					 select="com.lanou.dao.SpecMapper.selectSpecById"/>
 		<association property="unit" column="unit_id"
 					 select="com.lanou.dao.UnitMapper.selectUnitById"/>
 		<association property="detailsProduct" column="p_id"
 					 select="com.lanou.dao.DetailsMapper.selectProduct"/>
+		<collection	select="com.lanou.dao.StockMapper.findStockByPriceId"
+					   javaType="java.util.List"
+					   property="stocks"
+					   column="price_Id"
+					   ofType="com.lanou.entity.Stock"/>
 
 	</resultMap>
-
+	<!--通过id去查询价格-->
 	<select id="selectPriceByPriceId" parameterType="int" resultMap="prices">
 		select * from price where price_id = #{priceId}
+	</select>
+	<!--在商品页通过价格的三个属性去查询价格-->
+	<select id="selectPriceByThreeLimits" resultMap="prices">
+		SELECT price_id,price_name FROM price WHERE p_id = #{p_id} AND spec_id=#{spec_id} AND unit_id=#{unit_id}
 	</select>
 
 </mapper>
