@@ -1,6 +1,7 @@
 package com.lanou.Util;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -14,7 +15,7 @@ public class FastJson_All {
         response.setContentType("text/html; charset=UTF-8");
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setCharacterEncoding("utf-8");
-        String jsonStr = JSON.toJSONString(obj);
+        String jsonStr = JSON.toJSONString(obj, SerializerFeature.DisableCircularReferenceDetect);
         PrintWriter out = null;
         try {
             out = response.getWriter();

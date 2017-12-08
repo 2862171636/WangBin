@@ -8,9 +8,17 @@ public class ShoppingCar {
     private int shoppingCarId;
     private Price price;
     private int num;
-    private int uId;
     private Stock stock;
     private User user;
+    private int uId;
+
+    public int getuId() {
+        return uId;
+    }
+
+    public void setuId(int uId) {
+        this.uId = uId;
+    }
 
     public User getUser() {
         return user;
@@ -52,22 +60,16 @@ public class ShoppingCar {
         this.num = num;
     }
 
-    public int getuId() {
-        return uId;
-    }
 
-    public void setuId(int uId) {
-        this.uId = uId;
-    }
 
     public ShoppingCar() {
     }
 
 
-    public ShoppingCar(Price price, int num, int uId, Stock stock) {
+    public ShoppingCar(Price price, int num,  Stock stock) {
         this.price = price;
         this.num = num;
-        this.uId = uId;
+
         this.stock = stock;
     }
 
@@ -77,8 +79,8 @@ public class ShoppingCar {
                 "shoppingCarId=" + shoppingCarId +
                 ", price=" + price +
                 ", num=" + num +
-                ", uId=" + uId +
                 ", stock=" + stock +
+                ", uId=" + uId +
                 '}';
     }
 }

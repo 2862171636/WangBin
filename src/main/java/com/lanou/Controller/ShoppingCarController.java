@@ -3,6 +3,7 @@ package com.lanou.Controller;
 import com.lanou.Service.ShoppingCarService;
 import com.lanou.Util.FastJson_All;
 import com.lanou.entity.ShoppingCar;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,12 +29,18 @@ public class ShoppingCarController {
 
     //    添加到购物车 传入购物车对象
     @RequestMapping("/add.do")
-    public void addToShoppingCar(ShoppingCar shoppingCar,HttpServletResponse response){
-        if (shoppingCarService.addToShoppingCar(shoppingCar)){
-            FastJson_All.toJson("success",response);
-        }else{
-            FastJson_All.toJson("error",response);
+    public void addToShoppingCar(@Param("priceId") Integer priceId, @Param("num")Integer num, @Param("uId")Integer uId, @Param("stockId")Integer stockId, HttpServletResponse response){
+        if (priceId == null || num == null || uId == null || stockId == null){
+            FastJson_All.toJson("空指针",response);
+        }else {
+            if (true){
+                System.out.println(shoppingCarService.addToShoppingCar(priceId,num,uId,stockId));
+                FastJson_All.toJson("success",response);
+            }else{
+                FastJson_All.toJson("error",response);
+            }
         }
+
     }
     //    根据用户id查找购物车
     @RequestMapping("/user.do")

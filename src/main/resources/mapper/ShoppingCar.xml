@@ -14,16 +14,17 @@
 			<association property="stock" column="stock_id"
 						 select="com.lanou.dao.StockMapper.findStockByPriceId"/>
     </resultMap>
-	<parameterMap id="shoppingCar" type="ShoppingCar">
-		<parameter property="priceId" javaType="int"/>
-		<parameter property="num" javaType="int"/>
-		<parameter property="uId" javaType="int"/>
-		<parameter property="stockId" javaType="int"/>
-	</parameterMap>
+	<!--<parameterMap id="shoppingCarParam" type="ShoppingCar">-->
+		<!--<parameter property="shoppingCarId" javaType="int"/>-->
+		<!--<parameter property="num" javaType="int"/>-->
+		<!--<parameter property="user" resultMap="User.userResult" />-->
+		<!--<parameter property="stock" resultMap="Stock.stocks"/>-->
+		<!--<parameter property="price" resultMap="Price.prices"/>-->
+	<!--</parameterMap>-->
 
-	<!--添加到购物车 通过页面传过来的属性 priceId num(数量) uId(当前用户)-->
-	<insert id="addToShoppingCar" keyProperty="shoppingCarId" parameterMap="shoppingCar">
-		INSERT INTO shoppingCar(price_id,num,u_id,stock_id) VALUES (#{price_id},#{num},#{uId},#{stockId})
+	<!--添加到购物车 通过页面传过来的属性 priceId num(数量) uId(当前用户) 返回当前购物车主键-->
+	<insert id="addToShoppingCar" keyProperty="shoppingCarId">
+		INSERT INTO shoppingCar(price_id,num,u_id,stock_id) VALUES (#{0},#{1},#{2},#{ 3})
 	</insert>
 	<!--显示当前用户添加到购物车的商品信息-->
 	<select id="selectShoppingCarsForUser" resultMap="ShoppingResult" parameterType="int">

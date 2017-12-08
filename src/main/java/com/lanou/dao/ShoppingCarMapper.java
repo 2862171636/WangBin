@@ -8,7 +8,7 @@ import java.util.List;
  * Created by lanou on 2017/12/4.
  */
 public interface ShoppingCarMapper {
-    public boolean addToShoppingCar(ShoppingCar shoppingCar);
+    public int addToShoppingCar(int price_id,int num,int u_id,int stock_id);
     public List<ShoppingCar> selectShoppingCarsForUser(int uid);
     public List<ShoppingCar> selectShoppingCarsForOrder(int orderId);
     public boolean deleteShoppingCarById(int shoppingCarId);
