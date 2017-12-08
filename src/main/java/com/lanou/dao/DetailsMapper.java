@@ -11,8 +11,8 @@ import java.util.List;
  */
 public interface DetailsMapper {
     public DetailsProduct selectProduct(Integer pId);
-//    public Spec selectSpec(Integer sPecId);
-//    public Stock selectStock(Integer stockId);
+//  public Spec selectSpec(Integer sPecId);
+//  public Stock selectStock(Integer stockId);
     public Unit selectUnit(Integer unit_id);
     public List<Integer> selectUnitId(Integer pId);
     public Spec selectSpec(Integer spec_id);
@@ -20,5 +20,7 @@ public interface DetailsMapper {
     public  Stock selectStock(Integer pId);
     public Double selectPrice(Price price);
 
-
 }
+
+
+
