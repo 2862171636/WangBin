@@ -8,6 +8,15 @@ public class HomePage {
     private String sPec;
     private String pImg;
     private  Double pMoney;
+    private  Integer pId;
+
+    public Integer getpId() {
+        return pId;
+    }
+
+    public void setpId(Integer pId) {
+        this.pId = pId;
+    }
 
     public String getpName() {
         return pName;
@@ -59,6 +68,7 @@ public class HomePage {
                 ", sPec='" + sPec + '\'' +
                 ", pImg='" + pImg + '\'' +
                 ", pMoney=" + pMoney +
+                ", pId=" + pId +
                 '}';
     }
 }
