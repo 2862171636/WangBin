@@ -2,7 +2,6 @@ package com.lanou.Controller;
 
 import com.lanou.Service.ShoppingCarService;
 import com.lanou.Util.FastJson_All;
-import com.lanou.entity.Order;
 import com.lanou.entity.ShoppingCar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,7 +36,7 @@ public class ShoppingCarController {
         }
     }
     //    根据用户id查找购物车
-    @RequestMapping("/finds.do")
+    @RequestMapping("/user.do")
     public void findShoppingCars(int uId,HttpServletResponse response){
         FastJson_All.toJson(shoppingCarService.selectShoppingCarsForUser(uId),response);
 

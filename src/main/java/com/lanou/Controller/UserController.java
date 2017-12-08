@@ -44,15 +44,15 @@ public class UserController {
 
     //注册用户名失焦
     @RequestMapping(value = "/focus.do",method = RequestMethod.GET)
-    public String focus(User user) {
-        String result = null;
+    public void focus(User user,HttpServletResponse response) {
+        boolean result ;
         User regUser = userService.confirmUser(user.getUserName());
         if (regUser == null) {
-            result = "success";
+            result = true;
         } else {
-            return "error";
+            result = false;
         }
-        return result;
+        FastJson_All.toJson(result,response);
     }
 
     //注册验证
