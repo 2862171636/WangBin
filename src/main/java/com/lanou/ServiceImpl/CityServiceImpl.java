@@ -18,6 +18,7 @@ public class CityServiceImpl implements CityService{
     private CityMapper cityMapper;
     @Transactional
     public List<City> selectCity(Integer cityid) {
+
         return cityMapper.selectCity(cityid);
     }
 
