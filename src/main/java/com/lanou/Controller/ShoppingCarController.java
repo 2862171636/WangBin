@@ -62,7 +62,18 @@ public class ShoppingCarController {
 
     //    根据购物车id更新购物车
     @RequestMapping("/update.do")
-    public void updateShoppingCar(ShoppingCar shoppingCar,HttpServletResponse response){
+    public void updateShoppingCar(@Param("priceId") Integer priceId, @Param("num")Integer num, @Param("uId")Integer uId, @Param("stockId")Integer stockId, HttpServletResponse response){
+        ShoppingCar shoppingCar = new ShoppingCar();
+        Price price = new Price();
+        price.setPrice_id(priceId);
+        User user = new User();
+        user.setuId(uId);
+        Stock stock = new Stock();
+        stock.setStockId(stockId);
+        shoppingCar.setPrice(price);
+        shoppingCar.setNum(num);
+        shoppingCar.setUser(user);
+        shoppingCar.setStock(stock);
         FastJson_All.toJson(shoppingCarService.updateShoppingCar(shoppingCar),response);
 
     }

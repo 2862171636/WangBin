@@ -10,4 +10,5 @@ import java.util.List;
 public interface OrderService {
     public Order selectOrderById(int oId);
     public List<Order> findOrdersForUser(int uId);
+    public boolean addNewOrder(Order order);
 }

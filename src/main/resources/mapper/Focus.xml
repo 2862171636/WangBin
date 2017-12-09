@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lanou.dao.FocusMapper">
+
+	<resultMap id="focus" type="Focus">
+		<id column="focusId" property="focousId" javaType="int"/>
+		<association property="product"
+					 column="pId"
+					 select="com.lanou.dao.DetailsMapper.selectProduct"/>
+	</resultMap>
+
+	<select id="findFocusList" resultMap="focus" parameterType="int">
+		select * from focous where uId = #{uId}
+	</select>
+
+	<insert id="addToFocus">
+		INSERT INTO focous(pId,uId) VALUES (#{product.pId},#{uId})
+	</insert>
+
+	<delete id="deleteFocus" parameterType="int">
+		DELETE FROM focous WHERE 1=1 AND focus =#{focusId}
+	</delete>
+
+	<delete id="disFocus" >
+		DELETE FROM focous WHERE 1=1 AND uId = #{uId} AND pId=#{pId}
+	</delete>
+
+
+</mapper>
+

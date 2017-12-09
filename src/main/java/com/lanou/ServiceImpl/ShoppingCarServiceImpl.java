@@ -2,6 +2,7 @@ package com.lanou.ServiceImpl;
 
 import com.lanou.Service.ShoppingCarService;
 import com.lanou.dao.ShoppingCarMapper;
+import com.lanou.entity.Order;
 import com.lanou.entity.Price;
 import com.lanou.entity.ShoppingCar;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,8 +41,8 @@ public class ShoppingCarServiceImpl implements ShoppingCarService{
         return shoppingCarMapper.updateShoppingCar(shoppingCar);
     }
 
-    public boolean orderShoppingCar(int shoppingCarId, int orderId) {
-        return shoppingCarMapper.orderShoppingCar(shoppingCarId,orderId);
+    public boolean orderShoppingCars(Order order){
+        return shoppingCarMapper.orderShoppingCars(order);
     }
 
     public ShoppingCar findShoppingCarById(int shoppingCarId) {

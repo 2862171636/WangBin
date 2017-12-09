@@ -1,6 +1,7 @@
 package com.lanou.Service;
 
 
+import com.lanou.entity.Order;
 import com.lanou.entity.ShoppingCar;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public interface ShoppingCarService {
     public List<ShoppingCar> selectShoppingCarsForUser(int uid);
     public boolean deleteShoppingCarById(int shoppingCarId);
     public boolean updateShoppingCar(ShoppingCar shoppingCar);
-    public boolean orderShoppingCar(int shoppingCarId,int orderId);
+    public boolean orderShoppingCars(Order order);
     public ShoppingCar findShoppingCarById(int shoppingCarId);
 
 }

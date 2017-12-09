@@ -11,12 +11,12 @@ public class Price {
     private Unit unit;
     private Product product;
     private DetailsProduct detailsProduct;
+    private List<Stock> stocks;
     private Integer price_id;
     private Integer p_id;
     private Integer spec_id ;
     private Integer unit_id;
     private Double price_name;
-    private List<Stock> stocks;
 
     public List<Stock> getStocks() {
         return stocks;

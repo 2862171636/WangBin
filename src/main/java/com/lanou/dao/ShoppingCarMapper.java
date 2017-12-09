@@ -1,6 +1,8 @@
 package com.lanou.dao;
 
+import com.lanou.entity.Order;
 import com.lanou.entity.ShoppingCar;
+import org.aspectj.weaver.ast.Or;
 
 import java.util.List;
 
@@ -14,7 +16,8 @@ public interface ShoppingCarMapper {
     public List<ShoppingCar> selectShoppingCarsForOrder(int orderId);
     public boolean deleteShoppingCarById(int shoppingCarId);
     public boolean updateShoppingCar(ShoppingCar shoppingCar);
-    public boolean orderShoppingCar(int shoppingCarId,int orderId);
     public ShoppingCar selectShoppingCarById(int shoppingCarId);
+
+    public boolean orderShoppingCars(Order order);
 
 }

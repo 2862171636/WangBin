@@ -24,4 +24,8 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> findOrdersForUser(int uId) {
         return orderMapper.selectOrderForUser(uId);
     }
+
+    public boolean addNewOrder(Order order){
+        return orderMapper.addNewOrder(order);
+    }
 }

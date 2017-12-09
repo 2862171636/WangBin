@@ -11,6 +11,35 @@ public class Order {
     private List<ShoppingCar> shoppingCars;
     private int state;
     private Date orderTime;
+    private Adress address;
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Adress getAddress() {
+        return address;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", shoppingCars=" + shoppingCars +
+                ", state=" + state +
+                ", orderTime=" + orderTime +
+                ", address=" + address +
+                '}';
+    }
+
+    public void setAddress(Adress address) {
+        this.address = address;
+    }
 
     public int getOrderId() {
         return orderId;
@@ -47,13 +76,4 @@ public class Order {
     public Order() {
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderId=" + orderId +
-                ", shoppingCar=" + shoppingCars +
-                ", state=" + state +
-                ", orderTime=" + orderTime +
-                '}';
-    }
 }

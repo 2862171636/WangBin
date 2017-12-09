@@ -40,11 +40,16 @@
 	</delete>
 	<!--编辑购物车信息 可以改变所选商品属性-->
 	<update id="updateShoppingCar" useGeneratedKeys="true" keyProperty="shoppingCarId">
-		UPDATE (price_Id,num,stockId) VALUES (#{price.price_id},#{num},#{user.uId},#{stock.stockId}) WHERE shoppingCarId = #{shoppingCarId}
+		UPDATE shoppingCar(price_Id,num,stockId) VALUES (#{price.price_id},#{num},#{user.uId},#{stock.stockId}) WHERE shoppingCarId = #{shoppingCarId}
 	</update>
 	<!--当提交订单时 根据生成的订单orderId去改变购物车状态-->
-	<update id="orderShoppingCar" parameterType="int">
-		UPDATE (order_id) VALUES (#{orderId}) WHERE shoppingCarId = #{shoppingCarId} and order_Id = 0;
+	<update id="orderShoppingCars">
+		UPDATE shoppingCar SET order_id =  #{orderId}
+				WHERE shoppingCar_id IN
+					<foreach collection="shoppingCars"  item="shoppingCar" open="(" close=")" separator=",">
+						#{shoppingCar.shoppingCarId}
+					</foreach>
+				and order_id = 0;
 	</update>
 
 	<!--当访问订单时 通过orderId加载出对应的订单信息 -->

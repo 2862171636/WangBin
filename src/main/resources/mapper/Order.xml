@@ -5,13 +5,9 @@
 
 <mapper namespace="com.lanou.dao.OrderMapper">
 
-    <resultMap type="Order" id="OrderResult" >
-        <id column="order_id" property="tId" javaType="int"/>
-        <result column="order_name" property="teacherName" jdbcType="VARCHAR"/>
-    </resultMap>
-
-    <insert id="addToOrder" parameterType="com.lanou.entity.ShoppingCar" >
-        INSERT INTO shoppingCar VALUES #{shoppingCar}
+    <insert id="addNewOrder" useGeneratedKeys="true" keyProperty="orderId" >
+        INSERT INTO orders(u_id,address_id,orderTime,state)
+              VALUES (#{user.uId},#{address.dId},#{orderTime},0)
     </insert>
 
     <select id="selectOrderById" parameterType="int" resultMap="OrderResultMap.OrderResult">
