@@ -13,36 +13,18 @@
 
 	</resultMap>
 
-	<select id="selectByPrimaryKey" resultMap="selectByPrimaryKeyResult">
-		SELECT * FROM category WHERE  cId = #{cId}
+	<!--<select id="selectByPrimaryKey" resultMap="selectByPrimaryKeyResult">-->
+		<!--SELECT * FROM category WHERE  cId = #{cId}-->
+	<!--</select>-->
+
+
+	<select id="selectCategoryChildrenByParentId" parameterType="Integer" resultMap="selectByPrimaryKeyResult" >
+		SELECT cId,cName FROM category WHERE parentId = #{cId}
 	</select>
 
-	<resultMap type="Category" id="selectCategoryChildrenByParentIdResult">
 
-		<id column="cId" property="cId" javaType="Integer"></id>
-		<result column="cName" property="cName" jdbcType="VARCHAR"></result>
-		<result column="parentId" property="parentId" javaType="integer"></result>
-		<result column="state" property="state" javaType="integer"></result>
 
-		<collection property="categoryList" ofType="com.lanou.entity.Category">
-			<id column="cId" property="cId" javaType="Integer"></id>
-			<result column="cName" property="cName" jdbcType="VARCHAR"></result>
-			<result column="parentId" property="parentId" javaType="integer"></result>
-			<result column="state" property="state" javaType="integer"></result>
-		</collection>
-	</resultMap>
 
-	<select id="selectCategoryChildrenByParentId" resultMap="selectCategoryChildrenByParentIdResult" >
-		SELECT * FROM category WHERE parentId = #{cId}
-	</select>
-
-	<resultMap type="integer" id="selectCidParentIdForZeroResult">
-		<id column="cId"  javaType="Integer"></id>
-	</resultMap>
-
-	<select id="selectCidParentIdForZero" resultMap="selectCidParentIdForZeroResult">
-		SELECT cId FROM category WHERE parentId = 0
-	</select>
 
 	
 	

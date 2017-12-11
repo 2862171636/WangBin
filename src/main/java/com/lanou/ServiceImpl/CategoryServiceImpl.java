@@ -13,36 +13,43 @@ import java.util.List;
  * Created by lanou on 2017/12/4.
  */
 @Service("CategoryService")
-public class CategoryServiceImpl implements CategoryService{
+public class CategoryServiceImpl implements CategoryService {
 
     @Autowired
     private CategoryMapper categoryMapper;
 
-    @Transactional
-    public Category selectByPrimaryKey(Integer cId) {
-        Category category = categoryMapper.selectByPrimaryKey(cId);
-        if(category == null){
-            return null;
-        }
-        category.setCategoryList(findChildCategory(category,cId));//对应起来
-        return category;
-    }
+
+//    public Category selectByPrimaryKey(Integer cId) {
+//        Category category = categoryMapper.selectByPrimaryKey(cId);
+//        if(category == null){
+//            return null;
+//        }
+//        category.setCategoryList(findChildCategory(category,cId));//对应起来
+//        return category;
+//    }
 
     //递归
-    private List<Category> findChildCategory(Category categoryRes,Integer categoryId){
-        List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(categoryId);
-        for(Category categoryItem:categoryList){
-            categoryItem.setCategoryList(findChildCategory(categoryRes,categoryItem.getcId()));
-        }
+    @Transactional
+    public List<Category> findChildCategory(Integer cId) {
+        List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(cId);
+//        for(Category categoryItem:categoryList){
+//            categoryItem.setCategoryList(findChildCategory(categoryRes,categoryItem.getcId()));
+//        }
         return categoryList;
     }
 
-    //把parentId是0的取出来
     @Transactional
-    public List<Integer> selectCidParentIdForZero() {
-        List<Integer> cids = categoryMapper.selectCidParentIdForZero();
-        return cids;
+    public List<Category> findChildCategory2(Integer cId) {
+        List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(cId);
+        return categoryList;
     }
+
+//    //把parentId是0的取出来
+//    @Transactional
+//    public List<Integer> selectCidParentIdForZero() {
+//        List<Integer> cids = categoryMapper.selectCidParentIdForZero();
+//        return cids;
+//    }
 }
 
 
