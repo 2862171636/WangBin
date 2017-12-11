@@ -38,18 +38,22 @@ public class ProductController {
         List<Product> products = productService.findsProducts(categoryId);
 
         if (products.size() == 0) {
-
-
             maps.put("error",products);
-
         } else {
-
-
             maps.put("success",products);
-
         }
 
         FastJson_All.toJson(maps,response);
+
+    }
+    @RequestMapping("add.do")
+    public void newProduct(Product product,HttpServletResponse response){
+
+
+
+    }
+    @RequestMapping("update.do")
+    public void updateProduct(Product product,HttpServletResponse response){
 
     }
 

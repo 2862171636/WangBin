@@ -38,6 +38,13 @@
 			VALUES (#{pSpec},#{pNumber},#{pName},#{pPoint},#{pInfo},#{pTime},#{pDiscount},#{pStock},#{category_id},#{pDes},#{pMoney})
 	</insert>
 
+	<update id="updateProductDetail">
+		UPDATE product
+			SET (pSpec,pNumber,pName,pPoint,pInfo,pTime,pDiscount,pStock,category_id,pDes,pMoney)
+  			VALUES (#{pSpec},#{pNumber},#{pName},#{pPoint},#{pInfo},#{pTime},#{pDiscount},#{pStock},#{category_id},#{pDes},#{pMoney})
+  			WHERE 1=1 AND pId=#{pId}
+	</update>
+
 
 
 	

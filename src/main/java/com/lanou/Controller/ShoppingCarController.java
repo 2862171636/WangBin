@@ -78,6 +78,22 @@ public class ShoppingCarController {
 
     }
 
+    //更改购物车商品的数量
+    @RequestMapping("changeNum.do")
+    public void changeNum(int num,int shoppingCarId,HttpServletResponse response){
+        ShoppingCar shoppingCar = new ShoppingCar();
+        shoppingCar.setNum(num);
+        shoppingCar.setShoppingCarId(shoppingCarId);
+        if (shoppingCarService.updateShopNum(shoppingCar)){
+            FastJson_All.toJson(true,response);
+        }else{
+            FastJson_All.toJson(false,response);
+        }
+
+
+    }
+
+
 
 
 }

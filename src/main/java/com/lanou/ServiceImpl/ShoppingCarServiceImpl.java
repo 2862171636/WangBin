@@ -48,4 +48,7 @@ public class ShoppingCarServiceImpl implements ShoppingCarService{
     public ShoppingCar findShoppingCarById(int shoppingCarId) {
         return shoppingCarMapper.selectShoppingCarById(shoppingCarId);
     }
+    public boolean updateShopNum(ShoppingCar shoppingCar){
+        return shoppingCarMapper.updateShopNum(shoppingCar);
+    }
 }

@@ -19,5 +19,6 @@ public interface ShoppingCarMapper {
     public ShoppingCar selectShoppingCarById(int shoppingCarId);
 
     public boolean orderShoppingCars(Order order);
+    public boolean updateShopNum(ShoppingCar shoppingCar);
 
 }

@@ -18,5 +18,6 @@ public interface ShoppingCarService {
     public boolean updateShoppingCar(ShoppingCar shoppingCar);
     public boolean orderShoppingCars(Order order);
     public ShoppingCar findShoppingCarById(int shoppingCarId);
+    public boolean updateShopNum(ShoppingCar shoppingCar);
 
 }
