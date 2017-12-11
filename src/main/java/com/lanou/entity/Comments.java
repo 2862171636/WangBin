@@ -61,7 +61,9 @@ public class Comments {
     private String answerFor;
     private Date commentTime;
     private User user;
+
     private Product product;
+
 
 
     public Comments(int cid, String contents, String answerFor, Date commentTime, User user, Product product) {

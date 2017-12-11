@@ -21,8 +21,9 @@ public class FirstClasessServiceImpl implements FirstClasessService {
 
 
     public List<FirstClasess> findsParendIdAndPage(int classId, int pages) {
-
-         List<FirstClasess> firstClasesses = firstClasessMapper.findsClasess(classId,pages);
+        System.out.println("classid:"+classId);
+        System.out.println("pages:"+pages);
+        List<FirstClasess> firstClasesses = firstClasessMapper.findsClasess(classId,pages);
 
         return firstClasesses;
     }

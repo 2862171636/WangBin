@@ -24,7 +24,7 @@ public class CommentsController {
     private CommentService commentService;
 
     @RequestMapping("comments.do")
-    public Map<String,Object> commentsId(Integer productId, HttpServletResponse response){
+    public void commentsId(Integer productId, HttpServletResponse response){
 
         System.out.print("---------------_____--------__---_--_-_-------"+productId);
         Map maps = new HashMap();
@@ -38,7 +38,7 @@ public class CommentsController {
             maps.put("error",con);
         }
         FastJson_All.toJson(maps,response);
-        return maps;
+
     }
 
 }

@@ -24,10 +24,13 @@ public class FirstClasessController {
     private FirstClasessService firstClasessService;
 
     @RequestMapping("clasess.do")
-    public Map firstClasesses (int classId, int pages, HttpServletResponse response){
+    public void firstClasesses (int classId, int pages , HttpServletResponse response){
+        System.out.print("+++:::::"+classId+"00000000000000");
+        System.out.print("88888888888888888888888888888888888:::::"+pages+"00000000000000");
 
-//
          Map maps = new HashMap();
+
+
 
          pages = (pages-1) * 2;
 
@@ -45,7 +48,6 @@ public class FirstClasessController {
 
         FastJson_All.toJson(maps,response);
 
-         return maps;
     }
 
 

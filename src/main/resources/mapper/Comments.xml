@@ -12,18 +12,30 @@
         <result column="answerFor" property="answerFor" jdbcType="VARCHAR"/>
 
         <association property="user" javaType="com.lanou.entity.User">
-           <id column="uId" property="uId" javaType="int" />
-            <result column="userName" property="userName" jdbcType="VARCHAR" />
+        <id column="uId" property="uId" javaType="int" />
+        <result column="userName" property="userName" jdbcType="VARCHAR" />
+    </association>
+
+        <association property="product" javaType="com.lanou.entity.Product">
+            <id column="pId" property="pId" javaType="int" />
+            <result column="pImg" property="pImg" jdbcType="VARCHAR" />
         </association>
+
 
     </resultMap>
 
     <!--查看评论-->
     <select id="findComments" resultMap="comments">
 
-        SELECT * FROM Emeixian_User u,comments c,product p WHERE  c.u_id = u.uId AND c.p_id = p.pId =#{productId} AND deletId=0
+        SELECT * FROM Emeixian_User u,comments c,product p WHERE  c.u_id = u.uId AND c.p_id = #{productId} And c.p_id = p.pId AND deletId=0
+
+
 
     </select>
+
+
+
+
 
 </mapper>
 
