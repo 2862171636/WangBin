@@ -64,10 +64,7 @@
 	<update id="updateShopNum">
 		UPDATE shoppingCar SET num = #{num} where shoppingCar_id = #{shoppingCarId}
 	</update>
-	UPDATE product
-	SET (pSpec,pNumber,pName,pPoint,pInfo,pTime,pDiscount,pStock,category_id,pDes,pMoney)
-	VALUES (#{pSpec},#{pNumber},#{pName},#{pPoint},#{pInfo},#{pTime},#{pDiscount},#{pStock},#{category_id},#{pDes},#{pMoney})
-	WHERE 1=1 AND pId=#{pId}
+	
 
 
 </mapper>
