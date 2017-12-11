@@ -8,10 +8,12 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,11 +50,13 @@ public class ProductController {
     }
     @RequestMapping("add.do")
     public void newProduct(Product product,HttpServletResponse response){
+        Date time = new Date();
+        product.setpTime(time);
         FastJson_All.toJson(productService.addNewProduct(product),response);
 
 
     }
-    @RequestMapping("update.do")
+    @RequestMapping(value = "update.do",method = RequestMethod.GET)
     public void updateProduct(Product product,HttpServletResponse response){
         FastJson_All.toJson(productService.updateProductDetail(product),response);
     }

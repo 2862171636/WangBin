@@ -25,16 +25,14 @@
 	</insert>
 	<!--在完成订单时实现将库存减少-->
     <update id="updateByOrder" >
-        UPDATE stock(num) VALUES (num - #{shoppingCar.num}) WHERE stockId = #{stockId}
+        UPDATE stock(num) VALUES (num - #{stockNum}) WHERE stock_id = #{stockId}
     </update>
 	<!--管理员更改库存信息-->
     <update id="updateByAdmin">
         UPDATE stock(stockName,num,price_id) VALUES  #{stockName},#{stockNum},#{priceId} where 1=1 and stockId = #{stockId}
     </update>
 
-	<update id="changeProductStock">
-		UPDATE 
-	</update>
+
 
 
 </mapper>

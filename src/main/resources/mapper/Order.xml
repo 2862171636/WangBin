@@ -14,8 +14,16 @@
         SELECT * FROM orders WHERE oId = #{OrderId}
     </select>
     <select id="selectOrderForUser" parameterType="int" resultMap="OrderResultMap.OrderResult">
-        SELECT * FROM orders WHERE u_id = #{uId}
+        SELECT * FROM orders WHERE u_id = #{uId} and logistics_id != -1
     </select>
+    <!--订单完成后将逻辑值改为1:已支付-->
+    <update id="payOrder">
+        UPDATE orders SET logistics_id = 1 WHERE oId = #{oId}
+    </update>
+    <!--删除单个订单  逻辑删除 仅仅是用户无法看见 将逻辑值改为 -1-->
+    <update id="deleteOrder">
+        UPDATE orders SET logistics_id = -1 WHERE oId = #{oId}
+    </update>
 
 
 </mapper>

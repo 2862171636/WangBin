@@ -28,4 +28,11 @@ public class OrderServiceImpl implements OrderService {
     public boolean addNewOrder(Order order){
         return orderMapper.addNewOrder(order);
     }
+
+    public boolean payOrder(int oId) {
+        return false;
+    }
+    public boolean deleteOrder(int oId) {
+        return false;
+    }
 }

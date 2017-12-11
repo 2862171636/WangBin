@@ -11,4 +11,6 @@ public interface OrderService {
     public Order selectOrderById(int oId);
     public List<Order> findOrdersForUser(int uId);
     public boolean addNewOrder(Order order);
+    public boolean payOrder(int oId);
+    public boolean deleteOrder(int oId);
 }

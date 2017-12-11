@@ -20,4 +20,7 @@ public interface ShoppingCarService {
     public ShoppingCar findShoppingCarById(int shoppingCarId);
     public boolean updateShopNum(ShoppingCar shoppingCar);
 
+    public int confirmShopCar(ShoppingCar shoppingCar);
+    public boolean addNumToShopping(ShoppingCar shoppingCar);
+
 }

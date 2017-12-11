@@ -34,7 +34,7 @@ public class ShoppingCarController {
     @RequestMapping("/add.do")
     public void addToShoppingCar(@Param("priceId") Integer priceId, @Param("num")Integer num, @Param("uId")Integer uId, @Param("stockId")Integer stockId, HttpServletResponse response){
         if (priceId == null || num == null || uId == null || stockId == null){
-            FastJson_All.toJson("error",response);
+            FastJson_All.toJson("空指针",response);
         }else {
                 ShoppingCar shoppingCar = new ShoppingCar();
                 Price price = new Price();
@@ -47,8 +47,16 @@ public class ShoppingCarController {
                 shoppingCar.setNum(num);
                 shoppingCar.setUser(user);
                 shoppingCar.setStock(stock);
-                shoppingCarService.addToShoppingCar(shoppingCar);
-                FastJson_All.toJson("success",response);
+                int id = shoppingCarService.confirmShopCar(shoppingCar);
+                if (id != 0){
+                    shoppingCar.setShoppingCarId(id);
+                    shoppingCarService.addNumToShopping(shoppingCar);
+                    FastJson_All.toJson("已添加至已有购物车",response);
+                }else{
+                    shoppingCarService.addToShoppingCar(shoppingCar);
+                    FastJson_All.toJson("已添加到新的购物车",response);
+                }
+
         }
 
     }
@@ -61,7 +69,7 @@ public class ShoppingCarController {
 
 
     //    根据购物车id更新购物车
-    @RequestMapping("/update.do")
+    @RequestMapping(value="/update.do",method = RequestMethod.GET)
     public void updateShoppingCar(@Param("priceId") Integer priceId, @Param("num")Integer num, @Param("uId")Integer uId, @Param("stockId")Integer stockId, HttpServletResponse response){
         ShoppingCar shoppingCar = new ShoppingCar();
         Price price = new Price();
@@ -89,8 +97,6 @@ public class ShoppingCarController {
         }else{
             FastJson_All.toJson(false,response);
         }
-
-
     }
 
 

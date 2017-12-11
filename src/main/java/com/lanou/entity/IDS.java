@@ -15,4 +15,11 @@ public class IDS {
     public void setIds(List<Integer> Ids) {
         this.Ids = Ids;
     }
+
+    @Override
+    public String toString() {
+        return "IDS{" +
+                "Ids=" + Ids +
+                '}';
+    }
 }

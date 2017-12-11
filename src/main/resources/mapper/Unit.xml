@@ -18,5 +18,9 @@
 		INSERT INTO unit(unit_name) VALUES #{unit_Name}
 	</insert>
 
+	<select id="findAll">
+		SELECT * FROM spec
+	</select>
+
 </mapper>
 

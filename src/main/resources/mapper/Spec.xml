@@ -16,6 +16,9 @@
 	<insert id="addNewSpec" useGeneratedKeys="true" keyProperty="specId">
 		INSERT INTO spec(spec_name) VALUES #{spec_Name}
 	</insert>
+	<select id="selectAll">
+		SELECT * from spec
+	</select>
 
 
 </mapper>
