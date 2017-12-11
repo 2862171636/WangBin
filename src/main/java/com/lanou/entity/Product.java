@@ -64,7 +64,8 @@ public String toString() {
             ", pTime=" + pTime +
             ", pDiscount=" + pDiscount +
             '}';
-}private String pSpec;
+}
+    private String pSpec;
 //    标签
     private int category_id;
 //    价格

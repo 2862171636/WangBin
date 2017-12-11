@@ -29,6 +29,8 @@
 	<select id="selectPriceByThreeLimits" resultMap="prices">
 		SELECT price_id,price_name FROM price WHERE p_id = #{p_id} AND spec_id=#{spec_id} AND unit_id=#{unit_id}
 	</select>
-
+	<insert id="addPriceWithOutPriceName" useGeneratedKeys="true" keyProperty="price_id">
+		INSERT INTO price(p_id,spec_id,unit_id) VALUES (#{p_id},#{spec.spec_id},#{unit.unit_id})
+	</insert>
 </mapper>
 

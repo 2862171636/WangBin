@@ -69,6 +69,7 @@ public class OrderController {
     }
 //    付款时将订单状态改为已支付并更改库存
     @Transactional
+    @RequestMapping("pay.do")
     public void payOrder(int orderId,HttpServletResponse response){
         Order order = orderService.selectOrderById(orderId);
         if (orderService.payOrder(orderId)){

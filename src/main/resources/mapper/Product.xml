@@ -26,7 +26,7 @@
 		<result column="pSpec" property="pSpec" jdbcType="VARCHAR"/>
 		<result column="category_id" property="category_id" javaType="int"/>
 		<result column="pMoney" property="pMoney" javaType="int"/>
-		<result column=" pImg" property="pImg" jdbcType="VARCHAR"/>
+		<result column="pImg" property="pImg" jdbcType="VARCHAR"/>
 	</resultMap>
 
 	<select id="findsProdct" resultMap="productResult">
