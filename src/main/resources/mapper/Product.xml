@@ -30,13 +30,13 @@
 	</resultMap>
 
 	<select id="findsProdct" resultMap="productResult">
-
-		SELECT * FROM product WHERE category_id = #{parendId}
-
-
-
-
+		SELECT * FROM product WHERE category_id = #{parendId}∂
 	</select>
+
+	<insert id="addNewProduct" useGeneratedKeys="true" keyProperty="pId">
+		INSERT INTO prduct(pSpec,pNumber,pName,pPoint,pInfo,pTime,pDiscount,pStock,category_id,pDes,pMoney)
+			VALUES (#{pSpec},#{pNumber},#{pName},#{pPoint},#{pInfo},#{pTime},#{pDiscount},#{pStock},#{category_id},#{pDes},#{pMoney})
+	</insert>
 
 
 

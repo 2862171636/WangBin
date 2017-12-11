@@ -10,7 +10,6 @@ import java.util.Date;
 public interface UserMapper {
 
     public User confirmUser(String userName);
-
     public void addUser(User user);
     public void updateUser(User user);
     public void updatePassword(User user);

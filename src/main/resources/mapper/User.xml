@@ -22,6 +22,10 @@
 		select * from Emeixian_User where userName = #{userName}
 	</select>
 
+	<select id="confirmPassword" >
+		select password from Emeixian_User where userName = #{userName}
+	</select>
+
 	<insert id="addUser" parameterType="User">
 		insert into Emeixian_User(userName,password,phone) values(#{userName},#{password},#{poneNum})
 	</insert>
