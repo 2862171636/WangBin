@@ -10,5 +10,8 @@ import java.util.List;
 public interface ProductMapper {
 
     public List<Product> findsProdct(int parendId);
+    public boolean updateProductDetail(Product product);
+    public boolean addNewProduct(Product product);
+
 
 }

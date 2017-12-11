@@ -48,13 +48,13 @@ public class ProductController {
     }
     @RequestMapping("add.do")
     public void newProduct(Product product,HttpServletResponse response){
-
+        FastJson_All.toJson(productService.addNewProduct(product),response);
 
 
     }
     @RequestMapping("update.do")
     public void updateProduct(Product product,HttpServletResponse response){
-
+        FastJson_All.toJson(productService.updateProductDetail(product),response);
     }
 
 

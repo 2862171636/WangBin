@@ -36,7 +36,7 @@
 	</select>
 	<!--从购物车删除 直接物理删除 但要求购物车对象未绑定订单(提交) 即order_id = 0 -->
 	<delete id="deleteShoppingCarById" parameterType="int">
-		DELETE * FROM shoppingCar WHERE 1=1 AND shoppingCarId= #{shoppingCarId},order_id = 0
+		DELETE FROM shoppingCar WHERE 1=1 AND shoppingCarId= #{shoppingCarId},order_id = 0
 	</delete>
 	<!--编辑购物车信息 可以改变所选商品属性-->
 	<update id="updateShoppingCar" useGeneratedKeys="true" keyProperty="shoppingCarId">
@@ -60,11 +60,9 @@
 	<select id="selectShoppingCarById" parameterType="int" resultMap="ShoppingResult">
 		SELECT * FROM shoppingCar WHERE shoppingCar_id = #{shoppingCarId}
 	</select>
-
+	<!--修改购物车商品的数量-->
 	<update id="updateShopNum">
 		UPDATE shoppingCar SET num = #{num} where shoppingCar_id = #{shoppingCarId}
 	</update>
-	
-
 
 </mapper>
