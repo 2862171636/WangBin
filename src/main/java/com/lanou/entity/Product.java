@@ -1,5 +1,7 @@
 package com.lanou.entity;
 
+import java.util.Date;
+
 /**
  * Created by lanou on 2017/12/4.
  */
@@ -47,13 +49,82 @@ public class Product {
 
     private int pId;
 //    规格
-    private String pSpec;
+@Override
+public String toString() {
+    return "Product{" +
+            "pId=" + pId +
+            ", pSpec='" + pSpec + '\'' +
+            ", category_id=" + category_id +
+            ", pMoney=" + pMoney +
+            ", pImg='" + pImg + '\'' +
+            ", pNumber=" + pNumber +
+            ", pName='" + pName + '\'' +
+            ", pPoint=" + pPoint +
+            ", pInfo=" + pInfo +
+            ", pTime=" + pTime +
+            ", pDiscount=" + pDiscount +
+            '}';
+}private String pSpec;
 //    标签
     private int category_id;
 //    价格
     private int pMoney;
 //    图片
     private String pImg;
+    private int pNumber;
+    private String pName;
+    private int pPoint;
+    private String pInfo;
+    private Date pTime;
+    private double pDiscount;
+
+    public int getpNumber() {
+        return pNumber;
+    }
+
+    public void setpNumber(int pNumber) {
+        this.pNumber = pNumber;
+    }
+
+    public String getpName() {
+        return pName;
+    }
+
+    public void setpName(String pName) {
+        this.pName = pName;
+    }
+
+    public int getpPoint() {
+        return pPoint;
+    }
+
+    public void setpPoint(int pPoint) {
+        this.pPoint = pPoint;
+    }
+
+    public String getpInfo() {
+        return pInfo;
+    }
+
+    public void setpInfo(String pInfo) {
+        this.pInfo = pInfo;
+    }
+
+    public Date getpTime() {
+        return pTime;
+    }
+
+    public void setpTime(Date pTime) {
+        this.pTime = pTime;
+    }
+
+    public double getpDiscount() {
+        return pDiscount;
+    }
+
+    public void setpDiscount(double pDiscount) {
+        this.pDiscount = pDiscount;
+    }
 
     public Product(int pId, String pSpec, int category_id, int pMoney, String pImg) {
         this.pId = pId;
@@ -67,16 +138,6 @@ public class Product {
         super();
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "pId=" + pId +
-                ", pSpec='" + pSpec + '\'' +
-                ", category_id=" + category_id +
-                ", pMoney=" + pMoney +
-                ", pImg='" + pImg + '\'' +
-                '}';
-    }
 }
 
 

@@ -26,15 +26,39 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @RequestMapping("/find.do")
-    public void findCategory(HttpServletResponse response) throws IOException {
+    @RequestMapping("/find2.do")
+    public void findCategory2(int cId,HttpServletResponse response) throws IOException {
 
-        List<Integer> cids = categoryService.selectCidParentIdForZero();
-        List<Category> categoryList = new ArrayList<Category>();
-        for (int i = 0;i<cids.size();i++){
-        Category category = categoryService.selectByPrimaryKey(cids.get(i));
-        categoryList.add(category);
+        //List<Integer> cids = categoryService.selectCidParentIdForZero();
+
+        List<Category> SeccategoryList = categoryService.findChildCategory(cId);
+        for(int i = 0;i<SeccategoryList.size();i++){
+            List<Category> ThirdCat =  categoryService.findChildCategory(SeccategoryList.get(i).getcId());
+            SeccategoryList.get(i).setCategoryList(ThirdCat);
         }
+//        for (int i = 0;i<cids.size();i++){
+//        Category category = categoryService.selectByPrimaryKey(cids.get(i));
+//        categoryList.add(category);
+//        }
+
+        FastJson_All.toJson(SeccategoryList,response);
+//        String jsonStr = JSON
+//        response.setContentType("text/html");
+//        response.setCharacterEncoding("utf-8");
+//        PrintWriter writer = response.getWriter();
+//        writer.println(jsonStr);
+//        writer.flush();
+    }
+
+    @RequestMapping("/find.do")
+    public void findCategory(HttpServletResponse response) {
+
+//        List<Integer> cids = categoryService.selectCidParentIdForZero();
+        List<Category> categoryList = categoryService.findChildCategory(0);
+//        for (int i = 0;i<categoryList.size();i++){
+//        Category category = categoryService.selectByPrimaryKey(categoryList.get(i));
+//        categoryList.add(category);
+//        }
         FastJson_All.toJson(categoryList,response);
 //        String jsonStr = JSON
 //        response.setContentType("text/html");

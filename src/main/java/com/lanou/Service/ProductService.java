@@ -10,5 +10,7 @@ import java.util.List;
 public interface ProductService {
 
     public List<Product> findsProducts(int parendId);
+    public boolean updateProductDetail(Product product);
+    public boolean addNewProduct(Product product);
 
 }

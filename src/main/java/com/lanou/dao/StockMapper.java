@@ -10,4 +10,5 @@ import java.util.List;
 public interface StockMapper {
     public List<Stock> findStockByPriceId(int priceId);
     public Stock findStockById(int stockId);
+    public boolean updateByOrder(Stock stock);
 }

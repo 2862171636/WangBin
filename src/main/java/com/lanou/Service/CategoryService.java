@@ -9,9 +9,10 @@ import java.util.List;
  */
 public interface CategoryService {
 
-    public Category selectByPrimaryKey(Integer cId);
+//    public Category selectByPrimaryKey(Integer cId);
 
-    public List<Integer> selectCidParentIdForZero();
+//    public List<Integer> selectCidParentIdForZero();
 
+    public List<Category> findChildCategory(Integer cId);
 
 }

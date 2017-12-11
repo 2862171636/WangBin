@@ -30,15 +30,47 @@
 	</resultMap>
 
 	<select id="findsProdct" resultMap="productResult">
-
-		SELECT * FROM product WHERE category_id = #{parendId}
-
-
-
-
+		SELECT * FROM product WHERE category_id = #{parendId}∂
 	</select>
 
+	<insert id="addNewProduct" useGeneratedKeys="true" keyProperty="pId">
+		INSERT INTO product(pSpec,pNumber,pName,pPoint,pInfo,pTime,pDiscount,category_id,pMoney)
+			VALUES (
+					#{pSpec},#{pNumber},#{pName},#{pPoint},#{pInfo},#{pTime},#{pDiscount},#{category_id},#{pMoney})
+	</insert>
 
+	<update id="updateProductDetail">
+		UPDATE product
+			SET
+			<if test="pSpec != null">
+				pSpec=#{pSpec},
+			</if>
+			<if test="pNumber != null and pNumber != 0">
+				pNumber=#{pNumber},
+			</if>
+			<if test="pName != null">
+				pName=#{pName},
+			</if>
+			<if test="pPoint != null and pPoint != 0">
+				pPoint=#{pPoint},
+			</if>
+			<if test="pInfo != null">
+				pInfo=#{pInfo},
+			</if>
+			<if test="pTime != null">
+				pTime=#{pTime},
+			</if>
+			<if test="pDiscount != null and pDiscount != 0">
+				pDiscount=#{pDiscount},
+			</if>
+			<if test="category_id != null and category_id != 0">
+				category_id=#{category_id},
+			</if>
+			<if test="pMoney != null and pMoney != 0">
+				pMoney=#{pMoney},
+			</if>
+			pId=#{pId}
+			WHERE 1=1 AND pId=#{pId}
+	</update>
 
-	
 </mapper>

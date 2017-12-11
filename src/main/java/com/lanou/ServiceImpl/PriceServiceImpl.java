@@ -18,4 +18,5 @@ public class PriceServiceImpl implements PriceService{
     public Price findPriceLimited(Price price) {
         return priceMapper.selectPriceByThreeLimits(price);
     }
+
 }

@@ -13,6 +13,12 @@
 	<select id="selectSpecById" parameterType="int" resultMap="specs">
 		select * from spec where spec_id = #{specId}
 	</select>
+	<insert id="addNewSpec" useGeneratedKeys="true" keyProperty="specId">
+		INSERT INTO spec(spec_name) VALUES #{spec_Name}
+	</insert>
+	<select id="selectAll">
+		SELECT * from spec
+	</select>
 
 
 </mapper>

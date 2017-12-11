@@ -11,6 +11,8 @@ public interface OrderMapper {
     public Order selectOrderById(int oId);
     public List<Order> selectOrderForUser(int uId);
     public boolean addNewOrder(Order order);
+    public boolean payOrder(int oId);
+    public boolean deleteOrder(int oId);
 
 //    public List<Order> findAllOrders();
 }

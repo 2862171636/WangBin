@@ -25,4 +25,12 @@ public class ProductServiceImpl implements ProductService{
         return Products;
 
     }
+
+    public boolean updateProductDetail(Product product) {
+        return productMapper.updateProductDetail(product);
+    }
+
+    public boolean addNewProduct(Product product){
+        return productMapper.addNewProduct(product);
+    }
 }

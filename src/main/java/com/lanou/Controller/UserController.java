@@ -99,13 +99,19 @@ public class UserController {
     // 密码的修改
     //用户信息的修改
     @RequestMapping(value = "/updatePassword.do")
-    public void updatePassword(String password,String userName,HttpServletResponse response) throws IOException {
+    public void updatePassword(String password,String userName,String newPass,HttpServletResponse response) throws IOException {
         System.out.println("aa" );
         User user = new User();
-        user.setPassword(password);
+        user.setPassword(newPass);
         user.setUserName(userName);
-        userService.updatePassword(user);
-        FastJson_All.toJson("success", response);
+        if (password.equals(userService.confirmUser(userName).getPassword())){
+            userService.updatePassword(user);
+            FastJson_All.toJson("success", response);
+        }else {
+            FastJson_All.toJson("密码错误", response);
+        }
+
+
     }
 
 }

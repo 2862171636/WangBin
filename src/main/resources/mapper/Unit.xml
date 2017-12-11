@@ -13,7 +13,14 @@
 	<select id="selectUnitById" parameterType="int" resultMap="units">
 		select * from unit where unit_id = #{priceId}
 	</select>
+	<!--新建容量单位-->
+	<insert id="addNewUnit" useGeneratedKeys="true" keyProperty="unitId">
+		INSERT INTO unit(unit_name) VALUES #{unit_Name}
+	</insert>
 
+	<select id="findAll">
+		SELECT * FROM spec
+	</select>
 
 </mapper>
 

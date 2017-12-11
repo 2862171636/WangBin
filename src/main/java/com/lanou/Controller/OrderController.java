@@ -2,14 +2,14 @@ package com.lanou.Controller;
 
 import com.lanou.Service.OrderService;
 import com.lanou.Service.ShoppingCarService;
+import com.lanou.Service.StockService;
 import com.lanou.Util.FastJson_All;
 import com.lanou.entity.*;
-import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
@@ -26,6 +26,8 @@ public class OrderController {
     private OrderService orderService;
     @Autowired
     private ShoppingCarService shoppingCarService;
+    @Autowired
+    private StockService stockService;
 
 
 
@@ -40,7 +42,7 @@ public class OrderController {
     }
 //      将购物车对象添加到订单
     @RequestMapping(value = "/add.do",method = RequestMethod.GET)
-    public void findOrdersForUser(ShoppingCarIds shoppingCarIds, int addressId, int uId, HttpServletResponse response){
+    public void findOrdersForUser(IDS shoppingCarIds, int addressId, int uId, HttpServletResponse response){
 
         Order order = new Order();
         Adress adress = new Adress();
@@ -54,7 +56,7 @@ public class OrderController {
         order.setOrderTime(date);
 
         List<ShoppingCar> shoppingCars = new ArrayList<ShoppingCar>();
-        for (int id:shoppingCarIds.getShoppingCarIds()) {
+        for (int id:shoppingCarIds.getIds()) {
             ShoppingCar shoppingCar = new ShoppingCar();
             shoppingCar.setShoppingCarId(id);
             shoppingCars.add(shoppingCar);
@@ -64,6 +66,20 @@ public class OrderController {
         System.out.println(order.getOrderId());
         shoppingCarService.orderShoppingCars(order);
         FastJson_All.toJson("success",response);
+    }
+//    付款时将订单状态改为已支付并更改库存
+    @Transactional
+    public void payOrder(int orderId,HttpServletResponse response){
+        Order order = orderService.selectOrderById(orderId);
+        if (orderService.payOrder(orderId)){
+            for (ShoppingCar shoppingCar:order.getShoppingCars()) {
+                Stock stock = shoppingCar.getStock();
+                stock.setStockNum(shoppingCar.getNum());
+                stockService.updateByOrder(stock);
+            }
+        }
+        FastJson_All.toJson("订单完成",response);
+
     }
 
 
