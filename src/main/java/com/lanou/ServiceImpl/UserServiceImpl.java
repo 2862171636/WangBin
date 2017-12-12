@@ -44,5 +44,13 @@ public class UserServiceImpl implements UserService{
         return userMapper.confirmUserType(user);
     }
 
+    public boolean updateHeadImgUrl(User user) {
+        return userMapper.updateHeadImgUrl(user);
+    }
+
+    public User findUserByuId(Integer uId) {
+        return userMapper.findUserByuId(uId);
+    }
+
 
 }

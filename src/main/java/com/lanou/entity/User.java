@@ -13,6 +13,7 @@ public class User {
     private String userName;
     private String password;
     private String poneNum;
+    private String headImgUrl;
 
     @DateTimeFormat(pattern="yyyy/MM/dd HH")
     private Date birth;
@@ -111,9 +112,16 @@ public class User {
         this.poneNum = poneNum;
     }
 
-    public User() {
+    public String getHeadImgUrl() {
+        return headImgUrl;
     }
 
+    public void setHeadImgUrl(String headImgUrl) {
+        this.headImgUrl = headImgUrl;
+    }
+
+    public User() {
+    }
 
 
     @Override
@@ -122,13 +130,15 @@ public class User {
                 "uId=" + uId +
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
-                ", poneNum=" + poneNum +
+                ", poneNum='" + poneNum + '\'' +
+                ", headImgUrl='" + headImgUrl + '\'' +
                 ", birth=" + birth +
                 ", gener=" + gener +
                 ", email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 ", detailed='" + detailed + '\'' +
                 ", road=" + road +
+                ", userType=" + userType +
                 '}';
     }
 }

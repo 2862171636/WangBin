@@ -4,16 +4,17 @@ import com.lanou.Service.UserService;
 import com.lanou.Util.FastJson_All;
 import com.lanou.entity.User;
 import com.sun.org.apache.regexp.internal.RE;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
@@ -32,10 +33,11 @@ public class UserController {
 
     //登录验证用的
     @RequestMapping(value = "/login.do",method = RequestMethod.GET)
-    public void confirmUser(User user,HttpServletResponse response){
+    public void confirmUser(User user,HttpServletResponse response,HttpServletRequest request){
         System.out.println(user);
         String result = null;
         User loginUser = userService.confirmUser(user.getUserName());
+        request.getSession().setAttribute("user1",loginUser);
        if(loginUser != null && user.getPassword().equals(loginUser.getPassword())){
            if (user.getUserType() == 1){
                result = "admin";
@@ -120,6 +122,33 @@ public class UserController {
         }else {
             FastJson_All.toJson("密码错误", response);
         }
+    }
+
+    //上传头像
+    @RequestMapping("/upload.do")
+    public void updateHeadImg(@RequestParam("myFile") MultipartFile files, HttpServletRequest request, HttpServletResponse response){
+        System.out.println(files);
+        User user = (User) request.getSession().getAttribute("user1");
+        System.out.println(user);
+        boolean results = false;
+        String headImg = "Users/lanou/Desktop/mvcImg/Lbt/"+user.getuId()+".jpg";
+        File file = new File(headImg);
+        try {
+            FileUtils.copyInputStreamToFile(files.getInputStream(),file);
+            String headImgUrl = "http://10.80.16.104:8080/resource/views/img/"+user.getuId()+".jpg";
+        user.setHeadImgUrl(headImgUrl);
+        boolean result = userService.updateHeadImgUrl(user);
+        if (result){
+            results = true;
+            User user1 = userService.findUserByuId(user.getuId());
+            request.getSession().setAttribute("user1",user1);
+        }
+        FastJson_All.toJson(results,response);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
 }

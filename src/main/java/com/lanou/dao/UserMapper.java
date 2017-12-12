@@ -14,5 +14,7 @@ public interface UserMapper {
     public void updateUser(User user);
     public void updatePassword(User user);
     public int confirmUserType(User user);
+    public boolean updateHeadImgUrl(User user);
+    public User findUserByuId(Integer uId);
 
 }

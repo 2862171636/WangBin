@@ -16,6 +16,7 @@
 		<result column="email" property="email" jdbcType="VARCHAR"/>
 		<result column="birth" property="birth" jdbcType="DATE"/>
 		<result column="road" property="road" javaType="int"/>
+		<result column="headImgUrl" property="headImgUrl" jdbcType="VARCHAR"/>
 		<result column="userType" property="userType" javaType="int"/>
 	</resultMap>
 
@@ -38,6 +39,13 @@
 		update Emeixian_User set password=#{password} where userName=#{userName}
 	</update>
 
+	<update id="updateHeadImgUrl" parameterType="User">
+		UPDATE Emeixian_User SET headImgUrl = #{headImgUrl} where uId = #{uId}
+	</update>
+	
+	<select id="findUserByuId" parameterType="Integer" resultMap="userResult">
+		SELECT * FROM Emeixian_User WHERE uId = #{uId}
+	</select>
 
 </mapper>
 
