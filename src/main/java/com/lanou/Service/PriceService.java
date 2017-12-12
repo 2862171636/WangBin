@@ -7,5 +7,7 @@ import com.lanou.entity.Price;
  */
 public interface PriceService {
     public Price findPriceLimited(Price price);
-    public boolean addTagsToProduct(Price price);
+    public boolean addTagsToPrice(Price price);
+    public boolean addSpecToProduct(Price price);
+    public boolean addUnitToProduct(Price price);
 }

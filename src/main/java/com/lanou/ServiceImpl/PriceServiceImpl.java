@@ -26,9 +26,15 @@ public class PriceServiceImpl implements PriceService{
         return priceMapper.selectPriceByThreeLimits(price);
     }
     @Transactional
-    public boolean addTagsToProduct(Price price){
+    public boolean addTagsToPrice(Price price){
         price.setSpec(specMapper.selectSpecById(price.getSpec().getSpec_id()));
         price.setUnit(unitMapper.selectUnitById(price.getUnit().getUnit_id()));
-        return (specMapper.takeSpecToProduct(price) && unitMapper.takeUnitToProduct(price) && priceMapper.addPriceWithOutPriceName(price));
+        return priceMapper.addPriceWithOutPriceName(price);
+    }
+    public boolean addSpecToProduct(Price price){
+        return specMapper.takeSpecToProduct(price);
+    }
+    public boolean addUnitToProduct(Price price){
+        return unitMapper.takeUnitToProduct(price);
     }
 }
