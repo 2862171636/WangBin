@@ -13,16 +13,16 @@
 
 	</resultMap>
 
-	<!--<select id="selectByPrimaryKey" resultMap="selectByPrimaryKeyResult">-->
-		<!--SELECT * FROM category WHERE  cId = #{cId}-->
-	<!--</select>-->
+
 
 
 	<select id="selectCategoryChildrenByParentId" parameterType="Integer" resultMap="selectByPrimaryKeyResult" >
 		SELECT cId,cName FROM category WHERE parentId = #{cId}
 	</select>
 
-
+	<!--<update id="updaterUrl" parameterType="LBT">-->
+		<!--UPDATE LBT SET rUrl=#{rUrl} where rId = #{rId}-->
+	<!--</update>-->
 
 
 

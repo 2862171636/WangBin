@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lanou.dao.LBTMapper">
+
+	<update id="updaterUrl" parameterType="LBT" >
+		UPDATE LBT (rName,rUrl) VALUES (#{rName},#{rUrl}) where rId = #{rId}
+	</update>
+
+	<resultMap type="com.lanou.entity.LBT" id="LBtResult" >
+		<id column="rId" property="rId" javaType="Integer"/>
+		<result column="rName" property="rName" jdbcType="VARCHAR"/>
+		<result column="rUrl" property="rUrl" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<select id="selectrId" parameterType="Integer" resultMap="LBtResult">
+		select * from LBT where rId =#{rId}
+	</select>
+
+</mapper>

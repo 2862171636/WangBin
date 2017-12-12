@@ -18,14 +18,9 @@ public class CategoryServiceImpl implements CategoryService {
     @Autowired
     private CategoryMapper categoryMapper;
 
-
-//    public Category selectByPrimaryKey(Integer cId) {
-//        Category category = categoryMapper.selectByPrimaryKey(cId);
-//        if(category == null){
-//            return null;
-//        }
-//        category.setCategoryList(findChildCategory(category,cId));//对应起来
-//        return category;
+    //轮播图
+//    public boolean updateLbtUrl(Category category) {
+//        return categoryMapper.updateLbtUrl(category);
 //    }
 
     //递归
@@ -37,6 +32,7 @@ public class CategoryServiceImpl implements CategoryService {
 //        }
         return categoryList;
     }
+
 
     @Transactional
     public List<Category> findChildCategory2(Integer cId) {

@@ -21,6 +21,12 @@
     <mvc:annotation-driven></mvc:annotation-driven>
 
     <mvc:resources location="/resource/" mapping="/resource/**"></mvc:resources>
-	
+
+	<!--图片上传-->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="5242880"></property>
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<property name="resolveLazily" value="true" ></property>
+	</bean>
 
 </beans>
