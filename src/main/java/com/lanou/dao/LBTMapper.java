@@ -11,6 +11,6 @@ public interface LBTMapper {
 
     //public boolean updaterUrl(LBT lbt);
 
-    public List<LBT> selectrId(Integer rId);
+    public List<LBT> selectpId(Integer pId);
 
 }

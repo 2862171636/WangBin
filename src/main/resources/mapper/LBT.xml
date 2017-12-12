@@ -13,10 +13,11 @@
 		<id column="rId" property="rId" javaType="Integer"/>
 		<result column="rName" property="rName" jdbcType="VARCHAR"/>
 		<result column="rUrl" property="rUrl" jdbcType="VARCHAR"/>
+		<result column="pId" property="pId" javaType="Integer"></result>
 	</resultMap>
 
-	<select id="selectrId" parameterType="Integer" resultMap="LBtResult">
-		select * from LBT where rId =#{rId}
+	<select id="selectpId" parameterType="Integer" resultMap="LBtResult">
+		select * from LBT where pId = #{pId}
 	</select>
 
 </mapper>

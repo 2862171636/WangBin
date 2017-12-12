@@ -29,7 +29,7 @@ public class LBTController {
 
     @RequestMapping("/lbt.do")
     public void Lbt(Integer rId,HttpServletResponse response){
-        List<LBT> lbts = (List<LBT>) lbtService.selectrId(rId);
+        List<LBT> lbts = (List<LBT>) lbtService.selectpId(0);
         FastJson_All.toJson(lbts,response);
     }
 

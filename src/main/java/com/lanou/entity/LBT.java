@@ -1,5 +1,7 @@
 package com.lanou.entity;
 
+import java.util.List;
+
 /**
  * Created by lanou on 2017/12/11.
  */
@@ -8,6 +10,24 @@ public class LBT {
     public Integer rId;
     public String rName;
     public String rUrl;
+    public Integer pId;
+    public List<LBT> lbts;
+
+    public List<LBT> getLbts() {
+        return lbts;
+    }
+
+    public void setLbts(List<LBT> lbts) {
+        this.lbts = lbts;
+    }
+
+    public Integer getpId() {
+        return pId;
+    }
+
+    public void setpId(Integer pId) {
+        this.pId = pId;
+    }
 
     public Integer getrId() {
         return rId;

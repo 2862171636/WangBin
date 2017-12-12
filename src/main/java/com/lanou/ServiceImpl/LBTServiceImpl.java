@@ -18,8 +18,8 @@ public class LBTServiceImpl implements LBTService{
     @Autowired
     private LBTMapper lbtMapper;
 
-    public List<LBT> selectrId(Integer rId) {
-        return lbtMapper.selectrId(rId);
+    public List<LBT> selectpId(Integer pId) {
+        return lbtMapper.selectpId(pId);
     }
 
 //    @Transactional
