@@ -21,6 +21,15 @@ public class User {
     private  String name;
     private  String detailed;
     private  int road;
+    private int userType;
+
+    public int getUserType() {
+        return userType;
+    }
+
+    public void setUserType(int userType) {
+        this.userType = userType;
+    }
 
     public int getRoad() {
         return road;

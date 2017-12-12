@@ -50,14 +50,27 @@ public class ProductController {
 
     }
     @RequestMapping("add.do")
-    public void newProduct(Product product,HttpServletResponse response){
+    public void newProduct(Product product,Integer[] specs, Integer[] units,HttpServletResponse response){
         Date time = new Date();
         product.setpTime(time);
-        if (productService.addNewProduct(product)){
-            FastJson_All.toJson(product,response);
-        }else{
-            FastJson_All.toJson("error",response);
+        productService.addNewProduct(product);
+        List<Price> prices = new ArrayList<Price>();
+        for (int specId:specs) {
+            for (int unitId:units){
+                Price price = new Price();
+                Spec spec = new Spec();
+                spec.setSpec_id(specId);
+                Unit unit = new Unit();
+                unit.setUnit_id(unitId);
+                price.setSpec(spec);
+                price.setUnit(unit);
+                price.setP_id(product.getpId());
+                priceService.addTagsToProduct(price);
+                System.out.println(price.getPrice_id());
+                prices.add(price);
+            }
         }
+        FastJson_All.toJson(prices,response);
     }
     @RequestMapping(value = "update.do",method = RequestMethod.GET)
     public void updateProduct(Product product,HttpServletResponse response){
@@ -65,10 +78,10 @@ public class ProductController {
     }
 
     @RequestMapping("addTag.do")
-    public void addTagsToProduct(IDS specs,IDS units,int pId,HttpServletResponse response){
+    public void addTagsToProduct(Integer[] specs, Integer[] units,int pId,HttpServletResponse response){
         List<Price> prices = new ArrayList<Price>();
-        for (int specId:specs.getIds()) {
-            for (int unitId:units.getIds()){
+        for (int specId:specs) {
+            for (int unitId:units){
                 Price price = new Price();
                 Spec spec = new Spec();
                 spec.setSpec_id(specId);
@@ -84,17 +97,27 @@ public class ProductController {
         }
         FastJson_All.toJson(prices,response);
     }
-    @RequestMapping("ggg.do")
-    public void addTagsToProduct(Details details,int pId,HttpServletResponse response){
-        System.out.println(details.getSpec());
-        System.out.println(details.getStock());
-        System.out.println(pId);
-        FastJson_All.toJson("男男女女女",response);
-    }
+//    @RequestMapping("ggg.do")
+//    public void addTagsToProduct(Details details,int pId,HttpServletResponse response){
+//        System.out.println(details.getSpec());
+//        System.out.println(details.getStock());
+//        System.out.println(pId);
+//        FastJson_All.toJson("男男女女女",response);
+//    }
+//    @RequestMapping("HHH.do")
+//    public void addTagsToProductDDDDD(@Param("specs")IDS specs, @Param("units") IDS units, int pId, HttpServletResponse response){
+//        System.out.println(specs);
+//        System.out.println(units);
+//        System.out.println(pId);
+//        FastJson_All.toJson("男男女女女",response);
+//    }
+
     @RequestMapping("HHH.do")
-    public void addTagsToProductDDDDD(@Param("specs")IDS specs, @Param("units") IDS units, int pId, HttpServletResponse response){
-        System.out.println(specs);
-        System.out.println(units);
+    public void addTagsToProductDDDDD(Integer[] specs, Integer[] units, int pId, HttpServletResponse response){
+        System.out.println(specs[0]);
+        System.out.println(specs[1]);
+        System.out.println(units[0]);
+        System.out.println(units[1]);
         System.out.println(pId);
         FastJson_All.toJson("男男女女女",response);
     }

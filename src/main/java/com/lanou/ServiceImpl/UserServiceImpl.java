@@ -40,5 +40,9 @@ public class UserServiceImpl implements UserService{
         userMapper.updatePassword(user);
     }
 
+    public int confirmUserType(User user) {
+        return userMapper.confirmUserType(user);
+    }
+
 
 }

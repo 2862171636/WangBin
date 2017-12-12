@@ -16,14 +16,15 @@
 		<result column="email" property="email" jdbcType="VARCHAR"/>
 		<result column="birth" property="birth" jdbcType="DATE"/>
 		<result column="road" property="road" javaType="int"/>
+		<result column="userType" property="userType" javaType="int"/>
 	</resultMap>
 
 	<select id="confirmUser" resultMap="userResult">
 		select * from Emeixian_User where userName = #{userName}
 	</select>
 
-	<select id="confirmPassword" >
-		select password from Emeixian_User where userName = #{userName}
+	<select id="confirmUserType" resultType="int">
+		select userType from Emeixian_User where uId = #{uId}
 	</select>
 
 	<insert id="addUser" parameterType="User">

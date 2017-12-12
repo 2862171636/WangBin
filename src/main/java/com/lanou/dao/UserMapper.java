@@ -13,5 +13,6 @@ public interface UserMapper {
     public void addUser(User user);
     public void updateUser(User user);
     public void updatePassword(User user);
+    public int confirmUserType(User user);
 
 }

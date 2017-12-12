@@ -34,8 +34,11 @@ public class UserController {
         String result = null;
         User loginUser = userService.confirmUser(user.getUserName());
        if(loginUser != null && user.getPassword().equals(loginUser.getPassword())){
-           System.out.println("chengg");
-           result = "success";
+           if (user.getUserType() == 1){
+               result = "admin";
+           }else{
+                result = "user";
+           }
        }else {
            result = "error";
        }
