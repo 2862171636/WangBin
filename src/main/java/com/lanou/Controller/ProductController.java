@@ -145,6 +145,27 @@ public class ProductController {
 
        }
     }
+    @RequestMapping("init.do")
+    public void findAllTags(HttpServletResponse response){
+        FastJson_All.toJson(productService.findAllTags(),response);
+    }
+    @RequestMapping("addSpec.do")
+    public void addSpec(HttpServletResponse response,String specName){
+        Spec spec = new Spec();
+        spec.setSpec_name(specName);
+        productService.addNewSpec(spec);
+        FastJson_All.toJson(spec,response);
+
+    }
+    @RequestMapping("addUnit.do")
+    public void addUnit(HttpServletResponse response,String unitName){
+
+        Unit unit  = new Unit();
+        unit.setUnit_name(unitName);
+        productService.addNewUnit(unit);
+        FastJson_All.toJson(unit,response);
+
+    }
 }
 
 

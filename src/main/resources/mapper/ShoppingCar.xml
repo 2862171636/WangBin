@@ -41,6 +41,10 @@
 	<select id="selectShoppingCarsForUser" resultMap="ShoppingResult" parameterType="int">
 		SELECT * FROM shoppingCar WHERE 1=1 AND u_id = #{uid} AND order_id = 0
 	</select>
+	<select id="countShop" resultType="int">
+		SELECT count(*) FROM shoppingCar WHERE 1=1 AND u_id = #{uid} AND order_id = 0
+	</select>
+
 	<!--从购物车删除 直接物理删除 但要求购物车对象未绑定订单(提交) 即order_id = 0 -->
 	<delete id="deleteShoppingCarById" parameterType="int">
 		DELETE FROM shoppingCar WHERE 1=1 AND shoppingCarId= #{shoppingCarId} and order_id = 0

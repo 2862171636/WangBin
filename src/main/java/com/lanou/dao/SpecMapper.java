@@ -12,4 +12,5 @@ public interface SpecMapper {
     public Spec selectSpecById(int priceId);
     public boolean takeSpecToProduct(Price price);
     public List<Spec> selectAll();
+    public boolean addNewSpec(Spec spec);
 }

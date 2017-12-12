@@ -24,4 +24,6 @@ public interface ShoppingCarMapper {
     public int confirmShopCar(ShoppingCar shoppingCar);
     public boolean addNumToShopping(ShoppingCar shoppingCar);
 
+    public int countShop(int uId);
+
 }

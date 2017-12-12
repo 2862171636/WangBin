@@ -15,11 +15,11 @@
 	</select>
 	<!--新建容量单位-->
 
-	<insert id="addNewUnit" useGeneratedKeys="true" keyProperty="unitId">
-		INSERT INTO unit(unit_name) VALUES #{unit_Name}
+	<insert id="addNewUnit" useGeneratedKeys="true" keyProperty="unit_id">
+		INSERT INTO unit(unit_name) VALUES (#{unit_name})
 	</insert>
 
-	<select id="findAll" resultMap="units">
+	<select id="selectAll" resultMap="units">
 		SELECT * FROM unit
 	</select>
 	<select id="confirm">

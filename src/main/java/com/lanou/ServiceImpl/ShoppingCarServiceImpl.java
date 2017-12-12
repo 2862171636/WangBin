@@ -60,5 +60,9 @@ public class ShoppingCarServiceImpl implements ShoppingCarService{
         return shoppingCarMapper.addNumToShopping(shoppingCar);
     }
 
+    public int countShop(int uId) {
+        return shoppingCarMapper.countShop(uId);
+    }
+
 
 }

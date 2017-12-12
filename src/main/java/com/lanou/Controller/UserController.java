@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by lanou on 2017/12/2.
@@ -37,12 +40,16 @@ public class UserController {
            if (user.getUserType() == 1){
                result = "admin";
            }else{
-                result = "user";
+               result = "user";
            }
        }else {
            result = "error";
        }
-       FastJson_All.toJson(result,response);
+
+       Map<String,Object> results = new HashMap<String, Object>();
+       results.put("msg",result);
+       results.put("user",loginUser);
+
     }
 
     //注册用户名失焦

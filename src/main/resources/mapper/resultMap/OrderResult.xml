@@ -7,6 +7,7 @@
 		<id column="oId" property="orderId" javaType="int"/>
 		<result column="orderTime" jdbcType="DATE" property="orderTime"/>
 		<result column="state" javaType="int" property="state"/>
+
 		<collection select="com.lanou.dao.ShoppingCarMapper.selectShoppingCarsForOrder"
 					javaType="java.util.List"
 					property="shoppingCars"

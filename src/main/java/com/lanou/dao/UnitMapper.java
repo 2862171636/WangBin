@@ -13,4 +13,5 @@ public interface UnitMapper {
     public Unit selectUnitById(int priceId);
     public boolean takeUnitToProduct(Price price);
     public List<Unit> selectAll();
+    public boolean addNewUnit(Unit unit);
 }

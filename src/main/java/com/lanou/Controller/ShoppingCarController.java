@@ -99,6 +99,11 @@ public class ShoppingCarController {
         }
     }
 
+    //查找购物车的商品数量
+    @RequestMapping("count.do")
+    public void countShop(int uId,HttpServletResponse response){
+        FastJson_All.toJson(shoppingCarService.countShop(uId),response);
+    }
 
 
 
