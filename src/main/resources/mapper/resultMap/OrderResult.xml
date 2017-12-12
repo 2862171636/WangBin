@@ -7,7 +7,7 @@
 		<id column="oId" property="orderId" javaType="int"/>
 		<result column="orderTime" jdbcType="DATE" property="orderTime"/>
 		<result column="state" javaType="int" property="state"/>
-		<association property="address_id" javaType="int" select="com.lanou.dao.AdressMapper.selectAdressDid"/>
+		<association column="address_id" property="address" javaType="int" select="com.lanou.dao.AdressMapper.selectAdressDid"/>
 		<collection select="com.lanou.dao.ShoppingCarMapper.selectShoppingCarsForOrder"
 					javaType="java.util.List"
 					property="shoppingCars"
