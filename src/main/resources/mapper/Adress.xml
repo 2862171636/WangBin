@@ -5,11 +5,11 @@
 <mapper namespace="com.lanou.dao.AdressMapper">
 
     <insert id="insertAdress" parameterType="com.lanou.entity.Adress" >
-        INSERT INTO adress(aname,email,city,detailAdress,telephone,phone,building, codes,u_id) VALUE (#{aname},#{email},#{city},#{detailAdress},#{telephone},#{phone},#{building},#{codes},#{uId})
+        INSERT INTO adress(aname,email,city,detailAdress,telephone,phone,building, codes,u_id) VALUE (#{aname},#{email},#{city},#{detailAdress},#{telephone},#{phone},#{building},#{codes},#{u_id})
     </insert>
 
     <select id="selectAdress" parameterType="int" resultType="com.lanou.entity.Adress">
-          SELECT * FROM adress WHERE u_id=#{uId}
+          SELECT * FROM adress WHERE u_id=#{u_id}
     </select>
 
     <delete id="deleteAdress" parameterType="int">

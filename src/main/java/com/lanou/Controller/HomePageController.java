@@ -24,3 +24,5 @@ public class HomePageController {
        FastJson_All.toJson(homePageService.selectHomePage(category_id),response);
     }
 }
+
+
