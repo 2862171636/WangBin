@@ -7,4 +7,5 @@ import com.lanou.entity.Stock;
  */
 public interface StockService {
     public boolean updateByOrder(Stock stock);
+    public boolean addStockByPriceId(Stock stock);
 }

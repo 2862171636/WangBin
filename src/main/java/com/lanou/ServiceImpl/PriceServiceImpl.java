@@ -37,4 +37,8 @@ public class PriceServiceImpl implements PriceService{
     public boolean addUnitToProduct(Price price){
         return unitMapper.takeUnitToProduct(price);
     }
+
+    public boolean addPriceName(Price price) {
+        return priceMapper.addPriceName(price);
+    }
 }

@@ -10,4 +10,5 @@ public interface PriceService {
     public boolean addTagsToPrice(Price price);
     public boolean addSpecToProduct(Price price);
     public boolean addUnitToProduct(Price price);
+    public boolean addPriceName(Price price);
 }

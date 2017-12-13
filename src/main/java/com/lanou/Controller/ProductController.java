@@ -2,6 +2,7 @@ package com.lanou.Controller;
 
 import com.lanou.Service.PriceService;
 import com.lanou.Service.ProductService;
+import com.lanou.Service.StockService;
 import com.lanou.Util.FastJson_All;
 import com.lanou.entity.*;
 import org.apache.ibatis.annotations.Param;
@@ -32,6 +33,8 @@ public class ProductController {
     private ProductService productService;
     @Autowired
     private PriceService priceService;
+    @Autowired
+    private StockService stockService;
 
     @RequestMapping("product.do")
     public void prodcut(int categoryId, HttpServletResponse response) {
@@ -134,7 +137,7 @@ public class ProductController {
 //        FastJson_All.toJson("男男女女女",response);
 //    }
 
-    @RequestMapping("addPriceAndStock.do")
+    @RequestMapping("addStockToPrice.do")
     public void addPriceAndStock( String[]stockNames, Integer[] stockNums, int price_Id, HttpServletResponse response){
         System.out.println(price_Id);
        for (int i = 0;i < stockNames.length;i ++){
@@ -143,7 +146,7 @@ public class ProductController {
             stock.setStockName(stockNames[i]);
             stock.setStockId(price_Id);
 
-       }
+       }FastJson_All.toJson("success",response);
     }
     @RequestMapping("init.do")
     public void findAllTags(HttpServletResponse response){
@@ -164,6 +167,22 @@ public class ProductController {
         unit.setUnit_name(unitName);
         productService.addNewUnit(unit);
         FastJson_All.toJson(unit,response);
+
+    }
+    @RequestMapping("addPriceNameAndStock.do")
+    public void addPrice(HttpServletResponse response,Integer[]priceId,double[]priceName,String[]stockName,Integer[]stockNum){
+        for (int i = 0;i <priceId.length;i++){
+            Price price = new Price();
+            price.setPrice_id(priceId[i]);
+            price.setPrice_name(priceName[i]);
+            priceService.addPriceName(price);
+            Stock stock = new Stock();
+            stock.setStockId(priceId[i]);
+            stock.setStockNum(stockNum[i]);
+            stock.setStockName(stockName[i]);
+            stockService.addStockByPriceId(stock);
+        }
+        FastJson_All.toJson("success",response);
 
     }
 }

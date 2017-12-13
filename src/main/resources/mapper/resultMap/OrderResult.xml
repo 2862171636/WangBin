@@ -20,7 +20,7 @@
 						 select="com.lanou.dao.PriceMapper.selectPriceByPriceId"/>
 			<association property="stock"
 						 column="stock_id"
-						 select="com.lanou.dao.StockMapper.findStockByPriceId"/>
+						 select="com.lanou.dao.StockMapper.findStockById"/>
 			<association property="user"
 						 column="u_id"
 						 select="com.lanou.dao.UserMapper.confirmUser"/>

@@ -12,7 +12,7 @@
 			<association property="price" column="price_id"
 					 	select="com.lanou.dao.PriceMapper.selectPriceByPriceId"/>
 			<association property="stock" column="stock_id"
-						 select="com.lanou.dao.StockMapper.findStockByPriceId"/>
+						 select="com.lanou.dao.StockMapper.findStockById"/>
     </resultMap>
 	<!--<parameterMap id="shoppingCarParam" type="ShoppingCar">-->
 		<!--<parameter property="shoppingCarId" javaType="int"/>-->

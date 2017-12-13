@@ -21,16 +21,21 @@
 
 
 	<insert id="addStockByPriceId">
-        INSERT INTO stock(stockName,num,price_id) VALUES  #{stockName},#{stockNum},#{priceId}
+        INSERT INTO stock(stockName,stockNum,priceId)
+        	VALUES  (#{stockName},#{stockNum},#{stockId})
 	</insert>
+	<select id="confirm">
+		SELECT * FROM stock WHERE stockName=#{stockName} and stockNum = #{stockNum} AND price_id=#{priceId}
+	</select>
 	<!--在完成订单时实现将库存减少-->
     <update id="updateByOrder" >
-        UPDATE stock(num) VALUES (num - #{stockNum}) WHERE stock_id = #{stockId}
+        UPDATE stock(stockNum) VALUES (stockNum - #{stockNum}) WHERE stock_id = #{stockId}
     </update>
 	<!--管理员更改库存信息-->
     <update id="updateByAdmin">
-        UPDATE stock(stockName,num,price_id) VALUES  #{stockName},#{stockNum},#{priceId} where 1=1 and stockId = #{stockId}
+        UPDATE stock(stockName,stockNum,price_id) VALUES  (#{stockName},#{stockNum},#{priceId}) where 1=1 and stockId = #{stockId}
     </update>
+
 
 
 

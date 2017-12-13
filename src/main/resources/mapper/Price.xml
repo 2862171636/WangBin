@@ -21,8 +21,19 @@
 					   ofType="com.lanou.entity.Stock"/>
 
 	</resultMap>
+
+	<resultMap id="priceO" type="Price">
+	<id column="price_id" property="price_id" javaType="int"/>
+	<result column="price_name" property="price_name" jdbcType="VARCHAR"/>
+	<association property="spec" column="spec_id"
+				 select="com.lanou.dao.SpecMapper.selectSpecById"/>
+	<association property="unit" column="unit_id"
+				 select="com.lanou.dao.UnitMapper.selectUnitById"/>
+	<association property="detailsProduct" column="p_id"
+				 select="com.lanou.dao.DetailsMapper.selectProduct"/>
+	</resultMap>
 	<!--通过id去查询价格-->
-	<select id="selectPriceByPriceId" parameterType="int" resultMap="prices">
+	<select id="selectPriceByPriceId" parameterType="int" resultMap="priceO">
 		select * from price where price_id = #{priceId}
 	</select>
 	<!--在商品页通过价格的三个属性去查询价格-->
@@ -32,5 +43,9 @@
 	<insert id="addPriceWithOutPriceName" useGeneratedKeys="true" keyProperty="price_id">
 		INSERT INTO price(p_id,spec_id,unit_id) VALUES (#{p_id},#{spec.spec_id},#{unit.unit_id})
 	</insert>
+	<update id="addPriceName">
+		UPDATE price SET price_name = #{price_name} where price_id = #{price_id}
+	</update>
+
 </mapper>
 

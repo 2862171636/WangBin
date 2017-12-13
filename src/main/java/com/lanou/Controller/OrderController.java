@@ -54,7 +54,7 @@ public class OrderController {
         order.setAddress(adress);
         order.setUser(user);
         order.setOrderTime(date);
-
+        System.out.println(shoppingCarIds);
         List<ShoppingCar> shoppingCars = new ArrayList<ShoppingCar>();
         for (int id:shoppingCarIds.getIds()) {
             ShoppingCar shoppingCar = new ShoppingCar();
@@ -65,7 +65,7 @@ public class OrderController {
         orderService.addNewOrder(order);
         System.out.println(order.getOrderId());
         shoppingCarService.orderShoppingCars(order);
-        FastJson_All.toJson("success",response);
+        FastJson_All.toJson(orderService.selectOrderById(order.getOrderId()),response);
     }
 //    付款时将订单状态改为已支付并更改库存
     @Transactional

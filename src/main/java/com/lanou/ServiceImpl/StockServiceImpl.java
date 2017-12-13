@@ -17,6 +17,10 @@ public class StockServiceImpl implements StockService{
     public boolean updateByOrder(Stock stock) {
         return stockMapper.updateByOrder(stock);
     }
+
+    public boolean addStockByPriceId(Stock stock) {
+        return stockMapper.addStockByPriceId(stock);
+    }
 //    public boolean addNewStock(Stock){
 //
 //    };
