@@ -32,10 +32,10 @@
 	</insert>
 	<!--在添加购物车之前将购物车对象传入去查询是否已被用户添加进购物车,如果是 则仅增加数量-->
 	<select id="confirmShopCar" resultType="int">
-		SELECT IFNULL(MAX(shoppingCarId),0) AS shoppingCarId FROM shoppingCar WHERE price_id=#{price.price_id} AND u_id = #{user.uId} AND stock_id = #{stock.stockId} AND order_id = 0
+		SELECT IFNULL(MAX(shoppingCar_id),0) AS shoppingCarId FROM shoppingCar WHERE price_id=#{price.price_id} AND u_id = #{user.uId} AND stock_id = #{stock.stockId} AND order_id = 0
 	</select>
 	<update id="addNumToShopping">
-		UPDATE shoppingCar SET num = (num + #{num}) WHERE shoppingCarid = #{shoppingCarId}
+		UPDATE shoppingCar SET num = (num + #{num}) WHERE shoppingCar_id = #{shoppingCarId}
 	</update>
 	<!--显示当前用户添加到购物车的商品信息 要求未被添加进购物车  因此需要orderid为0-->
 	<select id="selectShoppingCarsForUser" resultMap="ShoppingResult" parameterType="int">
@@ -47,7 +47,7 @@
 
 	<!--从购物车删除 直接物理删除 但要求购物车对象未绑定订单(提交) 即order_id = 0 -->
 	<delete id="deleteShoppingCarById" parameterType="int">
-		DELETE FROM shoppingCar WHERE 1=1 AND shoppingCarId= #{shoppingCarId} and order_id = 0
+		DELETE FROM shoppingCar WHERE 1=1 AND shoppingCar_id= #{shoppingCarId} and order_id = 0
 	</delete>
 	<!--编辑购物车信息 可以改变所选商品属性-->
 	<update id="updateShoppingCar" useGeneratedKeys="true" keyProperty="shoppingCarId">
