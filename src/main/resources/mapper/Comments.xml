@@ -14,7 +14,7 @@
         <association property="user" javaType="com.lanou.entity.User">
         <id column="uId" property="uId" javaType="int" />
         <result column="userName" property="userName" jdbcType="VARCHAR" />
-    </association>
+       </association>
 
         <association property="product" javaType="com.lanou.entity.Product">
             <id column="pId" property="pId" javaType="int" />

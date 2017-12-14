@@ -6,12 +6,13 @@
 <mapper namespace="com.lanou.dao.HomePageMapper">
 
 
-
-
 	<!--根据商品Id查出对应的商品-->
 	<select id="selectHomePage" parameterType="int" resultType="com.lanou.entity.HomePage">
 
+
 		SELECT * FROM product WHERE category_id= #{category_id}
+
+
 	</select>
 
 </mapper>

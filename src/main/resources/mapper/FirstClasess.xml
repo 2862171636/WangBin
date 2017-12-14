@@ -10,12 +10,28 @@
 
         <id column="pId" property="pId" javaType="integer"/>
         <result column="pImg" property="pImg" jdbcType="VARCHAR"/>
+        <result column="pName" property="pName" jdbcType="VARCHAR"/>
+        <result column="pMoney" property="pMoney" jdbcType="VARCHAR"/>
+
+        
+        <collection property="brands" ofType="Brand">
+            <id column="bId" property="bId" javaType="int"/>
+            <result column="bName" property="bName" jdbcType="VARCHAR"/>
+            <result column="bName" property="bName" jdbcType="VARCHAR"/>
+
+        </collection>
+
+
 
     </resultMap>
 
     <select id="findsClasess" resultMap="First">
 
-     SELECT *FROM product WHERE category_id IN (SELECT cId FROM category WHERE parentId = #{0}) LIMIT #{1},2
+        SELECT a.*, b.* FROM product a
+
+        LEFT JOIN brand b ON a.b_id=b.bId
+
+        WHERE a.category_id IN (SELECT cId FROM category WHERE parentId = #{0}) LIMIT #{1},3
 
     </select>
 
