@@ -28,33 +28,33 @@ var arrId = (location.href).split("?")[1].split("&");
 var way = arrId[0].split("=")[1];
 var val = decodeURI(arrId[1].split("=")[1]);
 console.log(way,val);
-if(way == "name"){
-	$.ajax({
-		type:"get",
-		url:"http://10.80.13.73:8080/select/lists.do",
-		data:{
-			listname:val
-		},
-		dataType:"json",
-		async:true,
-		success:function(data){
-			console.log(data);
-			$(".wrap_show").html("");
-			if(data.success){
-				for(var i = 0; i < data.success.length; i++) {
-						$(".wrap_show").append($("<div><a href='shangpinxiangqing.html?pId="+data.success[i].pId+"><img src=" + data.success[i].pImg + " /></a>	<span>￥" + data.success[i].pMoney + "元</span><p>" + data.success[i].pName + "</p><a class='tu'></a></div>"));
-				}
-			}else{
-				$(".wrap_show").append("<div class='import'>暂无该商品<div>");
-			}
+// if(way == "name"){
+// 	$.ajax({
+// 		type:"get",
+// 		url:"http://211.159.187.227:8081/lcks-SSM/select/lists.do",
+// 		data:{
+// 			listname:val
+// 		},
+// 		dataType:"json",
+// 		async:true,
+// 		success:function(data){
+// 			console.log(data);
+// 			$(".wrap_show").html("");
+// 			if(data.success){
+// 				for(var i = 0; i < data.success.length; i++) {
+// 						$(".wrap_show").append($("<div><a href='shangpinxiangqing.html?pId="+data.success[i].pId+"><img src=" + data.success[i].pImg + " /></a>	<span>￥" + data.success[i].pMoney + "元</span><p>" + data.success[i].pName + "</p><a class='tu'></a></div>"));
+// 				}
+// 			}else{
+// 				$(".wrap_show").append("<div class='import'>暂无该商品<div>");
+// 			}
 			
-		}
-	});
-}
-if(way == "id"){
+// 		}
+// 	});
+// }
+if(true){
 	$.ajax({
 		type:"get",
-		url:"http://10.80.13.145:8080/clasess/clasess.do",
+		url:"http://211.159.187.227:8081/lcks-SSM/clasess/clasess.do",
 		data:{
 			classId:"14",
 			pages: "1",
@@ -65,6 +65,7 @@ if(way == "id"){
 			console.log(data);
 			$(".wrap_show").html("");
 			for(var i = 0; i < data.success.length; i++) {
+					console.log("hhhhhhhhhh"+data.success[i].pId);
 					$(".wrap_show").append($("<div><a href='shangpinxiangqing.html?pId="+data.success[i].pId+"><img src=" + data.success[i].pImg + " /></a>	<span>￥" + data.success[i].pMoney + "元</span><p>" + data.success[i].pName + "</p><a class='tu'></a></div>"));
 					
 			}
@@ -86,7 +87,7 @@ $('.fenye').pagination({
 	    callback:function(api){
 	   		api.setPageCount(23);
 	   		console.log(api.getCurrent());
-		   	$.getJSON('http://10.80.13.145:8080/clasess/clasess.do',{classId:"14",pages: api.getCurrent(),},function(data){
+		   	$.getJSON('http://211.159.187.227:8081/lcks-SSM/clasess/clasess.do',{classId:"14",pages: api.getCurrent(),},function(data){
 		   		$(".wrap_show").html("");
 	            console.log(data);
 	            for(var i = 0; i < data.success.length; i++) {

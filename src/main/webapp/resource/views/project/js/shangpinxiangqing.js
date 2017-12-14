@@ -71,7 +71,7 @@ var pId = parseInt(arr_pId[1]);
 console.log(pId);
 $.ajax({
     type: "get",
-    url: "http://10.80.16.104:8080/Details/selectProduct.do?pId=" + pId,
+    url: "http://211.159.187.227:8081/lcks-SSM/Details/selectProduct.do?pId=" + pId,
     async: true,
     dataType: "json",
     success: function(data) {
@@ -117,7 +117,7 @@ $.ajax({
             var b = $(".xuanz").eq(1).attr("aa");
             $.ajax({
                 type: "get",
-                url: "http://10.80.16.104:8080/Details/selectPrice.do?p_id=" + data.product.pId + "&spec_id=" + b + "&unit_id=" + a,
+                url: "http://211.159.187.227:8081/lcks-SSM/Details/selectPrice.do?p_id=" + data.product.pId + "&spec_id=" + b + "&unit_id=" + a,
                 async: true,
                 dataType: "json",
                 success: function(nn) {

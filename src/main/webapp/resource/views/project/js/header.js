@@ -13,7 +13,7 @@
 $(".menu_title").one("mouseenter", function() {
 	$.ajax({
 		type: "get",
-		url: "http://211.159.187.227:8080/category/find.do",
+		url:"http://211.159.187.227:8081/lcks-SSM/category/find.do",
 		async: true,
 		dataType: "json",
 		success: function(data) {
@@ -30,7 +30,7 @@ $(".menu_title").one("mouseenter", function() {
 					$(this).on("mouseover", function() {
 						$.ajax({
 							type: "get",
-							url: "http://211.159.187.227:8080/category/find2.do",
+							url: "http://211.159.187.227:8081/lcks-SSM/category/find2.do",
 							data: {
 								cId: index + 1,
 							},
@@ -106,7 +106,7 @@ $('.text').bind('keyup', function() {
 	if(val != "") {
 		$.ajax({
 			type: "get",
-			url: "http://211.159.187.227:8080/select/lists.do",
+			url:"http://211.159.187.227:8081/lcks-SSM/select/lists.do",
 			async: true,
 			data: {
 				listname: val,

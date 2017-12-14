@@ -1,21 +1,12 @@
-//function resizenow() {
-//	var browserwidth = $(".window ul").width();
-//	var browserheight = $(".window ul").height();
-//	console.log(browserwidth)
-//	jQuery('.bonfire-pageloader-icon').css('right', ((browserwidth - jQuery(".bonfire-pageloader-icon").width())/2)).css('top', ((browserheight - jQuery(".bonfire-pageloader-icon").height())/2));
-//};             
-//resizenow();
-
-
 var ul = document.querySelector(".first .window ul");
 
-window.onload = function(){
-	opendialog();
-}
+//window.onload = function(){
+//	opendialog();
+//}
 // 首页弹出框、
 function opendialog(){
 		var mask=document.createElement("div");
-		mask.style.position="fix";
+		mask.style.position="absolute";
 		mask.style.left=0;
 		mask.style.right=0;
 		mask.style.top=0;
@@ -159,7 +150,7 @@ var mySwiper = new Swiper ('.swiper-container', {
   // 大轮播图的渲染
 $.ajax({
   	type:"get",
-  	url:"http://211.159.187.227:8080/LBT/lbt.do?rId=0",
+  	url:"http://211.159.187.227:8081/lcks-SSM/LBT/lbt.do?rId=0",
 //	data:"",
   	dataType:"json",
   	async: true,
@@ -170,9 +161,6 @@ $.ajax({
   			$(".window .btn").append("<span class='dian'>"+data[i].rName+"</span>")
   		}
   		lunbo(data.length);
-//		jQuery(".window ul li img").load(function(){
-//			 resizenow();
-//		});
   	}
 }); 
   // 特惠专区鼠标移入切换
@@ -187,7 +175,7 @@ $.ajax({
   				isF = false;
 	  			$.ajax({
 		  			type:"get",
-		  			url:"http://211.159.187.227:8080/homePage/selectHomePage.do",
+		  			url:"http://211.159.187.227:8081/lcks-SSM/homePage/selectHomePage.do",
 		  			data:{category_id:val},
 		  			dataType:"json",
 		  			async:true,
@@ -210,12 +198,12 @@ $.ajax({
   	for(var i = 0 ; i < data.length ; i++){
   		htmls += `<li>
 			<div class="new_list_pic">
-					<a href="shangpinxiangqing.html">
+					<a href="shangpinzhangshi.html?${data[i].pId}">
 						<img src="${data[i].pImg}" alt="" />
 					</a>
 				</div>
 				<div class="new_list_detail">
-					<a href="shangpinxiangqing.html">
+					<a href="">
 						<div>${data[i].pName}</div>
 						<span>￥${data[i].pMoney}</span>
 					</a>
@@ -351,7 +339,7 @@ function goods1(i){
 var content = "";
 for(var i = 0 ; i < arrFs.length ; i++){
 	content += 
-		`<div class='Fs auto' id='F_${i+1}'>
+		`<div class='Fs auto'>
 			<div class="F1_top clearfix">
 				<div class="F1_top_left fl clearfix">
 					<div class="F1_logo fl">
@@ -446,7 +434,7 @@ function one(ss,id){
 	
 	$.ajax({
 		type:"get",
-		url:"http://211.159.187.227:8080/homePage/selectHomePage.do",
+		url:"http://211.159.187.227:8081/lcks-SSM/homePage/selectHomePage.do",
 		async:true,
 		data:{category_id:id},
 		dataType:"json",

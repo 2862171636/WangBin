@@ -74,10 +74,10 @@ $(".add_goods").on("click",function(){
 			var html1="";
 			var html2="";
 			for(var i=0;i<data.specs.length;i++){
-				html1+=`<input type="checkbox" name="" id="" value="${data.specs[i].spec_id}" />	<span>${data.specs[i].spec_name}</span>`
+				html1+=`<p><input type="checkbox" name="" id="" value="${data.specs[i].spec_id}" />	<span>${data.specs[i].spec_name}</span></p>`
 			}
 			for(var i=0;i<data.unit.length;i++){
-				html2+=`<input type="checkbox" name="" id="" value="${data.unit[i].unit_id}" /><span>${data.unit[i].unit_name}</span>`
+				html2+=`<p><input type="checkbox" name="" id="" value="${data.unit[i].unit_id}" /><span>${data.unit[i].unit_name}</span></p>`
 			}
 			$(".specail1").html(html1);
 			$(".specail2").html(html2);		
@@ -89,6 +89,12 @@ $(".addgoods_nav_item1").on("click",function(){
 	$(".addgoodstable").css({
 		display:"table",
 	});
+	$(".guige").css({
+		display:"block",
+	})
+	$(".rongliang").css({
+		display:"block",
+	})
 })
 //点击确定（sure）
 $(".sure").on("click",function(){
@@ -248,13 +254,15 @@ $(".accept_one").one("click",function(){
 		success:function(data){
 			console.log(data);
 			for(var i=0;i<data.length;i++){
-				$('<option></option>').html(data[i].cName).appendTo($(".accept_one"));
+				$('<option value='+data[i].cId+'></option>').html(data[i].cName).appendTo($(".accept_one"));
 			}
+			
 		}
 	})
 })
 $(".sure_two").on("click",function(){
 	var txt=$(".sure_two_text").val();
+	var preId=$(".accept_one").val();
 	if(txt!=""){
 		$.ajax({
 			type:"get",
@@ -262,10 +270,10 @@ $(".sure_two").on("click",function(){
 			async:true,
 			data:{
 				name:txt,
-				parentId:0,
+				parentId:preId,
 			},
 			dataType:"json",
-			success:function(){
+			success:function(data){
 				if(data){
 					tips("创建成功");
 				}
@@ -274,4 +282,56 @@ $(".sure_two").on("click",function(){
 	}
 })
 //点击创建三级分类
-$("")
+$(".accept_two").one("click",function(){
+	$.ajax({
+		type:"get",
+		url:"http://211.159.187.227:8080/category/find.do",
+		async:true,
+		dataType:"json",
+		success:function(data){
+			console.log(data);
+			for(var i=0;i<data.length;i++){
+				$('<option value='+data[i].cId+'></option>').html(data[i].cName).appendTo($(".accept_two"));
+			}
+			
+		}
+	})
+})
+//点击获取二级分类
+$(".accept_three").one("click",function(){
+	var preId=$(".accept_two").val();
+	$.ajax({
+		type:"get",
+		url:"http://211.159.187.227:8080/category/find2.do",
+		async:true,
+		dataType:"json",
+		data:{
+			cId:preId,
+		},
+		success:function(data){
+			console.log(data);
+			for(var i=0;i<data.length;i++){
+				$('<option value='+data[i].cId+'></option>').html(data[i].cName).appendTo($(".accept_three"));
+			}
+			
+		}
+	})
+})
+$(".sure_three").on("click",function(){
+	var txt=$(".sure_three_text").val();
+	var preId=$(".accept_three").val();
+	$.ajax({
+		type:"get",
+		url:"http://10.80.13.145:8080/category/insertCategory.do",
+		async:true,
+		data:{
+			name:txt,
+			parentId:preId,
+		},
+		success:function(data){
+			if(data){
+				tips("插入成功");
+			}
+		}
+	});
+})

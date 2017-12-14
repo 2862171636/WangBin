@@ -19,6 +19,7 @@
 /*通用信息*/
 .li_content{
 	display: none;
+	position: relative;
 }
 .item_title,.item_title1{
 	overflow: hidden;
@@ -93,7 +94,21 @@
 	display: inline-block;
 	background: #eee;
 }
-
+.specail1,.specail2{
+	height: 160px;
+	overflow-y: scroll;
+	border: 1px solid #EEEEEE;
+}
+.guige,.rongliang{
+	display: none;
+	width: 150px;
+	position: absolute;
+	top: 80px;
+	left: 350px;
+}
+.rongliang{
+	left: 527px;
+}
 /*点击确定设置价格样式*/
 .price_table{
 	display: none;
