@@ -1,0 +1,182 @@
+.ad{
+    width:100%;
+    height: 400px;
+    background: url('../image/img_chen/ad.jpg');
+    border-top: 1px solid transparent;
+}
+.part{
+    width: 153px;
+    height: 50px;
+    border-top: 1px solid transparent;
+    margin:335px 0px 0px 50%;
+    line-height: 40px;
+    text-align: center;
+    background-color: black;
+    opacity: 0.5;
+    color:white;
+}
+.part p{
+    width: 11px;
+    height: 4px;
+    margin:0 auto;
+    margin-top: 5px;
+    background-color: #1eaa39;
+}
+.activity{
+    width:100%;
+    height: 1278px;
+    padding-bottom: 30px;
+    background:url('../image/img_chen/active01.png');
+}
+.activity_content{
+    width: 1200px;
+    height: 1278px;
+}
+.activity_content_active{
+    width: 1200px;
+    height: 168px;
+    padding-top: 80px;
+}
+.active_name{
+    width: 212px;
+    height: 46px;
+    margin-top: 15px;
+}
+.active_rule{
+    width: 832px;
+    height: 168px;
+    margin-left: 80px;
+}
+.active_rule li{
+    width: 788px;
+    height: 24px;
+    line-height: 24px;
+    color: rgb(102, 102, 102);
+}
+.activity_content_goods,.activity2_content_goods{
+    width: 1200px;
+    height: 880px;
+    padding-top: 30px;
+}
+
+.activity_content_goods .list li,.activity2_content_goods .list li{
+    width:240px;
+    height: 400px;
+    padding: 15px 22px;
+    margin: 10px;
+    background-color: white;
+    float:left;
+
+}
+.activity_content_goods .list li:hover{
+    box-shadow: 10px 10px 5px lightgray;
+    transform:translateY(-2px) scale(1.01);
+}
+.freight{
+    width: 60px;
+    height: 24px;
+    margin-bottom: 5px;
+}
+.goods_img{
+    width: 240px;
+    height: 240px;
+}
+.goods_img img{
+    width: 240px;
+    height: 240px;
+}
+.goods_info{
+    width: 240px;
+    height: 116px;
+    margin-top: 10px;
+}
+.goods_name{
+    width: 240px;
+    height: 42px;
+    line-height: 22px;
+    text-align: left;
+    font-size: 14px;
+}
+.standard_price{
+    color:#666;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+.limit_number{
+    font-size: 14px;
+    color:#FFF;
+    padding:0 3px;
+    margin-left: 8px;
+    background-color: #e74c3c;
+}
+.discount_price{
+    width: 240px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    margin: 15px 0px 5px 0px;
+    color:#E64C3B;
+    font-weight: bold;
+    font-size: 24px;
+}
+.activity_content_tab{
+    width: 100px;
+    height: 20px;
+    margin-top:30px;
+}
+.activity_content_tab ul li{
+    width: 20px;
+    height: 13px;
+    margin:0px 3px;
+    background: url('../image/img_chen/taps_btn.png') -10px 38px;
+    float: left;
+}
+.activity_content_more{
+    width: 680px;
+    height: 44px;
+    margin-top: 16px;
+    margin-bottom: 10px;
+    background:url('../image/img_chen/active_16.png');
+}
+.activity_content_more a{
+    width:100%;
+    height: 100%;
+    display: block;
+}
+.activity2{
+    background:url('../image/img_chen/active02.png');
+}
+.activity2_content_goods .list li{
+     margin:10px 0px 0px 10px;
+}
+.activity2 .activity_content_tab ul li{
+    width: 20px;
+    height: 13px;
+    margin:0px 3px;
+    background: url('../image/img_chen/taps_btn.png') -10px 201px;
+    float: left;
+}
+.activity2 .activity_content_more{
+    background:url('../image/img_chen/active_04.png');
+
+}
+.activity2 .goods_price{
+    width: 240px;
+    height: 20px;
+}
+
+
+
+/* iiiiiiiii*/
+.cat_all_wrap .nav li:nth-child(3) a{
+	border-bottom: 2px solid #1a9733;
+	color: #1a9733;
+	display: inline-block;
+	height: 37px;
+	/*padding-bottom: 1px;*/
+}
+
+
+
+
+

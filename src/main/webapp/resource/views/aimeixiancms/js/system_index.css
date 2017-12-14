@@ -1,0 +1,115 @@
+.base{
+	border:1px solid #aaa;
+}
+.custom_title{
+	height: 80px;
+	padding-left: 15px;
+}
+.system_menu_list1{
+	list-style: none;
+}
+.system_menu_list1>li{
+	list-style: none;
+	line-height: 24px;
+}
+.system_menu_list2{
+	display: none;
+}
+                 
+/*通用信息*/
+.li_content{
+	display: none;
+}
+.item_title,.item_title1{
+	overflow: hidden;
+	line-height: 39px;
+	background: #eee;
+}
+.item_title h4,.item_title1 h4{
+	float: left;
+}
+.item_title a,.item_title1 a{
+	float: right;
+}
+.addgoodstable{
+	margin-left: 90px;
+	height: 300px;
+	display: none;
+}
+.addgoodstable tr{
+	padding: 10px;
+}
+.addgoodstable tr td{
+	text-align: right;
+}
+.addgoodstable tr .td_input{
+	text-align:left
+}
+.addgoods_nav{
+	line-height: 33px;
+	background: rgb(229,246,259);
+}
+.addgoods_nav span{
+	height: 33px;
+	display: inline-block;
+	padding: 0 15px;
+}
+.addgoods_nav span:hover{
+	background: rgb(142,201,210);
+}
+.reset{
+	margin-left: 50px;
+}
+/*点击新建弹出框样式*/
+.create_checkbox,.create_rongliang{
+	border:1px solid #999;
+	background: #EEEEEE;
+	padding: 0 5px;
+	margin-left: 10px;
+	border-radius: 2px;
+}
+.specaildiv{
+	width: 245px;
+	height: 100px;
+	border:1px solid #aaa;
+	border-radius: 4px;
+	position: relative;
+	position: absolute;
+	top: 92px;
+	left: 400px;
+	padding: 35px 0 0 20px;
+	
+}
+.create_close{
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	
+}
+.create_do{
+	border:1px solid #aaa;
+	height: 24px;
+	display: inline-block;
+	background: #eee;
+}
+
+/*点击确定设置价格样式*/
+.price_table{
+	display: none;
+}
+.final_add{
+	text-align: right;
+}
+
+/*商品列表*/
+/*.goods_lists{
+	display: none;
+}*/
+/*商品分类*/
+.create_tag{
+	padding-left: 70px;
+}
+.create_one,.create_two,.create_three{
+	margin-bottom: 10px;
+}

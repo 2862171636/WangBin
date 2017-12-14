@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>爱美鲜冻品商城后天管理系统</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/system_index.css" />
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row base">
+				<h1 class="h2 custom_title">爱美鲜冻品商城后台管理系统</h1>
+			</div>
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 base">
+					<div>
+						<ul class="system_menu_list1">
+							<li>
+								<span class="goodsmanage">商品管理</span>
+								<div>
+									<ul class="system_menu_list2">
+										<li class="add_goods">添加商品</li>
+										<li class="goods_order">商品分类</li>
+										<!--<li class="goods_menu">商品列表</li>-->
+									</ul>
+								</div>
+							</li>
+							<li>用户管理</li>
+							<li>订单管理</li>
+							<li>权限管理</li>
+							<li>库存管理</li>
+						</ul>
+					</div>
+				</div>
+				<div style="padding: 0;" class="col-lg-10 col-md-10 col-sm-10 col-xs-10 base guding">
+					<!--通用信息 添加商品-->
+					<div class="li_content haha">
+						<div class="item_title">
+							<h4>添加新商品</h4>
+							<a href="###">商品列表</a>
+						</div>
+						<div class="addgoods_nav">
+							<span class="addgoods_nav_item1">通用信息</span>
+							<span>商品相册</span>
+						</div>
+						<div class="addgoods_nav_content haha">
+							<table class="addgoodstable haha" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="">商品名称:</td>
+									<td class="td_input"><input class="productname" type="text" name="" id="" value="" /></td>
+								</tr>
+								<tr>
+									<td class="">商品编号:</td>
+									<td class="td_input"><input class="productnum" type="text" name="" id="" value="" /></td>
+								</tr>
+								<tr>
+									<td class="">商品简介:</td>
+									<td class="td_input"><textarea class="productinfo" name="" rows="" cols=""></textarea></td>
+								</tr>
+								<tr>
+									<td class="">积分:</td>
+									<td class="td_input"><input class="productpoint" type="text" name="" id="" value="" /></td>
+								</tr>
+								<tr>
+									<td class="">折扣:</td>
+									<td class="td_input"><input class="productdiscount" type="text" name="" id="" value="" /></td>
+								</tr>
+								<tr>
+									<td>规格:</td>
+									<td class="td_input specail1">
+										<!--<input type="checkbox" name="" id="" value="" />	<span>200克/袋</span>
+										<input type="checkbox" name="" id="" value="" /><span>220克/袋</span>-->
+									</td>
+									<td><span class="create_checkbox">新建</span></td>
+								</tr>
+								<tr>
+									<td>容量:</td>
+									<td class="td_input specail2">
+										<!--<input type="checkbox" name="" id="" value="" />	<span>盒</span>
+										<input type="checkbox" name="" id="" value="" /><span>箱</span>-->
+									</td>
+									<td><span class="create_rongliang">新建</span></td>
+								</tr>
+								<tr>
+									<td><button class="sure">确定</button></td>
+									<td class="td_input"><button class="reset">重置</button></td>
+								</tr>
+							</table>
+							<table class="table table-striped price_table">
+								<thead>
+									<tr>
+										<th>商品id</th>
+										<th>商品规格</th>
+										<th>商品容量</th>
+										<th>价格</th>
+										<th>库存</th>
+										<th>库存数量</th>
+									</tr>
+								</thead>
+								<tbody class="Tbody">
+									<!--<tr>
+										<td>4149</td>
+										<td>纯牛奶</td>
+										<td>单盒</td>
+										<td><input class="goods_price" type="text" /></td>
+										<td><input class="goods_stock" type="text" /></td>
+										<td><input class="stock_num" type="text" /></td>
+									</tr>
+									<tr>
+										<td><button class="btn btn-info final_add">添加</button></td>
+									</tr>-->
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+					<!--商品分类-->	
+					<div class="goods_order_contents">
+						<div class="item_title">
+							<h4>商品分类</h4>
+						</div>
+						<div class="create_tag">
+							<div class="create_one">
+								<label for="">创建一级分类：
+									<input class="sure_one_text" type="text" /><span class="sure_one">确定</span>
+								</label>
+							</div>
+							<div class="create_two">
+								<label for="">创建二级分类：
+									<select class="accept_one" name="">
+										<option value="">请选择上级分类</option>
+									</select>
+									<input class="sure_two_text" type="text" name="" id="" value="" placeholder="请输入二级分类名" /><span class="sure_two">确定</span>
+								</label>
+							</div>
+							<div class="create_three">
+								<label for="">创建三级分类：
+									<select name="">
+										<option value="">请选择一级分类</option>
+									</select>
+									<select name="">
+										<option value="">请选择二级分类</option>
+									</select>
+									<input class="sure_three_text" type="text" name="" id="" value="" placeholder="请输入三级分类名" /><span class="sure_three">确定</span>
+								</label>
+								
+							</div>
+						</div>
+						
+					</div>
+					<!--商品列表-->
+					
+					<!--<div class="goods_lists haha">
+						<div class="item_title1">
+							<h4>商品列表</h4>
+							<a href="###">添加新商品</a>
+						</div>
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>							
+						</table>
+					</div>-->
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery3.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/system_index.js"></script>
+
+</html>

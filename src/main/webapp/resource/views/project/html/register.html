@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../css/register.css">
+    	<link rel="stylesheet" type="text/css" href="../css/verify.css"/>    	
+</head>
+<body>
+    <div class="header">
+        <div class="both">
+            <a href="index.html"><img src="../image/img_chen/logo.jpg" alt=""></a>
+            <div>嘿，欢迎来到美鲜冻品商城！<span><a href="../html/login.html">请登录</a></span>&nbsp;&nbsp;&nbsp;<span><a href="">免费注册</a></span></div>
+        </div>    
+    </div>
+    <div class="ad"></div>
+    <div class="content">
+        <div class="content_top">
+            <h2>注册新用户</h2>
+            <h3>已经注册，<a href="../html/login.html">现在登录 ></a></h3>
+        </div>
+        <div class="register">
+            <div class="register_info1 user">
+                <input type="text" name="" id="username" placeholder="请输入用户名">
+                <div class="name"><span>*</span>用户名：</div>
+                <div id="failinfo"></div>
+            </div>
+            <div class="register_info1 pass">
+                <input type="password" name="" id="password" placeholder="请输入密码">
+                <div class="name"><span>*</span>密码：</div>
+                <div id="failpass"></div>
+            </div>
+            <div class="register_info1 passagin">
+                <input type="password" name="" id="agin" placeholder="确认密码">
+                <div class="name"><span>*</span>确认密码：</div> 
+                <div id="failagin"></div>  
+            </div>
+            <div class="register_info1">
+                <input type="text" name="" id="moble" placeholder="请输入验证手机号">
+                <div class="name"><span>*</span>验证手机：</div>
+                <div id="failmoble"></div>
+            </div>
+            <div class="register_info1 special_register">
+                <!--<input type="text" name="" placeholder="请输入右侧验证码">-->
+                <div id="name" class="name"><span>*</span>验证码：</div>
+                <div id="yanzhengma"></div>
+                <div id="yanzhengreault"></div>
+            </div>
+            <div class="register_info1">
+                <input type="text" name="" placeholder="请输入短信验证码">
+                <div class="name"><span>*</span>短信验证码：</div>
+            </div>
+            <div class="xieyi">
+                <input class="agree" type="checkbox" name="">我已阅读并同意<span><a href="###">用户协议</a></span>
+            </div>
+            <input type="submit" class="sub" name="" value="提 交">
+        </div>
+        <div class="load">
+            <img src="../image/img_chen/regist_index.jpg" alt="">
+        </div>
+    </div>
+   	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/verify.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+</html>

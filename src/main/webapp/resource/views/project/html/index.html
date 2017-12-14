@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/index.css" />
+		<link rel="stylesheet" href="../css/swiper-3.4.2.min.css">
+		<link rel="stylesheet" href="../css/aside.css" />
+		<!--<link rel="stylesheet" href="../css/header.css" />-->
+		<link rel="stylesheet" type="text/css" href="../css/footer.css"/>
+	</header>
+	<!--弹出框-->
+	<div id="dialog_model"></div>
+	
+	<div class="top"></div>
+	<header class="header">
+		<div class="header_top_wrap">
+			<div class="header_top clearfix">
+				<div class="header_top_l fl">
+					<h6 class="inline_block h6"></h6>
+					<div class="loginandregister inline_block">
+						<a href="../html/login.html">登录</a>|
+						<a href="../html/register.html">注册</a>
+					</div>
+				</div>
+				<ul class="header_top_list clearfix fr">
+					<li class="fl item1">
+						<a href="###">我的美鲜</a>
+						<span></span>
+						<ul class="usermsgnav">
+							<li><a href="tabs.html?show=1">我的订单</a></li>
+							<li><a href="tabs.html?show=2">用户信息</a></li>
+							<li><a href="tabs.html?show=3">收货地址</a></li>
+							<li><a href="tabs.html?show=4">我的红包</a></li>
+							<li><a href="tabs.html?show=5">资金管理</a></li>
+						</ul>
+					</li>
+					<li class="fl item2">
+						<span class="shopcar_icon"></span>
+						<a href="gouwuche.html">我的购物车</a>
+						<span class="shop_count">0</span>
+						<span class="down_icon"></span>
+					</li>
+					<li class="fl item3"><a href="###">积分商城</a></li>
+					<li class="fl item4">
+						<span class="phone_icon"></span>
+						<a href="###">手机逛美鲜</a>
+						<div class="erweima"><img src="../image/img_cgl/erweima.png" alt=""></div>
+					</li>
+					<li class="fl item5">
+						<span class="map_icon"></span>
+						<a href="###">网站地图</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //////////////////////////// -->
+		<div class="header_search">
+			<div class="logo inline_block">
+				<a href="index.html">
+					<img src="../image/img_cgl/logo.jpg" alt="">
+				</a>
+			</div>
+			<div class="search inline_block">
+				<form action="" method="">                                                                 
+					<input class="text" type="text" name="">
+					<a class="withlist" href="###"><span class="search_btn" id="btn" value="搜索">搜索</span></a>
+					<div class="resultmsg">
+						<ul class="resultmsg_list">
+							<!--<li>dfhsjj</li>
+							<li>dfhsjj</li>
+							<li>dfhsjj</li>-->
+						</ul>
+						<input type="button" class="close" value="关闭"></input>
+					</div>
+				</form>
+				<div class="hotwords">
+					<strong >热门搜索</strong>
+					<a href="###">1</a>
+					<a href="###">2</a>
+					<a href="###">3</a>
+				</div>
+			</div>
+		</div>
+		<!-- ///////////////////////// -->
+		
+		<div class="cat_all_wrap">
+			<div class="nav">
+				<ul class="clearfix">
+					<li><a href="index.html">首页</a><span>/</span></li>
+					<li><a href="newGoods.html">新品上架</a><span>/</span><span class="new_icon"></span></li>
+					<li><a href="###">美鲜预售</a><span>/</span></li>
+					<li><a href="apply.html">试用装申领</a><span>/</span></li>
+					<li><a href="recharge.html">充值有礼</a><span>/</span></li>
+					<li><a href="free.html">美鲜冷链</a><span>/</span></li>
+					<li><a href="canyingcehua.html">餐饮策划</a><span>/</span></li>
+					<li><a href="caipinyanfa.html">菜品研发</a><span>/</span></li>
+				</ul>
+			</div>
+			<div class="cat_all">
+				<div class="menu_title clearfix">
+					<h4><a class="cat_all_a" href="###">全部商品分类</a></h4>
+					<span></span>
+				</div>
+				<div class="menu_list">
+					<ul class="menu_list_item">
+						<!--js填充-->
+						<div class="tag_list clearfix">
+							<!--js填充-->
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="line"></div>
+	</header>
+	<!--侧边栏-->
+	<div class="aside clearfix">
+			<div class="shoppingcar fl">
+				<div class="shoppingcar_model">
+					<h2>
+						<a href="###">
+							<i></i>
+							<span>美鲜自营</span>
+						</a>
+						<addres id="address">济南仓</addres>
+					</h2>
+					<ul class="menu_list">
+						<li class="clearfix">
+							<a class="fl" href="###"><img src=""/></a>
+							<div class="wares_msg fr">
+								<p>味好美 千岛酱 1L/袋 12袋/箱 （单带）</p>
+								<span id="price">21.00</span>×
+								<span id="count">1</span>
+							</div>
+							<button id="deletebtn">删除</button>
+						</li>
+					</ul>
+				</div>
+				<div class="balance clearfix">
+					<div class="blance_left fl">
+						<span>共<s>0</s>件商品 共计<s>￥0</s></span>
+					</div>
+					<div class="blance_right fr">
+						<a href="###">去购物车</a>
+					</div>
+				</div>
+			</div>
+			<!--///////////////////////////////////////////-->
+			<ul class="aside_list fr">
+				<li class="aside_list_item1">
+					<a href="###">
+						<i></i>
+						<p class="shopcar_text">购物车</p>
+						<span class="aside_shoppingcar_count">0</span>
+					</a>
+				</li>
+				<li class="aside_list_item2">
+					<a href="###">
+						<i></i>
+						<div><span>客服qq点击交谈</span></div>
+					</a>
+				</li>
+				<li class="aside_list_item2 aside_list_item3">
+					<a href="###">
+						<span id="speacial_span"></span>
+						<div><span>客服电话：110-120-999</span></div>
+					</a>
+				</li>
+				<li class="aside_list_item4">
+					<a href="###">
+						<i></i>
+						<div><span></span></div>
+					</a>
+				</li>
+				<li class="aside_list_item5">
+					<a href="javascript:scrollTo(0,0);">
+						<i></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!--菜单栏-->
+		<div class="menu">
+			<ul>
+				<li>
+					<a href="#hot"></a>
+				</li>
+				<li>
+					<a href="#less"></a>
+				</li>
+				<li>
+					<a href="#F_1"></a>
+				</li>
+				<li>
+					<a href="#F_2"></a>
+				</li>
+				<li>
+					<a href="#F_3"></a>
+				</li>
+				<li>
+					<a href="#F_4"></a>
+				</li>
+				<li>
+					<a href="#F_5"></a>
+				</li>
+				<li>
+					<a href="#F_6"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="first auto clearfix">
+			<!--<div style="width: 240px;height:100px;float: left;"></div>-->
+			<div class="window fr">
+				<ul class="clearfix">
+					<!--<li>
+						<img src="../image/img_ltt/20171130ofybua.jpg" alt="" />
+					</li>
+					<li>
+						<img src="../image/img_ltt/20171130ofybua.jpg" alt="" />
+					</li>
+					<li>
+						<img src="../image/img_ltt/20171130ofybua.jpg" alt="" />
+					</li>
+					<li>
+						<img src="../image/img_ltt/20171130ofybua.jpg" alt="" />
+					</li>
+					<li>
+						<img src="../image/img_ltt/20171130ofybua.jpg" alt="" />
+					</li>-->
+				</ul>
+				<div class="btn clearfix">
+					<!--<span class="dian">按钮1</span>
+					<span class="dian">按钮1</span>
+					<span class="dian">按钮1</span>
+					<span class="dian">按钮1</span>
+					<span class="dian">按钮1</span>-->
+				</div>
+			</div>
+		</div>
+		<div class="sale auto" id="hot">
+			<ul class="clearfix">
+				<li>
+					<a href="">
+						<img src="../image/img_ltt/download.jpg"/>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../image/img_ltt/download-1.jpg"/>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../image/img_ltt/download-2.jpg"/>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="../image/img_ltt/download-3.jpg"/>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="new_first auto clearfix">
+			<div class="new_first_top clearfix">
+				<div class="title clearfix">
+					<div class="new_pic fl">
+						<img src="../image/img_ltt/header_icon.png" alt="" />
+					</div>
+					<h2 class="fl newTitle">新品首发</h2>
+					<div class="title_left clearfix">
+						<span>限量新品 准时开抢</span>
+						<a href="">
+							<span>进入专区</span>
+						</a>
+					</div>
+				</div>
+				<div class="notice">
+					<h4>美鲜公告<a href="">更多</a></h4>
+				</div>
+			</div>
+			<div class="new_content clearfix">
+				<div class="new_list fl">
+					<div class="swiper-container swiper1">
+					    <div class="swiper-wrapper">
+					        <div class="swiper-slide">
+					        		<ul class="clearfix">
+					        			<li>
+					        				<div class="new_list_pic">
+					        					<a href="">
+					        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+					        					</a>
+					        				</div>
+					        				<div class="new_list_detail">
+					        					<a href="">
+					        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+					        						<span>￥180.00</span>
+					        					</a>
+					        				</div>
+					        			</li>
+					        			<li>
+					        				<div class="new_list_pic">
+					        					<a href="">
+					        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+					        					</a>
+					        				</div>
+					        				<div class="new_list_detail">
+					        					<a href="">
+					        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+					        						<span>￥180.00</span>
+					        					</a>
+					        				</div>
+					        			</li>
+					        			<li>
+					        				<div class="new_list_pic">
+					        					<a href="">
+					        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+					        					</a>
+					        				</div>
+					        				<div class="new_list_detail">
+					        					<a href="">
+					        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+					        						<span>￥180.00</span>
+					        					</a>
+					        				</div>
+					        			</li>
+					        			<li>
+					        				<div class="new_list_pic">
+					        					<a href="">
+					        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+					        					</a>
+					        				</div>
+					        				<div class="new_list_detail">
+					        					<a href="">
+					        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+					        						<span>￥180.00</span>
+					        					</a>
+					        				</div>
+					        			</li>
+					        		</ul>	
+					        </div>
+					        <div class="swiper-slide">
+					       	 	<ul class="clearfix">
+					        			<li>
+					        				<div class="new_list_pic">
+					        					<a href="">
+					        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+					        					</a>
+					        				</div>
+					        				<div class="new_list_detail">
+					        					<a href="">
+					        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+					        						<span>￥180.00</span>
+					        					</a>
+					        				</div>
+					        			</li>
+					        			<li>
+					        				<div class="new_list_pic">
+					        					<a href="">
+					        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+					        					</a>
+					        				</div>
+					        				<div class="new_list_detail">
+					        					<a href="">
+					        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+					        						<span>￥180.00</span>
+					        					</a>
+					        				</div>
+					        			</li>
+					        			<li>
+					        				<div class="new_list_pic">
+					        					<a href="">
+					        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+					        					</a>
+					        				</div>
+					        				<div class="new_list_detail">
+					        					<a href="">
+					        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+					        						<span>￥180.00</span>
+					        					</a>
+					        				</div>
+					        			</li>
+					        			<li>
+					        				<div class="new_list_pic">
+					        					<a href="">
+					        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+					        					</a>
+					        				</div>
+					        				<div class="new_list_detail">
+					        					<a href="">
+					        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+					        						<span>￥180.00</span>
+					        					</a>
+					        				</div>
+					        			</li>
+					        		</ul>	
+					        </div>
+					        <div class="swiper-slide">
+					        		<ul class="clearfix">
+					        			<li>
+					        				<div class="new_list_pic">
+					        					<a href="">
+					        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+					        					</a>
+					        				</div>
+					        				<div class="new_list_detail">
+					        					<a href="">
+					        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+					        						<span>￥180.00</span>
+					        					</a>
+					        				</div>
+					        			</li>
+					        			<li>
+					        				<div class="new_list_pic">
+					        					<a href="">
+					        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+					        					</a>
+					        				</div>
+					        				<div class="new_list_detail">
+					        					<a href="">
+					        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+					        						<span>￥180.00</span>
+					        					</a>
+					        				</div>
+					        			</li>
+					        			<li>
+					        				<div class="new_list_pic">
+					        					<a href="">
+					        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+					        					</a>
+					        				</div>
+					        				<div class="new_list_detail">
+					        					<a href="">
+					        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+					        						<span>￥180.00</span>
+					        					</a>
+					        				</div>
+					        			</li>
+					        			<li>
+					        				<div class="new_list_pic">
+					        					<a href="">
+					        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+					        					</a>
+					        				</div>
+					        				<div class="new_list_detail">
+					        					<a href="">
+					        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+					        						<span>￥180.00</span>
+					        					</a>
+					        				</div>
+					        			</li>
+					        		</ul>	
+					        </div>
+					    </div>
+					    <!-- 如果需要分页器 -->
+					    <!--<div class="swiper-pagination"></div>-->
+					    <!-- 如果需要导航按钮 -->
+					    <div class="swiper-button-prev swiper-button-white left">
+					    	<span><</span>
+					    </div>
+					    <div class="swiper-button-next swiper-button-white right">
+					    	<span>></span>
+					    </div>
+					</div>
+				</div>
+				<div class="notice_list fl">
+					<div class="notice_list1">
+						<a href="">
+							<div class="notice_list_top clearfix">
+								<img src="../image/img_ltt/shanshu9o.gif" alt="" />
+								<div>
+									<em>物流配送</em>
+									<span>2017-11-30</span>
+								</div>	
+							</div>
+							<h3>国庆中秋物流路线发车安排</h3>
+							<ul>
+								<li>
+									<p>
+										<span class="send">[物流配送]</span>
+										<span class="storage">关于商品统一从济南仓库多少积分看风景啊</span>
+									</p>
+								</li>
+								<li>
+									<p>
+										<span class="send">[物流配送]</span>
+										<span class="storage">关于商品统一从济南仓库多少积分看风景啊</span>
+									</p>
+								</li>
+								<li>
+									<p>
+										<span class="send">[物流配送]</span>
+										<span class="storage">关于商品统一从济南仓库多少积分看风景啊</span>
+									</p>
+								</li>
+								<li>
+									<p>
+										<span class="send">[物流配送]</span>
+										<span class="storage">关于商品统一从济南仓库多少积分看风景啊</span>
+									</p>
+								</li>
+							</ul>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--特惠专区-->
+		<div class="discounts auto" id="less">
+			<div class="discounts_title clearfix">
+				<div class="discounts_title_left">
+					<div class="title_content clearfix">
+						<div class="discounts_pic fl">
+							<img src="../image/img_ltt/header_icon.png" alt="" />
+						</div>
+						<h2 class="fl discountsTitle">特惠专区</h2>
+						<div class="title_left clearfix">
+							<span>限量新品 准时开抢</span>
+							<a href="">
+								<span>进入专区</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="discounts_title_right">
+					<ul class="clearfix">
+						<li>
+							<a href="">
+								<span>特惠推荐</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span>秒杀专区</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span>爆款直降</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span>闪购</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span>聚食惠</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span>抄底价特卖</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="discounts_list">
+				<ul class="discounts_list_pic clearfix">
+					<li>
+						<a href=""><img src="../image/img_ltt/1510767913852776714.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href=""><img src="../image/img_ltt/1510767987313075802.jpg" alt="" /></a>
+					</li>
+					<li style="height: 124px;">
+						<a href=""><img src="../image/img_ltt/1510768031454557024 (1).jpg" alt="" /></a>
+					</li>
+					<li style="height: 124px;">
+						<a href=""><img src="../image/img_ltt/1510768031454557024 (1).jpg" alt="" /></a>
+					</li>
+					<li style="height: 124px;">
+						<a href=""><img src="../image/img_ltt/1510768031454557024 (1).jpg" alt="" /></a>
+					</li>
+					<li style="height: 124px;">
+						<a href=""><img src="../image/img_ltt/1510768031454557024 (1).jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href=""><img src="../image/img_ltt/1510767987313075802.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href=""><img src="../image/img_ltt/1510767987313075802.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href=""><img src="../image/img_ltt/1510767987313075802.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href=""><img src="../image/img_ltt/1510767947643606072 (1).jpg" alt="" /></a>
+					</li>		
+				</ul>
+				<ul class="discounts_list_pic1 clearfix">
+					<!--<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>-->
+				</ul>
+				<ul class="discounts_list_pic1 clearfix">
+					<!--<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>
+					<li>
+						<div class="new_list_pic">
+	        					<a href="">
+	        						<img src="../image/img_ltt/1090_thumb_G_1452194251592.jpg" alt="" />
+	        					</a>
+	        				</div>
+	        				<div class="new_list_detail">
+	        					<a href="">
+	        						<div>蓝威斯顿 H3031冷冻薯片 美国进口 5磅/袋 5</div>
+	        						<span>￥180.00</span>
+	        					</a>
+	        				</div>
+					</li>-->
+				</ul>
+				<ul class="discounts_list_pic1 clearfix"></ul>
+				<ul class="discounts_list_pic1 clearfix"></ul>
+				<ul class="discounts_list_pic1 clearfix"></ul>
+			</div>
+		</div>
+		<!--德国进口横幅-->
+		<div class="banner auto">
+			<a href="">
+				<img src="../image/img_ltt/1511973644758344878.jpg" alt="" />
+			</a>		
+		</div>
+		<!--5楼的1楼-->
+		
+		<footer>
+			<div class="part1">
+				<div class="part1_content">
+					<ul class="clearfix">
+						<li>
+							<span class="car_icon"></span>
+							<h3>美鲜冷链，仓配专家</h3>
+							<p>全程冷链，6/24小时送货上门</p>
+						</li>
+						<li>
+							<span class="car_icon"></span>
+							<h3>美鲜冷链，仓配专家</h3>
+							<p>全程冷链，6/24小时送货上门</p>
+						</li>
+						<li>
+							<span class="car_icon"></span>
+							<h3>美鲜冷链，仓配专家</h3>
+							<p>全程冷链，6/24小时送货上门</p>
+						</li>
+						<li>
+							<span class="car_icon"></span>
+							<h3>美鲜冷链，仓配专家</h3>
+							<p>全程冷链，6/24小时送货上门</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="part2">
+				<table class="table" border="" cellspacing="0" cellpadding="0">
+					<tr>
+						<th>购物指南</th>
+						<th>会员服务</th>
+						<th>配送方式</th>
+						<th>售后服务</th>
+						<th>餐饮支持</th>
+						<th>关于美鲜</th>
+					</tr>
+					<tr>
+						<td><a href="###">购物流程</a></td>
+						<td><a href="###">会员级别</a></td>
+						<td><a href="###">物流配送</a></td>
+						<td><a href="###">免责条款</a></td>
+						<td><a href="###">餐饮动态</a></td>
+						<td><a href="###">联系我们</a></td>
+					</tr>
+					<tr>
+						<td><a href="###">注册登录</a></td>
+						<td><a href="###">试用装申领额度</a></td>
+						<td><a href="###">订单截止时间</a></td>
+						<td><a href="###">退换货政策</a></td>
+						<td><a href="###">美鲜菜谱</a></td>
+						<td><a href="###">关于我们</a></td>
+					</tr>
+					<tr>
+						<td><a href="###">提交订单</a></td>
+						<td><a href="###">积分细则</a></td>
+						<td><a href="###">美鲜冷链</a></td>
+						<td><a href="###">退货流程</a></td>
+						<td><a href="###">美鲜课堂</a></td>
+						<td><a href="###">加入我们</a></td>
+					</tr>
+					<tr>
+						<td><a href="###">支付方式</a></td>
+						<td><a href="###">会员餐厅使用说明</a></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="###">友链申请</a></td>
+					</tr>
+					<tr>
+						<td><a href="###">支付常见问题</a></td>
+						<td><a href="###">连锁餐厅使用说明</a></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><a href="###">订单管理</a></td>
+						<td><a href="###">pc充值升级流程</a></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><a href="###">支付限额</a></td>
+						<td><a href="###">APP充值升级流程</a></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><a href="###">认证会员权益</a></td>
+					</tr>
+				</table>
+			</div>
+			<div class="part3">
+				<div class="friendlink">
+					<strong>友情链接:</strong>
+					<a href="###">养殖网</a>
+					<a href="###">美食网</a>
+					<a href="###">特步网</a>
+					<a href="###">当当网</a>
+					<a href="###">淘宝网</a>
+				</div>
+			</div>
+			<div class="part4">
+				<p>© 2005-2017 美鲜冻品商城 版权所有，并保留所有权利。</p>
+				<p>济南市历下区龙奥北路8号海尔玉兰广场3号楼606 Tel: 4006-728-726</p>
+				<p>ICP备案证书号:<a style="color:#666;" href="###">鲁ICP备11002915号</a></p>
+			</div>
+			<div class="part5">
+				<div class="footer_img">
+					<img src="../image/img_cgl/zhifubao.png" alt="" />
+					<img src="../image/img_cgl/footer_info_r1_c1.jpg" alt="" />
+					<img src="../image/img_cgl/footer_info_r1_c3.jpg" alt="" />
+					<img src="../image/img_cgl/footer_info_r1_c7.jpg" alt="" />
+					<img src="../image/img_cgl/wangjing (1).png" alt="" />
+				</div>
+			</div>
+		</footer>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript" src="../js/first.js"></script>
+	<script type="text/javascript" src="../js/aside.js"></script>
+	<script type="text/javascript" src="../js/shouyeheader.js"></script>
+	<!--懒加载-->
+	<script type="text/javascript" src="../js/jquery.lazyload.min.js"></script>
+</html>

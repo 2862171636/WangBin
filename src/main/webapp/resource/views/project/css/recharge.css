@@ -1,0 +1,70 @@
+.banner1{
+	width: 100%;
+	height: 449px;
+	background: url(../image/img_ltt/admin_ct_01_01.jpg);
+}
+.banner2{
+	width: 100%;
+	height: 443px;
+	background: url(../image/img_ltt/admin_ct_01_02.jpg);
+}
+.banner3{
+	width: 100%;
+	height: 715px;
+	background: url(../image/img_ltt/admin_ct_01_03.jpg);
+}
+.banner3 .banner3_1{
+	height: 100%;
+}
+.banner4,.banner5,.banner6,.banner7,.banner8,.banner9,.banner10,.banner11,.banner12,.banner13{
+	width: 100%;
+	height: 469px;
+}
+.banner4{
+	background: url(../image/img_ltt/admin_ct_01_04.jpg);
+}
+.banner5{
+	background: url(../image/img_ltt/admin_ct_01_05.jpg);
+}
+.banner6{
+	background: url(../image/img_ltt/admin_ct_01_06.jpg);
+}
+.banner7{
+	background: url(../image/img_ltt/admin_ct_01_07.jpg);
+}
+.banner8{
+	background: url(../image/img_ltt/admin_ct_01_08.jpg);
+}
+.banner9{
+	background: url(../image/img_ltt/admin_ct_01_09.jpg);
+}
+.banner10{
+	background: url(../image/img_ltt/admin_ct_01_10.jpg);
+}
+.banner11{
+	background: url(../image/img_ltt/admin_ct_01_11.jpg);
+}
+.banner12{
+	background: url(../image/img_ltt/admin_ct_01_12.jpg);
+}
+.banner13{
+	background: url(../image/img_ltt/admin_ct_01_13.jpg);
+}
+.banner15{
+	width: 100%;
+	height: 152px;
+	background: url(../image/img_ltt/admin_ct_01_15.jpg);
+}
+.banner16{
+	width: 100%;
+	height: 152px;
+	background: url(../image/img_ltt/admin_ct_01_16.jpg);
+}
+/* iiiiiiiii*/
+.cat_all_wrap .nav li:nth-child(5) a{
+	border-bottom: 2px solid #1a9733;
+	color: #1a9733;
+	display: inline-block;
+	height: 37px;
+	/*padding-bottom: 1px;*/
+}

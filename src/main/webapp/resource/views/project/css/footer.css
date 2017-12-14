@@ -1,0 +1,96 @@
+footer{
+	width: 100%;
+	height: auto;
+	padding-bottom: 50px;
+}
+.part1{
+	width: 100%;
+	border-top:1px solid #eee;
+	border-bottom:1px solid #eee;
+}
+.part1_content{
+	width: 1200px;
+	margin: 0 auto;
+}
+.part1_content li{
+	width: 300px;
+	height: 70px;
+	margin-top: 30px;
+	float: left;
+}
+.part1_content li h3{
+	width: 170px;
+    height: 30px;
+    display: inline-block;
+    margin-left: 5px;
+    text-wrap: normal;
+    color: #444444;
+    font-size: 18px;
+    font-family: "微软雅黑";
+}
+.car_icon{
+	width: 46px;
+    height: 46px;
+    background:url(../image/img_cgl/footer02.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+}
+.part1_content li p{
+	height: 14px;
+    text-align: left;
+    display: block;
+    color: #999999;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "微软雅黑";
+}
+.part2{
+	border-bottom:1px solid #EEE;
+	padding-bottom: 30px;
+	padding-top:30px;
+}
+.table{
+	width: 1200px;
+	margin: 0 auto;
+	border:0;
+}
+.table th{
+	text-align: left;
+	color: rgb(0,151,60);
+	font-size: 16px;
+	font-family: "微软雅黑";
+	border:0;
+}
+.table td{
+	font-size: 12px;
+	color: #666;
+	height: 24px;
+	border:0;
+}
+.friendlink{
+	padding: 20px;
+	width: 1200px;
+	margin:0 auto;
+}
+.friendlink strong{
+	font-weight: normal;
+	color:#999;
+}
+.part4{
+	margin: 20px 0 10px 0;
+	text-align: center;
+}
+.part4 p{
+	margin-bottom: 5px;
+	color: #666;
+}
+.part5{
+	margin-top: 20px;
+}
+.footer_img{
+	width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}

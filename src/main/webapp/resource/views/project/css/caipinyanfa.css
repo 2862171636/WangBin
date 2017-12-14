@@ -1,0 +1,163 @@
+	.content{
+		width: 100%;
+		/*margin-top: 40px;*/
+	}
+	.banner1 {
+		width: 100%;
+		height: 363px;
+		background: url(../image/img_h/list_01.jpg) top center no-repeat;
+	}
+    .banner2 {
+        width: 100%;
+        height: 362px;
+        background: url(../image/img_h/list_02.jpg) top center no-repeat;
+    }
+    .banner3 {
+        width: 100%;
+        height: 363px;
+         background: url(../image/img_h/list_03.jpg) top center no-repeat;
+    }
+    .banner4 {
+        width: 100%;
+        height: 362px;
+        background: url(../image/img_h/list_04.jpg) top center no-repeat;
+    }
+    .banner5 {
+        width: 100%;
+        height: 363px;
+         background: url(../image/img_h/list_05.jpg) top center no-repeat;
+    }
+    .banner6 {
+        width: 100%;
+        height: 362px;
+        background: url(../image/img_h/list_06.jpg) top center no-repeat;
+    }
+    .list_a{
+        height: 292px;
+        background: url(zhuanti/plan_2017_1/list_06.jpg) top center no-repeat;
+    }
+    .list_a a{
+        width: 136px;
+        height:202px;
+        display: block;
+        float: left;
+        margin-right: 106px;
+    }
+    .list_a a.no_margin{
+        margin-right: 0;
+    }
+    .banner7 {
+        width: 100%;
+        height: 363px;
+         background: url(../image/img_h/list_07.jpg) top center no-repeat;
+    }
+    .banner8 {
+        width: 100%;
+        height: 362px;
+         background: url(../image/img_h/list_08.jpg) top center no-repeat;
+    }
+    .banner9 {
+        width: 100%;
+        height: 363px;
+         background: url(../image/img_h/list_09.jpg) top center no-repeat;
+    }
+    .banner10 {
+        width: 100%;
+        height: 362px;
+         background: url(../image/img_h/list_10.jpg) top center no-repeat;
+    }
+    .banner11 {
+        width: 100%;
+        height: 363px;
+        background: url(../image/img_h/list_11.jpg) top center no-repeat;
+    }
+    .banner12 {
+        width: 100%;
+        height: 363px;
+         background: url(../image/img_h/list_12.jpg) top center no-repeat;
+    }
+    .banner13 {
+        width: 100%;
+        height: 362px;
+        background: url(../image/img_h/list_13.jpg) top center no-repeat;
+    }
+    .banner14 {
+        width: 100%;
+        height: 363px;
+        background: url(../image/img_h/list_14.jpg) top center no-repeat;
+    }
+    .banner15 {
+        width: 100%;
+        height: 362px;
+         background: url(../image/img_h/list_15.jpg) top center no-repeat;
+    }
+    .banner16 {
+        width: 100%;
+        height: 363px;
+         background: url(../image/img_h/list_16.jpg) top center no-repeat;
+    }
+    .banner17 {
+        width: 100%;
+        height: 362px;
+         background: url(../image/img_h/list_17.jpg) top center no-repeat;
+    }
+    .banner18 {
+        width: 100%;
+        height: 363px;
+         background: url(../image/img_h/list_18.jpg) top center no-repeat;
+    }
+    .banner19 {
+        width: 100%;
+        height: 362px;
+         background: url(../image/img_h/list_19.jpg) top center no-repeat;
+    }
+    .banner20 {
+        width: 100%;
+        height: 363px;
+         background: url(../image/img_h/list_20.jpg) top center no-repeat;
+    }
+    .banner21 {
+        width: 100%;
+        height: 362px;
+        background: url(../image/img_h/list_21.jpg) top center no-repeat;
+    }
+    .banner22 {
+        width: 100%;
+        height: 363px;
+         background: url(../image/img_h/list_22.jpg) top center no-repeat;
+    }
+    .banner23 {
+        width: 100%;
+        /*height: 650px;*/
+        height: 560px;
+    }
+    .floating{
+        width: 162px;;
+        height:475px;
+        position: fixed;
+        z-index: 10;
+        right: 4px;
+        top:100px;
+        background: url(../image/img_h/floating.png) top center no-repeat;
+    }
+    .link_cursor{
+        width: 100%;
+        height: 92px;
+        display: block;
+        background: url(../image/img_h/list_24.jpg) top center no-repeat;
+        margin-top: 64px;
+    }
+    .floating a{
+        width: 100%;
+        height: 46px;
+        margin-top: 418px;
+        display: block;
+    }
+/* iiiiiiiii*/
+.cat_all_wrap .nav li:nth-child(8) a{
+	border-bottom: 2px solid #1a9733;
+	color: #1a9733;
+	display: inline-block;
+	height: 37px;
+	/*padding-bottom: 1px;*/
+}
