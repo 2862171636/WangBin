@@ -127,15 +127,16 @@ public class UserController {
     //上传头像
     @RequestMapping("/upload.do")
     public void updateHeadImg(@RequestParam("myFile") MultipartFile files, HttpServletRequest request, HttpServletResponse response){
-        System.out.println(files);
+        System.out.println("图片："+files);
         User user = (User) request.getSession().getAttribute("user1");
-        System.out.println(user);
+        System.out.println("用户"+user);
         boolean results = false;
-        String headImg = "Users/lanou/Desktop/mvcImg/Lbt/"+user.getuId()+".jpg";
+//        String headImg = "/Users/lanou/Desktop/mvcImg/Lbt/"+user.getuId()+".jpg";
+        String headImg = "/Users/lanou/Desktop/mvcImg/Lbt/wym.jpg";
         File file = new File(headImg);
         try {
             FileUtils.copyInputStreamToFile(files.getInputStream(),file);
-            String headImgUrl = "http://10.80.16.104:8080/resource/views/img/"+user.getuId()+".jpg";
+            String headImgUrl = "http://10.80.13.111:8080/resource/views/headImg/"+user.getuId()+".jpg";
         user.setHeadImgUrl(headImgUrl);
         boolean result = userService.updateHeadImgUrl(user);
         if (result){
