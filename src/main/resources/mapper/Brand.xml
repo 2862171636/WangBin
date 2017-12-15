@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.lanou.dao.BrandMapper" >
+
+    <resultMap id="brand" type="Brand">
+
+        <id column="bId" property="bId" javaType="integer"></id>
+        <result column="bName" property="bName" jdbcType="VARCHAR"></result>
+        <collection property="product" ofType="com.lanou.entity.Product">
+            <id column="pId" property="pId" javaType="int"></id>
+            <result column="pSpec" property="pSpec" jdbcType="VARCHAR"/>
+            <result column="pMoney" property="pMoney" javaType="int"/>
+            <result column="pImg" property="pImg" jdbcType="VARCHAR"/>
+            <result column="pName" property="pName" jdbcType="VARCHAR"/>
+        </collection>
+
+    </resultMap>
+
+    <select id="brandAndProduct" resultMap="brand">
+
+        SELECT * FROM brand b,product p WHERE #{bId} = p.b_id
+
+    </select>
+
+
+
+
+</mapper>
+

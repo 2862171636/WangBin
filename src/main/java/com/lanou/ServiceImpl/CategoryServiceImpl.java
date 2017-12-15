@@ -46,6 +46,22 @@ public class CategoryServiceImpl implements CategoryService {
 //        List<Integer> cids = categoryMapper.selectCidParentIdForZero();
 //        return cids;
 //    }
+
+    @Transactional
+    public Boolean deletCategorys(Integer cid) {
+
+       Boolean res =  categoryMapper.deletCategory(cid);
+
+       if (res){
+
+           return  true;
+       }else {
+
+           return false;
+       }
+
+
+    }
 }
 
 

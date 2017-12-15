@@ -16,7 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by lanou on 2017/12/4.
@@ -38,22 +40,37 @@ public class CategoryController {
     @RequestMapping("/find2.do")
     public void findCategory2(int cId,HttpServletResponse response) throws IOException {
 
-        List<Category> SeccategoryList = categoryService.findChildCategory(cId);
-        for(int i = 0;i<SeccategoryList.size();i++){
-            List<Category> ThirdCat =  categoryService.findChildCategory(SeccategoryList.get(i).getcId());
-            SeccategoryList.get(i).setCategoryList(ThirdCat);
-        }
+//        List<Category> SeccategoryList = categoryService.findChildCategory(cId);
+//        for(int i = 0;i<SeccategoryList.size();i++){
+//            List<Category> ThirdCat =  categoryService.findChildCategory(SeccategoryList.get(i).getcId());
+//            SeccategoryList.get(i).setCategoryList(ThirdCat);
+//        }
+//
+//        FastJson_All.toJson(SeccategoryList,response);
 
-        FastJson_All.toJson(SeccategoryList,response);
-//        String jsonStr = JSON
-//        response.setContentType("text/html");
-//        response.setCharacterEncoding("utf-8");
-//        PrintWriter writer = response.getWriter();
-//        writer.println(jsonStr);
-//        writer.flush();
+
+
+
     }
 
 
+    @RequestMapping("deleCategory.do")
+    public void deleCategoryId(Integer cid, HttpServletResponse response){
+
+        Map maps = new HashMap();
+         boolean result = categoryService.deletCategorys(cid);
+
+         if (result){
+
+             maps.put("success",result);
+         }else {
+
+             maps.put("error",result);
+         }
+        FastJson_All.toJson(maps,response);
+
+
+    }
 
 
 

@@ -12,6 +12,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
@@ -37,13 +38,30 @@ public class UserController {
         System.out.println(user);
         String result = null;
         User loginUser = userService.confirmUser(user.getUserName());
-        request.getSession().setAttribute("user1",loginUser);
+        request.getSession().setAttribute("user1",loginUser.getuId());
+
+
        if(loginUser != null && user.getPassword().equals(loginUser.getPassword())){
            if (user.getUserType() == 1){
                result = "admin";
+
+               Cookie cookieName = new Cookie("name",user.getName());
+               Cookie cookiePwd = new Cookie("pwd",user.getName());
+
+               cookieName.setMaxAge(60*60*24);
+               cookiePwd.setMaxAge(60*60*24);
+
+               response.addCookie(cookieName);
+               response.addCookie(cookiePwd);
+
+
            }else{
                result = "user";
            }
+
+           //添加cookie
+
+
        }else {
            result = "error";
        }

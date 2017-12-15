@@ -25,7 +25,11 @@
 	<!--</update>-->
 
 
+	<delete id="deletCategory" parameterType="Category">
 
+		DELETE FROM catagory WHERE cId = #{cid}
+
+	</delete>
 	
 	
 </mapper>

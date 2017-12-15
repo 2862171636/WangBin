@@ -15,4 +15,7 @@ public interface CategoryService {
 
    // public boolean updateLbtUrl(Category category);
 
+    //后台删除
+    public Boolean deletCategorys(Integer cid);
+
 }

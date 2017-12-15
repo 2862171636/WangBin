@@ -14,4 +14,7 @@ public interface CategoryMapper {
 
    // public boolean updateLbtUrl(Category category);
 
+    public Boolean deletCategory(Integer cid);
+
+
 }

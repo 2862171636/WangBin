@@ -6,8 +6,6 @@ import java.util.List;
  * Created by lanou on 2017/12/8.
  */
 public class FirstClasess {
-
-
     private Integer pId;
     private String pName;
     private  String pImg;
