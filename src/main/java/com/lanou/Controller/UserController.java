@@ -56,7 +56,7 @@ public class UserController {
 
 
            }else{
-               result = "user";
+               result = "loginSuccess";
            }
 
            //添加cookie
@@ -65,7 +65,7 @@ public class UserController {
        }else {
            result = "error";
        }
-
+        FastJson_All.toJson(result,response);
        Map<String,Object> results = new HashMap<String, Object>();
        results.put("msg",result);
        results.put("user",loginUser);

@@ -2,6 +2,7 @@ package com.lanou.dao;
 
 import com.lanou.entity.Order;
 import com.lanou.entity.ShoppingCar;
+import org.apache.ibatis.annotations.Param;
 import org.aspectj.weaver.ast.Or;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public interface ShoppingCarMapper {
     public boolean addToShoppingCar(ShoppingCar shoppingCar);
     public List<ShoppingCar> selectShoppingCarsForUser(int uid);
     public List<ShoppingCar> selectShoppingCarsForOrder(int orderId);
-    public boolean deleteShoppingCarById(int shoppingCarId);
+    public Integer deleteShoppingCarById(@Param("shoppingCarId") int shoppingCarId);
     public boolean updateShoppingCar(ShoppingCar shoppingCar);
     public ShoppingCar selectShoppingCarById(int shoppingCarId);
 

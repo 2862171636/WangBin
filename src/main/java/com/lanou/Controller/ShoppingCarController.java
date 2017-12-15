@@ -104,6 +104,11 @@ public class ShoppingCarController {
     public void countShop(int uId,HttpServletResponse response){
         FastJson_All.toJson(shoppingCarService.countShop(uId),response);
     }
+    //delete
+    @RequestMapping("deleteShoppingCarGoods.do")
+    public void deleteShoppingCarGoods(int shoppingCarId,HttpServletResponse response){
+        FastJson_All.toJson(shoppingCarService.deleteShoppingCarById(shoppingCarId),response);
+    }
 
 
 
