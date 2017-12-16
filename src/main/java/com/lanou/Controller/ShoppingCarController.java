@@ -106,7 +106,7 @@ public class ShoppingCarController {
     }
     //delete
     @RequestMapping("deleteShoppingCarGoods.do")
-    public void deleteShoppingCarGoods(int shoppingCarId,HttpServletResponse response){
+    public void deleteShoppingCarGoods(Integer[] shoppingCarId,HttpServletResponse response){
         FastJson_All.toJson(shoppingCarService.deleteShoppingCarById(shoppingCarId),response);
     }
 

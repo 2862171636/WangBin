@@ -15,7 +15,7 @@ public interface ShoppingCarMapper {
     public boolean addToShoppingCar(ShoppingCar shoppingCar);
     public List<ShoppingCar> selectShoppingCarsForUser(int uid);
     public List<ShoppingCar> selectShoppingCarsForOrder(int orderId);
-    public Integer deleteShoppingCarById(@Param("shoppingCarId") int shoppingCarId);
+    public Integer deleteShoppingCarById(@Param("shoppingCarId") Integer[] shoppingCarId);
     public boolean updateShoppingCar(ShoppingCar shoppingCar);
     public ShoppingCar selectShoppingCarById(int shoppingCarId);
 

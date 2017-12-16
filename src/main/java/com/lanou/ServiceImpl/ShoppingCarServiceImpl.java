@@ -33,9 +33,9 @@ public class ShoppingCarServiceImpl implements ShoppingCarService{
         return shoppingCarMapper.selectShoppingCarsForUser(uid);
     }
 
-    public boolean deleteShoppingCarById(int shoppingCarId) {
+    public boolean deleteShoppingCarById(Integer[] shoppingCarId) {
         Integer a = shoppingCarMapper.deleteShoppingCarById(shoppingCarId);
-        if (a==1){
+        if (a!=0){
             return true;
         }
         return false;

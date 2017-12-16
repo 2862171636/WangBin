@@ -39,8 +39,6 @@ public class UserController {
         String result = null;
         User loginUser = userService.confirmUser(user.getUserName());
         request.getSession().setAttribute("user1",loginUser.getuId());
-
-
        if(loginUser != null && user.getPassword().equals(loginUser.getPassword())){
            if (user.getUserType() == 1){
                result = "admin";
@@ -60,7 +58,6 @@ public class UserController {
            }
 
            //添加cookie
-
 
        }else {
            result = "error";
