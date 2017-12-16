@@ -62,11 +62,11 @@ public class UserController {
        }else {
            result = "error";
        }
-        FastJson_All.toJson(result,response);
+
        Map<String,Object> results = new HashMap<String, Object>();
        results.put("msg",result);
        results.put("user",loginUser);
-
+        FastJson_All.toJson(results,response);
     }
 
     //注册用户名失焦
