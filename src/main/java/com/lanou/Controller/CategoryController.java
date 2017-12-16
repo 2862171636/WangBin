@@ -40,13 +40,13 @@ public class CategoryController {
     @RequestMapping("/find2.do")
     public void findCategory2(int cId,HttpServletResponse response) throws IOException {
 
-//        List<Category> SeccategoryList = categoryService.findChildCategory(cId);
-//        for(int i = 0;i<SeccategoryList.size();i++){
-//            List<Category> ThirdCat =  categoryService.findChildCategory(SeccategoryList.get(i).getcId());
-//            SeccategoryList.get(i).setCategoryList(ThirdCat);
-//        }
-//
-//        FastJson_All.toJson(SeccategoryList,response);
+        List<Category> SeccategoryList = categoryService.findChildCategory(cId);
+        for(int i = 0;i<SeccategoryList.size();i++){
+            List<Category> ThirdCat =  categoryService.findChildCategory(SeccategoryList.get(i).getcId());
+            SeccategoryList.get(i).setCategoryList(ThirdCat);
+        }
+
+        FastJson_All.toJson(SeccategoryList,response);
 
 
 
